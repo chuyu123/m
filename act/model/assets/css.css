@@ -250,12 +250,12 @@ body{ min-width:320px; max-width:768px; margin:0 auto; background:url(../assets/
 .baom-box .btn-linedown{ background:#7f7f7f; margin-bottom:10px;}
 
 /* jj-effect-box */
-.jj-effect-box{ border:1px solid #d3d3d3; padding:18px 12px;}
-.jj-effect{ font-size:24px; text-align:center;}
-.jj-effect .money-char{ display:inline-block; height:36px; font-weight: 700; font-size: 30px; line-height: 36px;}
-.jj-effect .money-card{ display: inline-block; margin-top: -5px;}
-.jj-effect i{ display:inline-block; width:26px; height:36px; line-height: 36px; background:#262626; color:#fff; border-radius:4px; font-style: normal; margin:0 3px;}
-.jj-info{ padding-top:18px; font-size:14px; line-height:18px; color:#333;}
+.jj-effect-box{ min-height:36px; border:1px solid #d3d3d3; padding:18px 12px;}
+.jj-effect{ font-size:24px; position:relative; left:50%; float:left; clear:both;}
+.jj-effect .money-char, .jj-effect i{ position:relative; left:-50%; float:left; margin:0 3px;}
+.jj-effect .money-char{ display:inline-block; height:36px; font-weight: 700; font-size: 30px; line-height: 36px; color:#c71a1a;}
+.jj-effect i{ display:inline-block; width:26px; height:36px; line-height: 36px; background-color:#c71a1a; background-image:url(eff.png); background-repeat:no-repeat; border-radius:4px; font-style: normal; text-align: center;}
+.jj-info{ display:none; padding-top:54px; font-size:14px; line-height:18px; color:#333;}
 .jj-info span{ color:#c71a1a;}
 
 /* zfyxj-box */

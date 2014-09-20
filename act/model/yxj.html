@@ -17,7 +17,8 @@
         <div class="jj-effect-box mt10">
             <div class="jj-effect">
                 <span class="money-char">￥</span>
-                <span class="money-card"><i>1</i><i>1</i><i>1</i><i>1</i></span>
+                <span class="money-card"></span>
+                <input type="hidden" id="cur_num" value="7891">
             </div>
             <div class="jj-info">恭喜您获得<span>1000元</span>购车基金，只要您报名活动并缴交意向金，活动当天购车即可抵扣购车款！</div>
         </div>
@@ -47,8 +48,30 @@
     </div>
 </div>
 
-<script src="../../js/jquery-2.1.0.min.js"></script>
-<script src="../../js/jquery.navScrollTo.min.js"></script>
-<script src="assets/js.js"></script>
+<script src="http://www.helloweba.com/demo/js/jquery.js"></script>
+<script src="assets/animateBackground-plugin.js"></script>
+<script>
+function show_num(n){
+    var it = $(".money-card i");
+    var len = String(n).length;
+    for(var i=0;i<len;i++){
+        if(it.length<=i){
+            $(".money-card").append("<i></i>");
+        }
+        var num=String(n).charAt(i);
+//             var y = -parseInt(num)*30;
+        var y = -(360 - parseInt(num)*36);
+        var obj = $(".money-card i").eq(i);
+        obj.each(function(){
+            $(this).animate({
+                    backgroundPosition :'(0 '+String(y)+'px)'
+                }, 2000 - i * 300,'swing',function(){}
+            );
+        });
+    }
+    setTimeout("$('.jj-info').show()",2200);
+}
+show_num($("#cur_num").val());
+</script>
 </body>
 </html>
