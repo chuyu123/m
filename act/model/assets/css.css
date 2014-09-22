@@ -17,15 +17,14 @@ a{ text-decoration:none; color:#306bf0;}
 .center{ text-align:center!important;}
 @font-face{ font-family:'qk'; font-weight:normal; font-style:normal; src:url(../../../font/icomoon.woff) format('woff'),url('../../../font/icomoon.ttf') format('truetype'),url('../../../font/icomoon.svg#qk') format('svg');}
 [class^='f-']{ font-family:qk; font-style:normal; -webkit-font-smoothing:antialiased;}
-@font-face{ font-family:'qk-act'; font-weight:normal; font-style:normal; src:url(../../../font/act.woff) format('woff');}
-[class^='f-act-']{ font-family:qk-act; font-style:normal; -webkit-font-smoothing:antialiased;}
-.f-close:after{ content: "\e626";}
+.yiyuantu:after{ content: "\e626";}
 .f-detla-bm:after{ content:"\e601";}
 .f-acttel:after{ content:"\e61b";}
 .f-tolink:after{ content:"\e621";}
 .f-rarr:after{ content: "\e619";}
 .f-i:after{ content: "\e623";}
 .f-larrow:after{ content: "\e620";}
+.f-wechat:after{ content: "\e629";}
 
 body{ min-width:320px; max-width:768px; margin:0 auto; background:url(../assets/grid_noise.png);}
 .body-main{ background: #fff;}
@@ -301,7 +300,8 @@ body{ min-width:320px; max-width:768px; margin:0 auto; background:url(../assets/
 .succ .tit span{ float:left;}
 .succ .txt{ color:#262626; padding:30px 20px 20px; line-height: 18px;}
 .succ-link{ display:block; margin:20px auto 0; width:160px; height:36px; line-height:36px; color:#c71a1a; text-align:center; border:1px solid #c71a1a; border-radius:4px; font-size:16px;}
-.succ-link i{ display:inline-block; -moz-transform:rotate(180deg); -webkit-transform:rotate(180deg); transform:rotate(180deg); line-height: 11px; margin-left:15px; font-weight: 700;}
+.succ-link i.f-larrow:after{ display:inline-block; -moz-transform:rotate(180deg); -webkit-transform:rotate(180deg); transform:rotate(180deg); line-height: 11px; margin-left:15px; font-weight: 700;}
+.succ-link2 .f-wechat:after{ margin-right:3px;}
 .succ-link2{ color:#fff; background: #c71a1a;}
 .huodong-hot{ float:left; width: 18px; height: 18px; background: url(hot.png) no-repeat; background-size: 100%; margin:9px 5px;}
 .yiyuanp{ margin:10px 10px 0; font-size:14px; line-height: 18px; color: #333;}
@@ -311,6 +311,9 @@ body{ min-width:320px; max-width:768px; margin:0 auto; background:url(../assets/
 .yiyuantu .money-char{ font-size:11px; margin-right:-4px;}
 .yiyuantu .money-val{ font-size:17px;}
 .yiyuantu .money-unit{ font-size:11px; margin-left:-2px;}
+.succ-more{ border-top:1px dashed #999; padding:20px;}
+.succ-more .tit{ font-size:1.1em; padding-bottom:10px;}
+.succ-more .txt span{ color:#c71a1a;}
 
 /* bmbar */
 .bmbar{ position:fixed; left:0; bottom:0; width:100%; height:30px; line-height:9px; padding:10px 0 5px; background:rgba(0,0,0,.8); z-index:900;}
@@ -385,7 +388,7 @@ body{ min-width:320px; max-width:768px; margin:0 auto; background:url(../assets/
 .act-sub .con{ padding:10px;}
 
 /* popup-v2a */
-.popup-v2a{ display:none; position:fixed; left:0; bottom:0; width:100%; height: 100%; background:rgba(0,0,0,.7);}
+.popup-v2a{ display:none; position:fixed; left:0; bottom:0; width:100%; height: 100%; background:rgba(0,0,0,.7); z-index:5555;}
 .popup-v2a-inside{ position:absolute; left:50%; bottom:0; width:100%; margin-left:-50%; background:#fff; border-radius:5px 5px 0 0;}
 .popup-v2a-hd{ position:relative; height:20px; text-align:center; font-size:1.3em; padding-top:25px;}
 .popup-v2a-hd .title-box{ display:block; width:100%; height:100%;}

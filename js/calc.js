@@ -1,19 +1,4 @@
-//calc
-
-//初始css相关
-$(function(){
-    //4等分元素屏幕宽度
-    $(".calc-blk").css("width",$(document).width());
-    $(".j-sh-switch").click(function(){
-        $(this).next().toggle();
-        if($(this).hasClass("j-sh-switch-cur")){
-            $(this).removeClass("j-sh-switch-cur");
-        }else{
-            $(this).addClass("j-sh-switch-cur");
-        };
-    });
-//    $(".cash").text("待定");
-});
+//功能函数
 //冒泡排序
 function bubbleSort(arr){
     var i=arr.length, j;
@@ -30,6 +15,37 @@ function bubbleSort(arr){
     }
     return arr;
 };
+//金额取整
+function roundNum(num){
+    var len = String(num).length;
+    var arr = [];
+    for(i = 0; i < len; i++){
+        var n = String(num).charAt(i);
+        arr[i] = n;
+        if(i == len-1){
+            arr[i] = "0";
+        }else if(i == len-2){
+            arr[i] = "0";
+        }else if(i == len-3){
+            arr[i] = "0";
+        };
+    };
+    rnum = arr.join("");
+};
+//初始css相关
+$(function(){
+    //4等分元素屏幕宽度
+    $(".calc-blk").css("width",$(document).width());
+    $(".j-sh-switch").click(function(){
+        $(this).next().toggle();
+        if($(this).hasClass("j-sh-switch-cur")){
+            $(this).removeClass("j-sh-switch-cur");
+        }else{
+            $(this).addClass("j-sh-switch-cur");
+        };
+    });
+//    $(".cash").text("待定");
+});
 //四屏高度取最高值
 function bigHei(){
     var arrHei = [];
@@ -73,6 +89,7 @@ $(".stage-btn").each(function(i){
    });
 });
 
+
 //==========================================功能函数，华丽丽的分割线 ヽ(●´∀`●)ﾉ==========================================
 //过渡到当前的动画
 function to1(i){
@@ -107,22 +124,22 @@ $.extend({
             oMonth.children().remove();
             oWay.children().remove();
             if (val == "xy") {
-                oMonth.append("<option value='0.0588' data-cycle='12'>(12期)</option><option value='0.1032' data-cycle='24'>(24期)</option><option value='0.144' data-cycle='36'>(36期)</option>");
+                oMonth.append("<option value='0.0588' data-cycle='12'>(12期)</option><option value='0.1032' data-cycle='24'>(24期)</option><option value='0.144' data-cycle='36' selected='selected'>(36期)</option>");
                 oWay.append("<option value='ftsq'>分摊收取</option>");
             }else if(val == "zx"){
-                oMonth.append("<option value='0.0896' data-cycle='12'>(12期)</option><option value='0.0896' data-cycle='24'>(24期)</option><option value='0.0896' data-cycle='36'>(36期)</option>");
+                oMonth.append("<option value='0.0896' data-cycle='12'>(12期)</option><option value='0.0896' data-cycle='24'>(24期)</option><option value='0.0896' data-cycle='36' selected='selected'>(36期)</option>");
                 oWay.append("<option value='ftsq'>分摊收取</option>");
             }else if(val == "js"){
-             oMonth.append("<option value='0' data-cycle='12'>(12期)</option><option value='0.072' data-cycle='24'>(24期)</option><option value='0.108' data-cycle='36'>(36期)</option>");
+             oMonth.append("<option value='0' data-cycle='12'>(12期)</option><option value='0.072' data-cycle='24'>(24期)</option><option value='0.108' data-cycle='36' selected='selected'>(36期)</option>");
              oWay.append("<option value='ycxsq'>一次性收取</option>");
              }else if(val == "gs"){
-             oMonth.append("<option value='0.0358' data-cycle='12'>(12期)</option><option value='0.0705' data-cycle='24'>(24期)</option><option value='0.1043' data-cycle='36'>(36期)</option>");
+             oMonth.append("<option value='0.0358' data-cycle='12'>(12期)</option><option value='0.0705' data-cycle='24'>(24期)</option><option value='0.1043' data-cycle='36' selected='selected'>(36期)</option>");
              oWay.append("<option value='ycxsq'>一次性收取</option>");
              }else if(val == "zg"){
-            oMonth.append("<option value='0.035' data-cycle='12'>(12期)</option><option value='0.035' data-cycle='24'>(24期)</option><option value='0.11' data-cycle='36'>(36期)</option>");
+            oMonth.append("<option value='0.035' data-cycle='12'>(12期)</option><option value='0.075' data-cycle='24'>(24期)</option><option value='0.11' data-cycle='36' selected='selected'>(36期)</option>");
              oWay.append("<option value='ycxsq'>一次性收取</option><option value='ftsq'>分摊收取</option>");
              }else if(val == "pa"){
-             oMonth.append("<option value='0.06' data-cycle='12'>(12期)</option><option value='0.12' data-cycle='24'>(24期)</option><option value='0.18' data-cycle='36'>(36期)</option>");
+             oMonth.append("<option value='0.06' data-cycle='12'>(12期)</option><option value='0.12' data-cycle='24'>(24期)</option><option value='0.18' data-cycle='36' selected='selected'>(36期)</option>");
              oWay.append("<option value='ftsq'>分摊收取</option>");
              };
         });
@@ -130,10 +147,10 @@ $.extend({
             var val = $(this).val();
             if (val == "ycxsq") {
                 oMonth.children().remove();
-                oMonth.append("<option value='0.035' data-cycle='12'>(12期)</option><option value='0.035' data-cycle='24'>(24期)</option><option value='0.11' data-cycle='36'>(36期)</option>");
+                oMonth.append("<option value='0.035' data-cycle='12'>(12期)</option><option value='0.075' data-cycle='24'>(24期)</option><option value='0.11' data-cycle='36' selected='selected'>(36期)</option>");
             }else if(val == "ftsq"){
                 oMonth.children().remove();
-                oMonth.append("<option value='0.04' data-cycle='12'>(12期)</option><option value='0.08' data-cycle='24'>(24期)</option><option value='0.115' data-cycle='36'>(36期)</option>");
+                oMonth.append("<option value='0.04' data-cycle='12'>(12期)</option><option value='0.08' data-cycle='24'>(24期)</option><option value='0.115' data-cycle='36' selected='selected'>(36期)</option>");
             }
         });
     }
@@ -158,6 +175,281 @@ $(function(){
     $("#jqx").change(function(){
         six();
     });
+    function add(){
+        //车身价
+        var csjVal = $("#csj").val();
+        //指导价
+        var zdjVal = $("#csj").attr("data-zvalue");
+        //首付款 + 贷款金额
+        var sfkVal = $("#sfk").val();
+        var sfValue = (csjVal * sfkVal).toFixed(0);
+        var dkjeVal = csjVal - sfValue;
+        roundNum(dkjeVal);
+        $("#sfk-val").text(csjVal - rnum);
+        $("#dkje-val").text(rnum);
+        //购置税
+        $("#gzs").text((zdjVal / (1 + 0.17) * 0.1).toFixed(0));
+        //金融服务费
+        $("#jrfwf").text((rnum * 0.03).toFixed(0));
+        //必要花费
+        var byhfValue = parseFloat($("#gzs").text()) + parseFloat($("#jrfwf").text()) + parseFloat($("#spfw").val());
+        $("#settle-byhf").text(byhfValue);
+
+        //全款
+        //必要花费
+        var byhfValue2 = parseFloat($("#gzs2").text()) + parseFloat($("#spfw2").val());
+        $("#settle-byhf2").text(byhfValue2);
+        //车身价
+        var sfValue2 = $("#csj2").val();
+        var byhfValue2 = parseFloat($("#gzs2").text()) + parseFloat($("#spfw2").val());
+        //购置税
+        $("#gzs2").text((sfValue2 / (1 + 0.17) * 0.1).toFixed(0));
+
+        //文案类别变更
+        function tabSelect(){
+            if($("#j-stage1-tab").find("li").eq(0).hasClass("cur")){
+                $("#stage1-p").html("贷款购车，首付" + $("#sfk").find("option:selected").text() + "，" + $("#xzyh").find("option:selected").text() + "，贷款按" + $("#yg").find("option:selected").text() + "计算，需首付" + $("#sfk-val").text() + "元 + 必要花费" + $("#settle-byhf").text() + "元，月还款" + $("#lxje-val").text() + "元");
+                var firstValue = parseFloat(sfValue) + parseFloat(byhfValue);
+                $("#stage1-all-val").text(firstValue);
+                $("#j-calc-nav-val1").text(firstValue);
+                $("#j-settle-box-ul3").find(".daikuan").css("display","block");
+                //首付合计
+                $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-jrfwf").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-dyfwf").text()) + parseFloat($("#s4-bxje").text()));
+                //车身首付
+                $("#s4-csj-tit").text("车身首付");
+                $("#s4-csj").text($("#sfk-val").text());
+            }else{
+                $("#stage1-p").html("全款购车，车身价" + $("#csj2").val() + "元 + 必要花费" + $("#settle-byhf2").text() + "元");
+                var firstValue2 = parseFloat(sfValue2) + parseFloat(byhfValue2);
+                $("#stage1-all-val").text(firstValue2);
+                $("#j-calc-nav-val1").text(firstValue2);
+                $("#j-settle-box-ul3").find(".daikuan").css("display","none");
+                //首付合计
+                $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-bxje").text()));
+                //车身首付
+                $("#s4-csj-tit").text("车身金额");
+                $("#s4-csj").text($("#csj").val());
+            };
+            bigHei();
+        };
+        tabSelect();
+        //银行利率及利息金额
+        var yhllVal = $("#yg").val();
+        if($("#lxzffs").val() == "ftsq"){
+            var lxValue = (dkjeVal * (1 + parseFloat(yhllVal)) / $("#yg").find("option:selected").attr("data-cycle")).toFixed(0);
+        };
+        if($("#lxzffs").val() == "ycxsq"){
+            var lxValue = (dkjeVal / $("#yg").find("option:selected").attr("data-cycle")).toFixed(0);
+            var ycxLxValue = (dkjeVal * yhllVal).toFixed(0);
+            $("#stage1-p").append("<span>，贷款利息一次性支付：" + ycxLxValue + "元</span>")
+        };
+        $("#lxje-val").text(lxValue);
+
+        $("#stage1-p").html("贷款购车，首付" + $("#sfk").find("option:selected").text() + "，" + $("#xzyh").find("option:selected").text() + "，贷款按" + $("#yg").find("option:selected").text() + "计算，需首付" + $("#sfk-val").text() + "元 + 必要花费" + $("#settle-byhf").text() + "元，月还款" + $("#lxje-val").text() + "元");
+
+        //第二屏
+        //初始化
+        $("#dszzrx-val").attr("data-value","0");
+        $("#clssx-val").attr("data-value","0");
+        $("#qcdqx-val").attr("data-value","0");
+        $("#sjzwzrx-val").attr("data-value","0");
+        $("#ckzwzrx-val").attr("data-value","0");
+        $("#bjmpx-val").attr("data-value","0");
+        $("#zrssx-val").attr("data-value","0");
+        $("#blddpsx-val").attr("data-value","0");
+        $("#cshhssx-val").attr("data-value","0");
+        $("#ssxsssx-val").attr("data-value","0");
+        $("#zdzxc-val").attr("data-value","0");
+        $("#bjmpx2-val").attr("data-value","0");
+        //交强险
+        $("#jqx-val").text($("#jqx").val());
+        //车船税
+        $("#ccs-val").text($("#ccs").val());
+        //第三者责任险
+        $("#dszzrx-val").text($("#dszzrx").val());
+        if(!$("#dszzrx").prop("disabled")){
+            $("#dszzrx-val").attr("data-value",$("#dszzrx-val").text());
+        };
+        $("#s4-dszzrx-val").text($("#dszzrx-val").attr("data-value"));
+        //乘客座位责任险
+        $("#ckzwzrx-val").text(10000 * 0.0026);
+        //不计免赔险
+        bjmpx_run();
+        //自燃损失险
+        $("#zrssx-val").text(($("#csj").val() * 0.0012).toFixed(0));
+        //玻璃单独破碎险
+        $("#blddpsx-val").text(($("#blddpsx").val() * $("#csj").val()).toFixed(0));
+        if(!$("#blddpsx").prop("disabled")){
+            $("#blddpsx-val").attr("data-value",$("#blddpsx-val").text());
+        };
+        //车身划痕损失险
+        $("#cshhssx-val").text($("#cshhssx").val());
+        if(!$("#cshhssx").prop("disabled")){
+            $("#cshhssx-val").attr("data-value",$("#cshhssx-val").text());
+        };
+        //涉水行驶损失险
+        $("#ssxsssx-val").text((taxTmp[0] * 0.05).toFixed(0));
+        //指定专修厂
+        $("#zdzxc-val").text((taxTmp[0] * 0.5).toFixed(0));
+        //附加险不计免赔险
+        $("#bjmpx2-val").text(((parseFloat($("#zrssx-val").text()) + parseFloat($("#cshhssx-val").text()) + parseFloat($("#ssxsssx-val").text())) * 0.15).toFixed(0));
+        //小计部分
+        $("#settle2-byhf").text(parseFloat($("#jqx-val").text()) + parseFloat($("#ccs-val").text()));
+        $("#settle2-byhf2").text(parseFloat($("#dszzrx-val").attr("data-value")) + parseFloat($("#clssx-val").attr("data-value")) + parseFloat($("#qcdqx-val").attr("data-value")) + parseFloat($("#sjzwzrx-val").attr("data-value")) + parseFloat($("#ckzwzrx-val").attr("data-value")) + parseFloat($("#bjmpx-val").attr("data-value")));
+        $("#settle2-byhf3").text(parseFloat($("#zrssx-val").attr("data-value")) + parseFloat($("#blddpsx-val").attr("data-value")) + parseFloat($("#cshhssx-val").attr("data-value")) + parseFloat($("#ssxsssx-val").attr("data-value")) + parseFloat($("#zdzxc-val").attr("data-value")) + parseFloat($("#bjmpx2-val").attr("data-value")));
+        //stage2保险合计
+        $("#stage2-all-val").text(parseFloat($("#settle2-byhf").text()) + parseFloat($("#settle2-byhf2").text()) + parseFloat($("#settle2-byhf3").text()));
+        $("#j-calc-nav-val2").text($("#stage2-all-val").text());
+
+        //第四屏
+        $("#to-stage1-p").text($("#stage1-p").text() + "。首付" + $("#stage1-all-val").text() + "元。");
+        $("#to-stage2-p").text($(".stage3-p").eq(0).text() + "+" + $(".stage3-p").eq(1).text());
+        $("#s4-jqx-val").text($("#jqx-val").text());
+        $("#s4-ccs-val").text($("#ccs-val").text());
+        //购置税
+        $("#s4-gzs").text($("#gzs").text());
+        //金融服务费
+        $("#s4-jrfwf").text($("#jrfwf").text());
+        //上牌服务费
+        $("#s4-spfwf").text($("#spfw").val());
+        //抵押服务费
+        $("#s4-dyfwf").text($("#dyfw").text());
+        //保险金额
+        $("#s4-bxje").text($("#j-calc-nav-val2").text());
+        //关联第三关 + 加装精品
+        $(".jzjp-select").bind("click",function(){
+            $("#to-stage2-p").text($(".stage3-p").eq(0).text());
+            if($(".stage3-p").eq(0).text() == ""){
+                $("#to-stage2-p").text($(".stage3-p").eq(1).text());
+            }else if($(".stage3-p").eq(1).text() != ""){
+                $("#to-stage2-p").text($(".stage3-p").eq(0).text() + "+" + $(".stage3-p").eq(1).text());
+            };
+            $("#s4-jzjp").text($("#j-calc-nav-val3").text());
+            if($("#j-stage1-tab").find("li").eq(0).hasClass("cur")) {
+                $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-jrfwf").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-dyfwf").text()) + parseFloat($("#s4-bxje").text()) + parseFloat($("#s4-jzjp").text()));
+            }else{
+                $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-bxje").text()) + parseFloat($("#s4-jzjp").text()));
+            }
+            $("#j-calc-nav-val4").text($("#s4-all").text());
+        });
+        $("#to-stage2-p").text($(".stage3-p").eq(0).text());
+        if($(".stage3-p").eq(1).text() != ""){
+            $("#to-stage2-p").text($(".stage3-p").eq(0).text() + "+" + $(".stage3-p").eq(1).text());
+        };
+        $("#s4-jzjp").text($("#j-calc-nav-val3").text());
+        //首付合计
+        if($("#j-stage1-tab").find("li").eq(0).hasClass("cur")){
+            $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-jrfwf").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-dyfwf").text()) + parseFloat($("#s4-bxje").text()) + parseFloat($("#s4-jzjp").text()));
+            $(".jzjp-select").bind("click",function(){
+                $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-jrfwf").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-dyfwf").text()) + parseFloat($("#s4-bxje").text()) + parseFloat($("#s4-jzjp").text()));
+            });
+            $("#s4-tit").text("首付合计");
+        }else{
+            $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-bxje").text()) + parseFloat($("#s4-jzjp").text()));
+            $("#s4-tit").text("购车合计");
+        };
+        $("#j-calc-nav-val4").text($("#s4-all").text());
+        $(".j-sh-switch").click(bigHei);
+
+
+        //第三者责任险
+        if($(".point2-dszzrx").hasClass("point2-cur")){
+            $(".point2-dszzrx").siblings().find("#dszzrx").removeAttr("disabled");
+            $("#dszzrx-val").attr("data-value",$("#dszzrx-val").text());
+            $("#stage4-jbxz").append("<li class='c1'><span class='val'>￥<b id='s4-dszzrx-val'>" + $("#dszzrx-val").attr("data-value") + "</b></span><span class='tit'>第三者责任险</span></li>");
+        };
+        //车辆损失险
+        if($(".check-select-box-clssx").hasClass("check-select-box-cur")){
+            $("#clssx-val").attr("data-value",$("#clssx-val").text());
+            $("#stage4-jbxz").append("<li class='c2'><span class='val'>￥<b>" + $("#clssx-val").attr("data-value") + "</b></span><span class='tit'>车辆损失险</span></li>");
+        };
+        //全车盗抢险
+        if($(".check-select-box-qcdqx").hasClass("check-select-box-cur")){
+            $("#qcdqx-val").attr("data-value",$("#qcdqx-val").text());
+            $("#stage4-jbxz").append("<li class='c3'><span class='val'>￥<b>" + $("#qcdqx-val").attr("data-value") + "</b></span><span class='tit'>全车盗抢险</span></li>");
+        };
+        //司机座位责任险
+        if($(".check-select-box-sjzwzrx").hasClass("check-select-box-cur")){
+            $("#sjzwzrx-val").attr("data-value",$("#sjzwzrx-val").text());
+            $("#stage4-jbxz").append("<li class='c4'><span class='val'>￥<b>" + $("#sjzwzrx-val").attr("data-value") + "</b></span><span class='tit'>司机座位责任险</span></li>");
+        };
+        //乘客座位责任险
+        if($(".check-select-box-ckzwzrx").hasClass("check-select-box-cur")){
+            $("#ckzwzrx-val").attr("data-value",$("#ckzwzrx-val").text());
+            $("#stage4-jbxz").append("<li class='c5'><span class='val'>￥<b>" + $("#ckzwzrx-val").attr("data-value") + "</b></span><span class='tit'>乘客座位责任险</span></li>");
+        };
+        //不计免赔险
+        if($(".check-select-box-bjmpx").hasClass("check-select-box-cur")) {
+            $("#bjmpx-val").attr("data-value", $("#bjmpx-val").text());
+            $("#stage4-jbxz").append("<li class='c6'><span class='val'>￥<b>" + $("#bjmpx-val").attr("data-value") + "</b></span><span class='tit'>不计免赔险</span></li>");
+        };
+        //自燃损失险
+        if($(".check-select-box-zrssx").hasClass("check-select-box-cur")){
+            $("#zrssx-val").attr("data-value",$("#zrssx-val").text());
+            $("#stage4-fjxz").append("<li class='c1'><span class='val'>￥<b>" + $("#zrssx-val").attr("data-value") + "</b></span><span class='tit'>自燃损失险</span></li>");
+        };
+        //玻璃单独破碎险
+        if($(".point2-blddpsx").hasClass("point2-cur")){
+            $(".point2-blddpsx").siblings().find("#blddpsx").removeAttr("disabled");
+            $("#blddpsx-val").attr("data-value",$("#blddpsx-val").text());
+            $("#stage4-fjxz").append("<li class='c2'><span class='val'>￥<b id='s4-blddpsx-val'>" + $("#blddpsx-val").attr("data-value") + "</b></span><span class='tit'>玻璃单独破碎险</span></li>");
+        };
+        //车身划痕损失险
+        if($(".point2-cshhssx").hasClass("point2-cur")){
+            $(".point2-cshhssx").siblings().find("#cshhssx").removeAttr("disabled");
+            $("#cshhssx-val").attr("data-value",$("#cshhssx-val").text());
+            $("#stage4-fjxz").append("<li class='c3'><span class='val'>￥<b id='s4-cshhssx-val'>" + $("#cshhssx-val").attr("data-value") + "</b></span><span class='tit'>车身划痕损失险</span></li>");
+        };
+        //不计免赔险
+        if($(".check-select-box-bjmpx2").hasClass("check-select-box-cur")){
+            $("#bjmpx2-val").attr("data-value",$("#bjmpx2-val").text());
+            $("#stage4-fjxz").append("<li class='c6'><span class='val'>￥<b>" + $("#bjmpx2-val").attr("data-value") + "</b></span><span class='tit'>不计免赔险</span></li>");
+        };
+        $("#settle2-byhf2").text(parseFloat($("#dszzrx-val").attr("data-value")) + parseFloat($("#clssx-val").attr("data-value")) + parseFloat($("#qcdqx-val").attr("data-value")) + parseFloat($("#sjzwzrx-val").attr("data-value")) + parseFloat($("#ckzwzrx-val").attr("data-value")) + parseFloat($("#bjmpx-val").attr("data-value")));
+        console.log(parseFloat($("#dszzrx-val").attr("data-value")) +"_"+ parseFloat($("#clssx-val").attr("data-value")) +"_"+ parseFloat($("#qcdqx-val").attr("data-value")) +"_"+ parseFloat($("#sjzwzrx-val").attr("data-value")) +"_"+ parseFloat($("#ckzwzrx-val").attr("data-value")) +"_"+ parseFloat($("#bjmpx-val").attr("data-value")))
+        $("#settle2-byhf3").text(parseFloat($("#zrssx-val").attr("data-value")) + parseFloat($("#blddpsx-val").attr("data-value")) + parseFloat($("#cshhssx-val").attr("data-value")) + parseFloat($("#ssxsssx-val").attr("data-value")) + parseFloat($("#zdzxc-val").attr("data-value")) + parseFloat($("#bjmpx2-val").attr("data-value")));
+        //stage2保险合计
+        $("#stage2-all-val").text(parseFloat($("#settle2-byhf").text()) + parseFloat($("#settle2-byhf2").text()) + parseFloat($("#settle2-byhf3").text()));
+        $("#j-calc-nav-val2").text($("#stage2-all-val").text());
+    };
+
+    function six(){
+        //座位类别判断
+        var selectTxt = $("#jqx").find("option:selected").text();
+        if(selectTxt == "(家用6座以下)"){
+            $("#dszzrx").children().remove();
+            $("#dszzrx").append("<option value='660'>(5万)</option><option value='954'>(10万)</option><option value='1087'>(15万)</option><option value='1182'>(20万)</option><option value='1334'>(30万)</option><option value='1601' selected='selected'>(50万)</option><option value='2085'>(100万)</option>")
+            $("#dszzrx-val").text($("#dszzrx").val());
+            //车辆损失险
+            $("#clssx-val").text((566 + parseFloat($("#csj").val()) * 0.0135).toFixed(0));
+            //全车盗抢险
+            $("#qcdqx-val").text((120 + parseFloat($("#csj").val()) * 0.005).toFixed(0));
+            //司机座位责任险
+            $("#sjzwzrx-val").text(10000 * 0.0041);
+            //涉水行驶损失险
+            $("#ssxsssx-val").text(($("#clssx-val").text() * 0.05).toFixed(0));
+            //指定专修厂
+            $("#zdzxc-val").text(($("#clssx-val").text() * 0.5).toFixed(0));
+        }else if(selectTxt == "(家用6座以上)"){
+            $("#dszzrx").children().remove();
+            $("#dszzrx").append("<option value='616'>(5万)</option><option value='869'>(10万)</option><option value='982'>(15万)</option><option value='1058'>(20万)</option><option value='1185'>(30万)</option><option value='1411' selected='selected'>(50万)</option><option value='1838'>(100万)</option>");
+            $("#dszzrx-val").text($("#dszzrx").val());
+            //车辆损失险
+            $("#clssx-val").text((679 + parseFloat($("#csj").val()) * 0.0135).toFixed(0));
+            //全车盗抢险
+            $("#qcdqx-val").text((140 + parseFloat($("#csj").val()) * 0.0045).toFixed(0));
+            //司机座位责任险
+            $("#sjzwzrx-val").text(10000 * 0.004);
+            //涉水行驶损失险
+            $("#ssxsssx-val").text(($("#clssx-val").text() * 0.05).toFixed(0));
+            //指定专修厂
+            $("#zdzxc-val").text(($("#clssx-val").text() * 0.5).toFixed(0));
+        };
+        taxTmp[0] = $("#clssx-val").text();
+        taxTmp[1] = $("#sjzwzrx-val").text();
+        taxTmp[2] = $("#qcdqx-val").text();
+        bjmpx_run();
+    };
 
     $(".check-select-box").click(function(){
         if($(this).hasClass("check-select-box-cur")){
@@ -257,11 +549,21 @@ $(function(){
         };
 
         $("#settle2-byhf2").text(parseFloat($("#dszzrx-val").attr("data-value")) + parseFloat($("#clssx-val").attr("data-value")) + parseFloat($("#qcdqx-val").attr("data-value")) + parseFloat($("#sjzwzrx-val").attr("data-value")) + parseFloat($("#ckzwzrx-val").attr("data-value")) + parseFloat($("#bjmpx-val").attr("data-value")));
+        console.log(parseFloat($("#dszzrx-val").attr("data-value")) +"_"+ parseFloat($("#clssx-val").attr("data-value")) +"_"+ parseFloat($("#qcdqx-val").attr("data-value")) +"_"+ parseFloat($("#sjzwzrx-val").attr("data-value")) +"_"+ parseFloat($("#ckzwzrx-val").attr("data-value")) +"_"+ parseFloat($("#bjmpx-val").attr("data-value")))
         $("#settle2-byhf3").text(parseFloat($("#zrssx-val").attr("data-value")) + parseFloat($("#blddpsx-val").attr("data-value")) + parseFloat($("#cshhssx-val").attr("data-value")) + parseFloat($("#ssxsssx-val").attr("data-value")) + parseFloat($("#zdzxc-val").attr("data-value")) + parseFloat($("#bjmpx2-val").attr("data-value")));
         //stage2保险合计
         $("#stage2-all-val").text(parseFloat($("#settle2-byhf").text()) + parseFloat($("#settle2-byhf2").text()) + parseFloat($("#settle2-byhf3").text()));
         $("#j-calc-nav-val2").text($("#stage2-all-val").text());
+        $("#s4-bxje").text($("#stage2-all-val").text());
+        if($("#j-stage1-tab").find("li").eq(0).hasClass("cur")) {
+            $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-jrfwf").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-dyfwf").text()) + parseFloat($("#s4-bxje").text()) + parseFloat($("#s4-jzjp").text()));
+        }else{
+            $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-bxje").text()) + parseFloat($("#s4-jzjp").text()));
+        }
+        $("#j-calc-nav-val4").text($("#s4-all").text());
+        bigHei();
     });
+
 
     $(".point2").click(function(){
         if($(this).hasClass("point2-cur")){
@@ -311,184 +613,18 @@ $(function(){
         //stage2保险合计
         $("#stage2-all-val").text(parseFloat($("#settle2-byhf").text()) + parseFloat($("#settle2-byhf2").text()) + parseFloat($("#settle2-byhf3").text()));
         $("#j-calc-nav-val2").text($("#stage2-all-val").text());
+        $("#s4-bxje").text($("#stage2-all-val").text());
+        $("#j-calc-nav-val4").text($("#s4-all").text());
+        bigHei();
     });
 
-    function add(){
+    //保险金额
+    $("#s4-bxje").text($("#j-calc-nav-val2").text());
 
-        //文案类别变更
-        function tabSelect(){
-            if($("#j-stage1-tab").find("li").eq(0).hasClass("cur")){
-                $("#stage1-p").html("贷款购车，首付" + $("#sfk").find("option:selected").text() + "，" + $("#xzyh").find("option:selected").text() + "，贷款按" + $("#yg").find("option:selected").text() + "计算，需首付" + $("#sfk-val").text() + "元 + 必要花费" + $("#settle-byhf").text() + "元，月还款" + $("#lxje-val").text() + "元");
-                var firstValue = parseFloat(sfValue) + parseFloat(byhfValue);
-                $("#stage1-all-val").text(firstValue);
-                $("#j-calc-nav-val1").text(firstValue);
-                $("#j-settle-box-ul3").find(".daikuan").css("display","block");
-                //首付合计
-                $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-jrfwf").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-dyfwf").text()) + parseFloat($("#s4-bxje").text()));
-            }else{
-                $("#stage1-p").html("全款购车，车身价" + $("#csj2").val() + "元 + 必要花费" + $("#settle-byhf2").text() + "元");
-                var firstValue2 = parseFloat(sfValue2) + parseFloat(byhfValue2);
-                $("#stage1-all-val").text(firstValue2);
-                $("#j-calc-nav-val1").text(firstValue2);
-                $("#j-settle-box-ul3").find(".daikuan").css("display","none");
-                //首付合计
-                $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-bxje").text()));
-            };
-        };
-        tabSelect();
-
-        //车身价
-        var csjVal = $("#csj").val();
-        //首付款
-        var sfkVal = $("#sfk").val();
-        var sfValue = (csjVal * sfkVal).toFixed(0);
-        $("#sfk-val").text(sfValue);
-        //贷款金额
-        var dkjeVal = csjVal - sfValue;
-        $("#dkje-val").text(dkjeVal);
-        //银行利率及利息金额
-        var yhllVal = $("#yg").val();
-        if($("#lxzffs").val() == "ftsq"){
-            var lxValue = (dkjeVal * (1 + parseFloat(yhllVal)) / $("#yg").find("option:selected").attr("data-cycle")).toFixed(0);
-        };
-        if($("#lxzffs").val() == "ycxsq"){
-            var lxValue = (dkjeVal / $("#yg").find("option:selected").attr("data-cycle")).toFixed(0);
-            var ycxLxValue = (dkjeVal * yhllVal).toFixed(0);
-            $("#stage1-p").append("<span>，贷款利息一次性支付：" + ycxLxValue + "元</span>")
-        };
-        $("#lxje-val").text(lxValue);
-        //购置税
-        $("#gzs").text((csjVal / (1 + 0.17) * 0.1).toFixed(0));
-        //必要花费
-        var byhfValue = parseFloat($("#gzs").text()) + parseFloat($("#jrfwf").text()) + parseFloat($("#spfw").val());
-        $("#settle-byhf").text(byhfValue);
-
-        //全款
-        //必要花费
-        var byhfValue2 = parseFloat($("#gzs2").text()) + parseFloat($("#spfw2").val());
-        $("#settle-byhf2").text(byhfValue2);
-        //车身价
-        var sfValue2 = $("#csj2").val();
-        var byhfValue2 = parseFloat($("#gzs2").text()) + parseFloat($("#spfw2").val());
-        //购置税
-        $("#gzs2").text((sfValue2 / (1 + 0.17) * 0.1).toFixed(0));
-
-        //第二屏
-        //初始化
-        $("#dszzrx-val").attr("data-value","0");
-        $("#clssx-val").attr("data-value","0");
-        $("#qcdqx-val").attr("data-value","0");
-        $("#sjzwzrx-val").attr("data-value","0");
-        $("#ckzwzrx-val").attr("data-value","0");
-        $("#bjmpx-val").attr("data-value","0");
-        $("#zrssx-val").attr("data-value","0");
-        $("#blddpsx-val").attr("data-value","0");
-        $("#cshhssx-val").attr("data-value","0");
-        $("#ssxsssx-val").attr("data-value","0");
-        $("#zdzxc-val").attr("data-value","0");
-        $("#bjmpx2-val").attr("data-value","0");
-        //交强险
-        $("#jqx-val").text($("#jqx").val());
-        //车船税
-        $("#ccs-val").text($("#ccs").val());
-        //第三者责任险
-        $("#dszzrx-val").text($("#dszzrx").val());
-        if(!$("#dszzrx").prop("disabled")){
-            $("#dszzrx-val").attr("data-value",$("#dszzrx-val").text());
-        };
-        $("#s4-dszzrx-val").text($("#dszzrx-val").attr("data-value"));
-        //乘客座位责任险
-        $("#ckzwzrx-val").text(10000 * 0.0026);
-        //不计免赔险
-        bjmpx_run();
-        //自燃损失险
-        $("#zrssx-val").text(($("#csj").val() * 0.0012).toFixed(0));
-        //玻璃单独破碎险
-        $("#blddpsx-val").text($("#blddpsx").val() * $("#csj").val());
-        if(!$("#blddpsx").prop("disabled")){
-            $("#blddpsx-val").attr("data-value",$("#blddpsx-val").text());
-        };
-        //车身划痕损失险
-        $("#cshhssx-val").text($("#cshhssx").val());
-        if(!$("#cshhssx").prop("disabled")){
-            $("#cshhssx-val").attr("data-value",$("#cshhssx-val").text());
-        };
-        //涉水行驶损失险
-        $("#ssxsssx-val").text((taxTmp[0] * 0.05).toFixed(0));
-        //指定专修厂
-        $("#zdzxc-val").text((taxTmp[0] * 0.5).toFixed(0));
-        //附加险不计免赔险
-        $("#bjmpx2-val").text(((parseFloat($("#zrssx-val").text()) + parseFloat($("#cshhssx-val").text()) + parseFloat($("#ssxsssx-val").text())) * 0.15).toFixed(0));
-        //小计部分
-        $("#settle2-byhf").text(parseFloat($("#jqx-val").text()) + parseFloat($("#ccs-val").text()));
-        $("#settle2-byhf2").text(parseFloat($("#dszzrx-val").attr("data-value")) + parseFloat($("#clssx-val").attr("data-value")) + parseFloat($("#qcdqx-val").attr("data-value")) + parseFloat($("#sjzwzrx-val").attr("data-value")) + parseFloat($("#ckzwzrx-val").attr("data-value")) + parseFloat($("#bjmpx-val").attr("data-value")));
-        $("#settle2-byhf3").text(parseFloat($("#zrssx-val").attr("data-value")) + parseFloat($("#blddpsx-val").attr("data-value")) + parseFloat($("#cshhssx-val").attr("data-value")) + parseFloat($("#ssxsssx-val").attr("data-value")) + parseFloat($("#zdzxc-val").attr("data-value")) + parseFloat($("#bjmpx2-val").attr("data-value")));
-        //stage2保险合计
-        $("#stage2-all-val").text(parseFloat($("#settle2-byhf").text()) + parseFloat($("#settle2-byhf2").text()) + parseFloat($("#settle2-byhf3").text()));
-        $("#j-calc-nav-val2").text($("#stage2-all-val").text());
-
-//        console.log(parseFloat($("#dszzrx-val").attr("data-value")) +"_"+ parseFloat($("#clssx-val").attr("data-value")) +"_"+ parseFloat($("#qcdqx-val").attr("data-value")) +"_"+ parseFloat($("#sjzwzrx-val").attr("data-value")) +"_"+ parseFloat($("#ckzwzrx-val").attr("data-value")) +"_"+ parseFloat($("#bjmpx-val").attr("data-value")))
-
-        //第四屏
-        $("#to-stage1-p").text($("#stage1-p").text() + "。首付" + $("#stage1-all-val").text() + "元。");
-        $("#s4-jqx-val").text($("#jqx-val").text());
-        $("#s4-ccs-val").text($("#ccs-val").text());
-        //车身首付
-        $("#s4-csj").text($("#csj").val());
-        //购置税
-        $("#s4-gzs").text($("#gzs").text());
-        //金融服务费
-        $("#s4-jrfwf").text($("#jrfwf").text());
-        //上牌服务费
-        $("#s4-spfwf").text($("#spfw").val());
-        //抵押服务费
-        $("#s4-dyfwf").text($("#dyfw").text());
-        //保险金额
-        $("#s4-bxje").text($("#stage2-all-val").text());
-        //首付合计
-        if($("#j-stage1-tab").find("li").eq(0).hasClass("cur")){
-            $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-jrfwf").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-dyfwf").text()) + parseFloat($("#s4-bxje").text()));
-            $("#s4-tit").text("首付合计");
-        }else{
-            $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-bxje").text()));
-            $("#s4-tit").text("购车合计");
-        };
-        $("#j-calc-nav-val4").text($("#s4-all").text());
-    };
-
-    function six(){
-        //座位类别判断
-        var selectTxt = $("#jqx").find("option:selected").text();
-        if(selectTxt == "(家用6座以下)"){
-            $("#dszzrx").children().remove();
-            $("#dszzrx").append("<option value='660'>(5万)</option><option value='954'>(10万)</option><option value='1087'>(15万)</option><option value='1182' selected='selected'>(20万)</option><option value='1334'>(30万)</option><option value='1601'>(50万)</option><option value='2085'>(100万)</option>")
-            $("#dszzrx-val").text($("#dszzrx").val());
-            //车辆损失险
-            $("#clssx-val").text(566 + parseFloat($("#csj").val()) * 0.0135);
-            //全车盗抢险
-            $("#qcdqx-val").text(120 + parseFloat($("#csj").val()) * 0.005);
-            //司机座位责任险
-            $("#sjzwzrx-val").text(10000 * 0.0041);
-        }else if(selectTxt == "(家用6座以上)"){
-            $("#dszzrx").children().remove();
-            $("#dszzrx").append("<option value='616'>(5万)</option><option value='869'>(10万)</option><option value='982'>(15万)</option><option value='1058' selected='selected'>(20万)</option><option value='1185'>(30万)</option><option value='1411'>(50万)</option><option value='1838'>(100万)</option>");
-            //车辆损失险
-            $("#clssx-val").text(679 + parseFloat($("#csj").val()) * 0.0135);
-            //全车盗抢险
-            $("#qcdqx-val").text(140 + parseFloat($("#csj").val()) * 0.0045);
-            //司机座位责任险
-            $("#sjzwzrx-val").text(10000 * 0.004);
-        };
-        taxTmp[0] = $("#clssx-val").text();
-        taxTmp[1] = $("#sjzwzrx-val").text();
-        taxTmp[2] = $("#qcdqx-val").text();
-        bjmpx_run();
-    };
     function bjmpx_run(){
         $("#bjmpx-val").text(((parseFloat(taxTmp[0]) + parseFloat($("#dszzrx-val").text()) + parseFloat(taxTmp[1]) + parseFloat($("#ckzwzrx-val").text())) * 0.15 + parseFloat(taxTmp[2]) * 0.2).toFixed(0));
     }
 });
-
 
 //stage3
 $(function(){
@@ -561,7 +697,7 @@ function getTaozhuang(obj,hobj){
 }
 function getTotalALL(){
     var all=getTotal($('.calc-blk:eq(2) .calc-settle'),'.js .val');
-    $('.calc-nav-ul li:eq(2) .cash').html('￥'+all);
+    $('.calc-nav-ul #j-calc-nav-val3').html(all);
 }
 function getTotal(obj,vobj){
     var sum=0,vobj=vobj||'.hl span';

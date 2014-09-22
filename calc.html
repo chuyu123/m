@@ -4,7 +4,7 @@
     <ul class="calc-nav-ul clearfix" id="j-calc-nav-ul">
         <li class="cur"><strong>金融方案</strong><span class="cash">￥<span id="j-calc-nav-val1"></span></span><i class="i1"></i><i class="i2"></i></li>
         <li><strong>保险方案</strong><span class="cash">￥<span id="j-calc-nav-val2"></span></span><i class="i1"></i><i class="i2"></i></li>
-        <li><strong>加装精品</strong><span class="cash">待开发</span><i class="i1"></i><i class="i2"></i></li>
+        <li><strong>加装精品</strong><span class="cash">￥<span id="j-calc-nav-val3">0</span></span><i class="i1"></i><i class="i2"></i></li>
         <li><strong>购车计算</strong><span class="cash">￥<span id="j-calc-nav-val4"></span></span></li>
     </ul>
     <div class="calc-blks clearfix">
@@ -22,7 +22,7 @@
                                 <i class="f-rarrow"></i>
                                 <label for="csj"><span class="tit">车身价</span></label>
                                 <span class="value-box">
-                                    <input class="change" name="csj" id="csj" type="number" value="90000" />元
+                                    <input class="change" name="csj" id="csj" type="number" value="156324" data-zvalue="100000" />元
                                 </span>
                             </li>
                             <li>
@@ -92,9 +92,9 @@
                                     <span class="hide-select-box">
                                         <span class="hide-select-inside">
                                             <select class="selwide change" name="yg" id="yg">
-                                                <option value="0.0588" data-cycle="12">（12期）</option>
-                                                <option value="0.1032" data-cycle="24">（24期）</option>
-                                                <option value="0.144" data-cycle="36">（36期）</option>
+                                                <option value="0.0588" data-cycle="12">(12期)</option>
+                                                <option value="0.1032" data-cycle="24">(24期)</option>
+                                                <option value="0.144" data-cycle="36" selected="selected">(36期)</option>
                                             </select>
                                         </span>
                                     </span>
@@ -125,7 +125,7 @@
                             <li>
                                 <span class="tit">金融服务费</span>
                                 <span class="value-box">
-                                    <b id="jrfwf">1000</b>元
+                                    <b id="jrfwf"></b>元
                                 </span>
                             </li>
                             <li>
@@ -152,7 +152,7 @@
                                 <i class="f-rarrow"></i>
                                 <label for="csj2"><span class="tit">车身价</span></label>
                                 <span class="value-box">
-                                    <input class="change" name="csj2" id="csj2" type="number" value="90000" />元
+                                    <input class="change" name="csj2" id="csj2" type="number" value="156324" />元
                                 </span>
                             </li>
                         </ul>
@@ -251,7 +251,7 @@
                     <li>
 
                         <i class="f-rarrow"></i>
-                        <div class="point2 point2-dszzrx"><i></i></div>
+                        <div class="point2 point2-dszzrx point2-cur"><i></i></div>
                         <label class="point-label" for="dszzrx">
                             <span class="tit tit-auto">第三者责任险</span>
                             <span class="hide-select-box">
@@ -266,7 +266,7 @@
                         </span>
                     </li>
                     <li>
-                        <div class="check-select-box check-select-box-clssx">
+                        <div class="check-select-box check-select-box-clssx check-select-box-cur">
                             <div class="point"><i></i></div>
                             <label class="point-label">车辆损失险</label>
                             <span class="value-box">
@@ -275,7 +275,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="check-select-box check-select-box-qcdqx">
+                        <div class="check-select-box check-select-box-qcdqx check-select-box-cur">
                             <div class="point"><i></i></div>
                             <label class="point-label">全车盗抢险</label>
                             <span class="value-box">
@@ -284,7 +284,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="check-select-box check-select-box-sjzwzrx">
+                        <div class="check-select-box check-select-box-sjzwzrx check-select-box-cur">
                             <div class="point"><i></i></div>
                             <label class="point-label">司机座位责任险(1万)</label>
                             <span class="value-box">
@@ -293,7 +293,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="check-select-box check-select-box-ckzwzrx">
+                        <div class="check-select-box check-select-box-ckzwzrx check-select-box-cur">
                             <div class="point"><i></i></div>
                             <label class="point-label">乘客座位责任险</label>
                             <span class="value-box">
@@ -302,7 +302,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="check-select-box check-select-box-bjmpx">
+                        <div class="check-select-box check-select-box-bjmpx check-select-box-cur">
                             <div class="point"><i></i></div>
                             <label class="point-label">不计免赔险</label>
                             <span class="value-box">
@@ -317,7 +317,7 @@
                 </div>
                 <ul class="calc-list-ul clearfix">
                     <li>
-                        <div class="check-select-box check-select-box-zrssx">
+                        <div class="check-select-box check-select-box-zrssx check-select-box-cur">
                             <div class="point"><i></i></div>
                             <label class="point-label">自燃损失险</label>
                             <span class="value-box">
@@ -327,7 +327,7 @@
                     </li>
                     <li>
                         <i class="f-rarrow"></i>
-                        <div class="point2 point2-blddpsx"><i></i></div>
+                        <div class="point2 point2-blddpsx point2-cur"><i></i></div>
                         <label class="point-label" for="blddpsx">
                             <span class="tit tit-auto">玻璃单独破碎险</span>
                             <span class="hide-select-box">
@@ -345,7 +345,7 @@
                     </li>
                     <li>
                         <i class="f-rarrow"></i>
-                        <div class="point2 point2-cshhssx"><i></i></div>
+                        <div class="point2 point2-cshhssx point2-cur"><i></i></div>
                         <label class="point-label" for="cshhssx">
                             <span class="tit tit-auto">车身划痕损失险</span>
                             <span class="hide-select-box">
@@ -396,7 +396,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="check-select-box check-select-box-bjmpx2">
+                        <div class="check-select-box check-select-box-bjmpx2 check-select-box-cur">
                             <div class="point"><i></i></div>
                             <label class="point-label">不计免赔险</label>
                             <span class="value-box">
@@ -411,6 +411,7 @@
                         <p class="js">保险合计：<b class="val" id="stage2-all-val"></b>元</p>
                     </div>
                 </div>
+                <div class="bm-bz">注：保险费用为预估价，实际以投保项目保单为准</div>
                 <a href="#" class="stage-btn">下一步</a>
             </div>
             <!--/stage2-->
@@ -639,8 +640,8 @@
                     <div class="calc-settle mt15">
                         <div class="tit">您选择的精品是</div>
                         <div class="con">
-                            <p id="stage1-p">未选择</p>
-                            <p class="js">合计：<b class="val" id="stage1-all-val">0</b>元</p>
+                            <p id="stage1-p" class="stage3-p">未选择</p>
+                            <p class="js">合计：<b class="val" id="stage3-all-val">0</b>元</p>
                         </div>
                     </div>
                     </div>
@@ -717,8 +718,8 @@
                             <div class="calc-settle mt15">
                                 <div class="tit">您选择的精品是</div>
                                 <div class="con">
-                                    <p id="stage1-p">暂无选择</p>
-                                    <p class="js">合计：<b class="val" id="stage1-all-val">33000</b>元</p>
+                                    <p id="stage1-p" class="stage3-p">暂无选择</p>
+                                    <p class="js">合计：<b class="val" id="stage3-all-val">33000</b>元</p>
                                 </div>
                             </div>
                         </div>
@@ -733,6 +734,10 @@
                 <div class="settle-box">
                     <div class="settle-box-hd">金融方案</div>
                     <div class="settle-box-bd"><p class="mt10" id="to-stage1-p"></p></div>
+                </div>
+                <div class="settle-box">
+                    <div class="settle-box-hd">加装精品</div>
+                    <div class="settle-box-bd"><p class="mt10" id="to-stage2-p"></p></div>
                 </div>
                 <div class="settle-box">
                     <div class="settle-box-hd j-sh-switch"><i class="f-larrow"></i>保险方案</div>
@@ -761,7 +766,7 @@
                         <ul class="settle-box-ul" id="j-settle-box-ul3">
                             <li>
                                 <span class="val">￥<b id="s4-csj"></b></span>
-                                <span class="tit">车身首付/车身金额</span>
+                                <span class="tit" id="s4-csj-tit"></span>
                             </li>
                             <li>
                                 <span class="val">￥<b id="s4-gzs"></b></span>
@@ -784,12 +789,17 @@
                                 <span class="tit">保险金额</span>
                             </li>
                             <li>
+                                <span class="val">￥<b id="s4-jzjp"></b></span>
+                                <span class="tit">加装精品</span>
+                            </li>
+                            <li>
                                 <span class="val">￥<b id="s4-all"></b></span>
                                 <span class="tit" id="s4-tit">首付合计</span>
                             </li>
                         </ul>
                     </div>
                 </div>
+                <div class="bm-bz">注：此结果仅供参考，实际费用以现场缴费为准</div>
                 <div class="settle-box-btn">
                     <a href="#" class="btn1">参加活动</a>
                     <a href="#" class="btn2">保存</a>
