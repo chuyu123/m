@@ -8,8 +8,8 @@
 define('DOME_APP','./qkmobile static html/');
 
 $urls = array(
-  /*'index'=>'http://172.16.85.120/1/m/index.html',
-  'cx-qa'=>'http://172.16.85.120/1/m/cx-qa.html',
+  'index'=>'http://172.16.85.126:801/m/index.html',
+  /*'cx-qa'=>'http://172.16.85.120/1/m/cx-qa.html',
   'pg-sale'=>'http://172.16.85.120/1/m/pg-sale.html',
   'qianggoutijiao'=>'http://172.16.85.120/1/m/qianggoutijiao.html',
   'saleintro'=>'http://172.16.85.120/1/m/saleintro.html',
