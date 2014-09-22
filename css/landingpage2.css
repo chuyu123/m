@@ -1004,6 +1004,7 @@ body{ padding-bottom:50px; -webkit-text-size-adjust:none;}
 .calc-settle .con{ background:#f5f5f5; padding:10px; border-top:1px solid #ddd;}
 .calc-settle .js{ padding-top:5px;}
 .calc-settle .val{ color:#e7b557; font-size:1.2em;}
+.bm-bz{ padding:10px; font-size:.9em; color:#666;}
 .stage-btn{ display:block; margin:10px; background:#e7b557; font-size:1.1em; text-align:center; color:#fff; border-radius:2px; line-height:40px;}
 
 /* settle-box */
