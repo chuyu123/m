@@ -322,7 +322,7 @@ body{ min-width:320px; max-width:768px; margin:0 auto; background:url(../assets/
 .f-close{ float:left; width:25px; height:25px; font-size:1.8em; padding:10px 5px 0; color:#a0a0a0;}
 .f-close:after{ content: '\e626';}
 .bmbar a{ float:right; border:1px solid #fff; border-radius:3px; color:#eee; margin-right:10px; padding:8px 10px;}
-.centerwm{ font-size:.8em; line-height:15px; background:#292929; color:#fff; margin-top:15px; padding:10px 0 10px 10px; overflow:hidden;}
+.centerwm{ font-size:.8em; line-height:15px; background:#292929; color:#666; margin-top:15px; padding:10px 0 10px 10px; overflow:hidden;}
 .centerwm .bg{ float:right; width:69px; height:35px; background:url(../assets/top.png) no-repeat; background-size:100%; margin-top:5px;}
 
 /* popup-v2 */
