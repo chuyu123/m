@@ -359,7 +359,7 @@ body{ padding-bottom:50px; -webkit-text-size-adjust:none;}
 .bmbar .txt{ float:left; color:#fff; font-size:.8em; color:#fff;}
 .bmbar .txt span{ display:block; font-size:1.3em; color:#FFEC12;}
 .f-close{ float:left; width:25px; height:25px; font-size:1.8em; padding:10px 5px 0; color:#a0a0a0;}
-.f-close:after{ content: '\e606';}
+.f-close:after{ content: '\e626';}
 .bmbar a{ float:right; border:1px solid #fff; border-radius:3px; color:#eee; margin-right:10px; padding:8px 10px;}
 
 
