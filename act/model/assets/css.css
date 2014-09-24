@@ -377,7 +377,7 @@ body{ min-width:320px; max-width:768px; margin:0 auto; background:url(../assets/
 .paramete-tb{ width:100%;}
 .paramete-tb th,.paramete-tb td{ border:1px solid #dfdfdf; padding:10px;}
 .paramete-tb th{ width:100px;}
-.paramete-tb td  a.link{color:#000;}
+.paramete-tb td  a.link{color:#000;display:block;}
 .paramete-tb .arrow-right{-ms-transform:rotate(45deg);-moz-transform:rotate(45deg);-webkit-transform:rotate(45deg);float:right;
 	transform:rotate(45deg);border-color:#818181;border-width:2px 2px 0  0;border-style:solid;height:8px;width:8px;margin-top:2px;}
 .actqa img{ display:block;}
