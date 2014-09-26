@@ -162,6 +162,22 @@ $(function(){
     });
 });*/
 
+//第三版报名
+function tpbm(){
+    $("#popup-tpbm").css("height",$(document).height());
+    $("#popup-tpbm").show();
+    window.scrollTo(0,0);
+    $(".popup-tpbm-inside").click(function(e){
+        e.stopPropagation();
+    });
+    $("#popup-tpbm").find(".f-close").click(function(){
+        $('#popup-tpbm').hide();
+    });
+    $("#popup-tpbm").click(function(){
+        $('#popup-tpbm').hide();
+    })
+};
+
 //报名动画效果
 $(function(){
     var tmpColor = 0;
@@ -184,6 +200,7 @@ $(function(){
     });
 });
 
+//delete
 function newbaoming(){
     $(".popup-v2a").show();
     var insideHei = $(".popup-v2a-inside").height();

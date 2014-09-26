@@ -8,7 +8,7 @@
 define('DOME_APP','./qkmobile static html/');
 
 $urls = array(
-  'index'=>'http://172.16.85.126:801/m/index.html',
+  // 'index'=>'http://172.16.85.126:801/m/index.html',
   /*'cx-qa'=>'http://172.16.85.120/1/m/cx-qa.html',
   'pg-sale'=>'http://172.16.85.120/1/m/pg-sale.html',
   'qianggoutijiao'=>'http://172.16.85.120/1/m/qianggoutijiao.html',
@@ -25,9 +25,9 @@ $urls = array(
   'cx-addcontrast'=>'http://172.16.85.120/1/m/cx-addcontrast.html',
   
   'counselor'=>'http://172.16.85.120/1/m/counselor.html',
-  'counselor-person'=>'http://172.16.85.120/1/m/counselor-person.html',
+  'counselor-person'=>'http://172.16.85.120/1/m/counselor-person.html',*/
 
-  'navact'=>'http://172.16.85.120/1/m/navact.html',
+  'navact'=>'http://172.16.85.120/1/m/navact.html',/*
   'intention'=>'http://172.16.85.120/1/m/intention.html',
   'baoming'=>'http://172.16.85.120/1/m/baoming.html',
   'login'=>'http://172.16.85.120/1/m/login.html',
@@ -46,7 +46,7 @@ $urls = array(
   'find3'=>'http://172.16.85.120/1/m/find3.html',*/
   // 'map'=>'http://172.16.85.120/1/m/map.html',
   // 'calc'=>'http://172.16.85.120/1/m/calc.html',
-  'orderprogress'=>'http://172.16.85.120/1/m/orderprogress.html',
+  // 'orderprogress'=>'http://172.16.85.120/1/m/orderprogress.html',
 );
 
 if(is_array($urls))
