@@ -187,6 +187,8 @@ $(function(){
         roundNum(dkjeVal);
         $("#sfk-val").text(csjVal - rnum);
         $("#dkje-val").text(rnum);
+        var sfkValue=csjVal - rnum;
+        var dkjeValue=rnum;
         //购置税
         $("#gzs").text((zdjVal / (1 + 0.17) * 0.1).toFixed(0));
         //金融服务费
@@ -209,7 +211,7 @@ $(function(){
         function tabSelect(){
             if($("#j-stage1-tab").find("li").eq(0).hasClass("cur")){
                 $("#stage1-p").html("贷款购车，首付" + $("#sfk").find("option:selected").text() + "，" + $("#xzyh").find("option:selected").text() + "，贷款按" + $("#yg").find("option:selected").text() + "计算，需首付" + $("#sfk-val").text() + "元 + 必要花费" + $("#settle-byhf").text() + "元，月还款" + $("#lxje-val").text() + "元");
-                var firstValue = parseFloat(sfValue) + parseFloat(byhfValue);
+                var firstValue = parseFloat(sfkValue) + parseFloat(byhfValue);
                 $("#stage1-all-val").text(firstValue);
                 $("#j-calc-nav-val1").text(firstValue);
                 $("#j-settle-box-ul3").find(".daikuan").css("display","block");
@@ -236,7 +238,7 @@ $(function(){
         //银行利率及利息金额
         var yhllVal = $("#yg").val();
         if($("#lxzffs").val() == "ftsq"){
-            var lxValue = (dkjeVal * (1 + parseFloat(yhllVal)) / $("#yg").find("option:selected").attr("data-cycle")).toFixed(0);
+            var lxValue = (dkjeValue * (1 + parseFloat(yhllVal)) / $("#yg").find("option:selected").attr("data-cycle")).toFixed(0);
         };
         if($("#lxzffs").val() == "ycxsq"){
             var lxValue = (dkjeVal / $("#yg").find("option:selected").attr("data-cycle")).toFixed(0);
@@ -276,9 +278,10 @@ $(function(){
         //不计免赔险
         bjmpx_run();
         //自燃损失险
-        $("#zrssx-val").text(($("#csj").val() * 0.0012).toFixed(0));
+        var gzjVal = $("#csj").attr("data-gzjvalue");
+        $("#zrssx-val").text((gzjVal * 0.0012).toFixed(0));
         //玻璃单独破碎险
-        $("#blddpsx-val").text(($("#blddpsx").val() * $("#csj").val()).toFixed(0));
+        $("#blddpsx-val").text(($("#blddpsx").val() * gzjVal).toFixed(0));
         if(!$("#blddpsx").prop("disabled")){
             $("#blddpsx-val").attr("data-value",$("#blddpsx-val").text());
         };
@@ -298,7 +301,7 @@ $(function(){
         $("#settle2-byhf2").text(parseFloat($("#dszzrx-val").attr("data-value")) + parseFloat($("#clssx-val").attr("data-value")) + parseFloat($("#qcdqx-val").attr("data-value")) + parseFloat($("#sjzwzrx-val").attr("data-value")) + parseFloat($("#ckzwzrx-val").attr("data-value")) + parseFloat($("#bjmpx-val").attr("data-value")));
         $("#settle2-byhf3").text(parseFloat($("#zrssx-val").attr("data-value")) + parseFloat($("#blddpsx-val").attr("data-value")) + parseFloat($("#cshhssx-val").attr("data-value")) + parseFloat($("#ssxsssx-val").attr("data-value")) + parseFloat($("#zdzxc-val").attr("data-value")) + parseFloat($("#bjmpx2-val").attr("data-value")));
         //stage2保险合计
-        $("#stage2-all-val").text(parseFloat($("#settle2-byhf").text()) + parseFloat($("#settle2-byhf2").text()) + parseFloat($("#settle2-byhf3").text()));
+        $("#stage2-all-val").text((parseFloat($("#settle2-byhf").text()) + parseFloat($("#settle2-byhf2").text())*0.95 + parseFloat($("#settle2-byhf3").text())*0.95).toFixed(0));
         $("#j-calc-nav-val2").text($("#stage2-all-val").text());
 
         //第四屏
@@ -409,7 +412,7 @@ $(function(){
         console.log(parseFloat($("#dszzrx-val").attr("data-value")) +"_"+ parseFloat($("#clssx-val").attr("data-value")) +"_"+ parseFloat($("#qcdqx-val").attr("data-value")) +"_"+ parseFloat($("#sjzwzrx-val").attr("data-value")) +"_"+ parseFloat($("#ckzwzrx-val").attr("data-value")) +"_"+ parseFloat($("#bjmpx-val").attr("data-value")))
         $("#settle2-byhf3").text(parseFloat($("#zrssx-val").attr("data-value")) + parseFloat($("#blddpsx-val").attr("data-value")) + parseFloat($("#cshhssx-val").attr("data-value")) + parseFloat($("#ssxsssx-val").attr("data-value")) + parseFloat($("#zdzxc-val").attr("data-value")) + parseFloat($("#bjmpx2-val").attr("data-value")));
         //stage2保险合计
-        $("#stage2-all-val").text(parseFloat($("#settle2-byhf").text()) + parseFloat($("#settle2-byhf2").text()) + parseFloat($("#settle2-byhf3").text()));
+        $("#stage2-all-val").text((parseFloat($("#settle2-byhf").text()) + parseFloat($("#settle2-byhf2").text())*0.95 + parseFloat($("#settle2-byhf3").text())*0.95).toFixed(0));
         $("#j-calc-nav-val2").text($("#stage2-all-val").text());
     };
 
@@ -552,7 +555,7 @@ $(function(){
         console.log(parseFloat($("#dszzrx-val").attr("data-value")) +"_"+ parseFloat($("#clssx-val").attr("data-value")) +"_"+ parseFloat($("#qcdqx-val").attr("data-value")) +"_"+ parseFloat($("#sjzwzrx-val").attr("data-value")) +"_"+ parseFloat($("#ckzwzrx-val").attr("data-value")) +"_"+ parseFloat($("#bjmpx-val").attr("data-value")))
         $("#settle2-byhf3").text(parseFloat($("#zrssx-val").attr("data-value")) + parseFloat($("#blddpsx-val").attr("data-value")) + parseFloat($("#cshhssx-val").attr("data-value")) + parseFloat($("#ssxsssx-val").attr("data-value")) + parseFloat($("#zdzxc-val").attr("data-value")) + parseFloat($("#bjmpx2-val").attr("data-value")));
         //stage2保险合计
-        $("#stage2-all-val").text(parseFloat($("#settle2-byhf").text()) + parseFloat($("#settle2-byhf2").text()) + parseFloat($("#settle2-byhf3").text()));
+        $("#stage2-all-val").text((parseFloat($("#settle2-byhf").text()) + parseFloat($("#settle2-byhf2").text())*0.95 + parseFloat($("#settle2-byhf3").text())*0.95).toFixed(0));
         $("#j-calc-nav-val2").text($("#stage2-all-val").text());
         $("#s4-bxje").text($("#stage2-all-val").text());
         if($("#j-stage1-tab").find("li").eq(0).hasClass("cur")) {
@@ -611,7 +614,7 @@ $(function(){
         $("#settle2-byhf2").text(parseFloat($("#dszzrx-val").attr("data-value")) + parseFloat($("#clssx-val").attr("data-value")) + parseFloat($("#qcdqx-val").attr("data-value")) + parseFloat($("#sjzwzrx-val").attr("data-value")) + parseFloat($("#ckzwzrx-val").attr("data-value")) + parseFloat($("#bjmpx-val").attr("data-value")));
         $("#settle2-byhf3").text(parseFloat($("#zrssx-val").attr("data-value")) + parseFloat($("#blddpsx-val").attr("data-value")) + parseFloat($("#cshhssx-val").attr("data-value")) + parseFloat($("#ssxsssx-val").attr("data-value")) + parseFloat($("#zdzxc-val").attr("data-value")) + parseFloat($("#bjmpx2-val").attr("data-value")));
         //stage2保险合计
-        $("#stage2-all-val").text(parseFloat($("#settle2-byhf").text()) + parseFloat($("#settle2-byhf2").text()) + parseFloat($("#settle2-byhf3").text()));
+        $("#stage2-all-val").text((parseFloat($("#settle2-byhf").text()) + parseFloat($("#settle2-byhf2").text())*0.95 + parseFloat($("#settle2-byhf3").text())*0.95).toFixed(0));
         $("#j-calc-nav-val2").text($("#stage2-all-val").text());
         $("#s4-bxje").text($("#stage2-all-val").text());
         $("#j-calc-nav-val4").text($("#s4-all").text());
