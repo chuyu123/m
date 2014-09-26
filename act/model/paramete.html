@@ -18,16 +18,18 @@
             <div class="paramete-title">主要参数</div>
             <table class="paramete-tb">
                 <tr>
-                    <th>乾坤一口价</th>
+                    <th><a class="link" href="#">乾坤一口价</a></th>
+                    <td>100000 
+                    </td>
+                </tr>
+                <tr>
+                    <th><a class="link" href="#">乾坤一口价</a></th>
                     <td>100000</td>
                 </tr>
                 <tr>
                     <th>乾坤一口价</th>
-                    <td>100000</td>
-                </tr>
-                <tr>
-                    <th>乾坤一口价</th>
-                    <td>100000</td>
+                    <td>100000 
+                    </td>
                 </tr>
                 <tr>
                     <th>乾坤一口价</th>
@@ -73,5 +75,15 @@
 <script src="../../js/jquery-2.1.0.min.js"></script>
 <script src="../../js/jquery.navScrollTo.min.js"></script>
 <script src="assets/js.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".paramete-tb tr").each(function(){
+            var parameteLink=$(this).find("th:has(a)").length;
+            if(parameteLink>0){
+                $(this).find("td").html("<a class='link' href='#'>"+ $(this).find("td").html() +"<span class='arrow-right'></span>" +"</a>");
+            }
+        });
+    });
+</script>
 </body>
 </html>

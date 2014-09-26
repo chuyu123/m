@@ -187,6 +187,8 @@ $(function(){
         roundNum(dkjeVal);
         $("#sfk-val").text(csjVal - rnum);
         $("#dkje-val").text(rnum);
+        var sfkValue=csjVal - rnum;
+        var dkjeValue=rnum;
         //购置税
         $("#gzs").text((zdjVal / (1 + 0.17) * 0.1).toFixed(0));
         //金融服务费
@@ -209,7 +211,7 @@ $(function(){
         function tabSelect(){
             if($("#j-stage1-tab").find("li").eq(0).hasClass("cur")){
                 $("#stage1-p").html("贷款购车，首付" + $("#sfk").find("option:selected").text() + "，" + $("#xzyh").find("option:selected").text() + "，贷款按" + $("#yg").find("option:selected").text() + "计算，需首付" + $("#sfk-val").text() + "元 + 必要花费" + $("#settle-byhf").text() + "元，月还款" + $("#lxje-val").text() + "元");
-                var firstValue = parseFloat(sfValue) + parseFloat(byhfValue);
+                var firstValue = parseFloat(sfkValue) + parseFloat(byhfValue);
                 $("#stage1-all-val").text(firstValue);
                 $("#j-calc-nav-val1").text(firstValue);
                 $("#j-settle-box-ul3").find(".daikuan").css("display","block");
@@ -236,7 +238,7 @@ $(function(){
         //银行利率及利息金额
         var yhllVal = $("#yg").val();
         if($("#lxzffs").val() == "ftsq"){
-            var lxValue = (dkjeVal * (1 + parseFloat(yhllVal)) / $("#yg").find("option:selected").attr("data-cycle")).toFixed(0);
+            var lxValue = (dkjeValue * (1 + parseFloat(yhllVal)) / $("#yg").find("option:selected").attr("data-cycle")).toFixed(0);
         };
         if($("#lxzffs").val() == "ycxsq"){
             var lxValue = (dkjeVal / $("#yg").find("option:selected").attr("data-cycle")).toFixed(0);
@@ -276,9 +278,10 @@ $(function(){
         //不计免赔险
         bjmpx_run();
         //自燃损失险
-        $("#zrssx-val").text(($("#csj").val() * 0.0012).toFixed(0));
+        var gzjVal = $("#csj").attr("data-gzjvalue");
+        $("#zrssx-val").text((gzjVal * 0.0012).toFixed(0));
         //玻璃单独破碎险
-        $("#blddpsx-val").text(($("#blddpsx").val() * $("#csj").val()).toFixed(0));
+        $("#blddpsx-val").text(($("#blddpsx").val() * gzjVal).toFixed(0));
         if(!$("#blddpsx").prop("disabled")){
             $("#blddpsx-val").attr("data-value",$("#blddpsx-val").text());
         };
@@ -297,8 +300,10 @@ $(function(){
         $("#settle2-byhf").text(parseFloat($("#jqx-val").text()) + parseFloat($("#ccs-val").text()));
         $("#settle2-byhf2").text(parseFloat($("#dszzrx-val").attr("data-value")) + parseFloat($("#clssx-val").attr("data-value")) + parseFloat($("#qcdqx-val").attr("data-value")) + parseFloat($("#sjzwzrx-val").attr("data-value")) + parseFloat($("#ckzwzrx-val").attr("data-value")) + parseFloat($("#bjmpx-val").attr("data-value")));
         $("#settle2-byhf3").text(parseFloat($("#zrssx-val").attr("data-value")) + parseFloat($("#blddpsx-val").attr("data-value")) + parseFloat($("#cshhssx-val").attr("data-value")) + parseFloat($("#ssxsssx-val").attr("data-value")) + parseFloat($("#zdzxc-val").attr("data-value")) + parseFloat($("#bjmpx2-val").attr("data-value")));
+        $("#settle2-byhf2").text(parseFloat($("#dszzrx-val").text()) + parseFloat($("#clssx-val").text()) + parseFloat($("#qcdqx-val").text()) + parseFloat($("#sjzwzrx-val").text()) + parseFloat($("#ckzwzrx-val").text()) + parseFloat($("#bjmpx-val").text()));
+        $("#settle2-byhf3").text(parseFloat($("#zrssx-val").text()) + parseFloat($("#blddpsx-val").text()) + parseFloat($("#cshhssx-val").text())+ parseFloat($("#bjmpx2-val").text()));
         //stage2保险合计
-        $("#stage2-all-val").text(parseFloat($("#settle2-byhf").text()) + parseFloat($("#settle2-byhf2").text()) + parseFloat($("#settle2-byhf3").text()));
+        $("#stage2-all-val").text((parseFloat($("#settle2-byhf").text()) + parseFloat($("#settle2-byhf2").text())*0.95 + parseFloat($("#settle2-byhf3").text())*0.95).toFixed(0));
         $("#j-calc-nav-val2").text($("#stage2-all-val").text());
 
         //第四屏
@@ -356,60 +361,70 @@ $(function(){
         if($(".point2-dszzrx").hasClass("point2-cur")){
             $(".point2-dszzrx").siblings().find("#dszzrx").removeAttr("disabled");
             $("#dszzrx-val").attr("data-value",$("#dszzrx-val").text());
-            $("#stage4-jbxz").append("<li class='c1'><span class='val'>￥<b id='s4-dszzrx-val'>" + $("#dszzrx-val").attr("data-value") + "</b></span><span class='tit'>第三者责任险</span></li>");
+            if($("#stage4-jbxz:has(li[class='c1'])").length==0){
+            $("#stage4-jbxz").append("<li class='c1'><span class='val'>￥<b id='s4-dszzrx-val'>" + $("#dszzrx-val").attr("data-value") + "</b></span><span class='tit'>第三者责任险</span></li>");}
         };
         //车辆损失险
         if($(".check-select-box-clssx").hasClass("check-select-box-cur")){
             $("#clssx-val").attr("data-value",$("#clssx-val").text());
-            $("#stage4-jbxz").append("<li class='c2'><span class='val'>￥<b>" + $("#clssx-val").attr("data-value") + "</b></span><span class='tit'>车辆损失险</span></li>");
+            if($("#stage4-jbxz:has(li[class='c2'])").length==0){
+            $("#stage4-jbxz").append("<li class='c2'><span class='val'>￥<b>" + $("#clssx-val").attr("data-value") + "</b></span><span class='tit'>车辆损失险</span></li>");}
         };
         //全车盗抢险
         if($(".check-select-box-qcdqx").hasClass("check-select-box-cur")){
             $("#qcdqx-val").attr("data-value",$("#qcdqx-val").text());
-            $("#stage4-jbxz").append("<li class='c3'><span class='val'>￥<b>" + $("#qcdqx-val").attr("data-value") + "</b></span><span class='tit'>全车盗抢险</span></li>");
+            if($("#stage4-jbxz:has(li[class='c3'])").length==0){
+            $("#stage4-jbxz").append("<li class='c3'><span class='val'>￥<b>" + $("#qcdqx-val").attr("data-value") + "</b></span><span class='tit'>全车盗抢险</span></li>");}
         };
         //司机座位责任险
         if($(".check-select-box-sjzwzrx").hasClass("check-select-box-cur")){
             $("#sjzwzrx-val").attr("data-value",$("#sjzwzrx-val").text());
-            $("#stage4-jbxz").append("<li class='c4'><span class='val'>￥<b>" + $("#sjzwzrx-val").attr("data-value") + "</b></span><span class='tit'>司机座位责任险</span></li>");
+            if($("#stage4-jbxz:has(li[class='c4'])").length==0){
+            $("#stage4-jbxz").append("<li class='c4'><span class='val'>￥<b>" + $("#sjzwzrx-val").attr("data-value") + "</b></span><span class='tit'>司机座位责任险</span></li>");}
         };
         //乘客座位责任险
         if($(".check-select-box-ckzwzrx").hasClass("check-select-box-cur")){
             $("#ckzwzrx-val").attr("data-value",$("#ckzwzrx-val").text());
-            $("#stage4-jbxz").append("<li class='c5'><span class='val'>￥<b>" + $("#ckzwzrx-val").attr("data-value") + "</b></span><span class='tit'>乘客座位责任险</span></li>");
+            if($("#stage4-jbxz:has(li[class='c5'])").length==0){
+            $("#stage4-jbxz").append("<li class='c5'><span class='val'>￥<b>" + $("#ckzwzrx-val").attr("data-value") + "</b></span><span class='tit'>乘客座位责任险</span></li>");}
         };
         //不计免赔险
         if($(".check-select-box-bjmpx").hasClass("check-select-box-cur")) {
             $("#bjmpx-val").attr("data-value", $("#bjmpx-val").text());
-            $("#stage4-jbxz").append("<li class='c6'><span class='val'>￥<b>" + $("#bjmpx-val").attr("data-value") + "</b></span><span class='tit'>不计免赔险</span></li>");
+            if($("#stage4-jbxz:has(li[class='c6'])").length==0){
+            $("#stage4-jbxz").append("<li class='c6'><span class='val'>￥<b>" + $("#bjmpx-val").attr("data-value") + "</b></span><span class='tit'>不计免赔险</span></li>");}
         };
         //自燃损失险
         if($(".check-select-box-zrssx").hasClass("check-select-box-cur")){
             $("#zrssx-val").attr("data-value",$("#zrssx-val").text());
-            $("#stage4-fjxz").append("<li class='c1'><span class='val'>￥<b>" + $("#zrssx-val").attr("data-value") + "</b></span><span class='tit'>自燃损失险</span></li>");
+            if($("#stage4-fjxz:has(li[class='c1'])").length==0){
+            $("#stage4-fjxz").append("<li class='c1'><span class='val'>￥<b>" + $("#zrssx-val").attr("data-value") + "</b></span><span class='tit'>自燃损失险</span></li>");}
         };
         //玻璃单独破碎险
         if($(".point2-blddpsx").hasClass("point2-cur")){
             $(".point2-blddpsx").siblings().find("#blddpsx").removeAttr("disabled");
             $("#blddpsx-val").attr("data-value",$("#blddpsx-val").text());
-            $("#stage4-fjxz").append("<li class='c2'><span class='val'>￥<b id='s4-blddpsx-val'>" + $("#blddpsx-val").attr("data-value") + "</b></span><span class='tit'>玻璃单独破碎险</span></li>");
+            if($("#stage4-fjxz:has(li[class='c2'])").length==0){
+            $("#stage4-fjxz").append("<li class='c2'><span class='val'>￥<b id='s4-blddpsx-val'>" + $("#blddpsx-val").attr("data-value") + "</b></span><span class='tit'>玻璃单独破碎险</span></li>");}
         };
         //车身划痕损失险
         if($(".point2-cshhssx").hasClass("point2-cur")){
             $(".point2-cshhssx").siblings().find("#cshhssx").removeAttr("disabled");
             $("#cshhssx-val").attr("data-value",$("#cshhssx-val").text());
-            $("#stage4-fjxz").append("<li class='c3'><span class='val'>￥<b id='s4-cshhssx-val'>" + $("#cshhssx-val").attr("data-value") + "</b></span><span class='tit'>车身划痕损失险</span></li>");
+            if($("#stage4-fjxz:has(li[class='c3'])").length==0){
+            $("#stage4-fjxz").append("<li class='c3'><span class='val'>￥<b id='s4-cshhssx-val'>" + $("#cshhssx-val").attr("data-value") + "</b></span><span class='tit'>车身划痕损失险</span></li>");}
         };
         //不计免赔险
         if($(".check-select-box-bjmpx2").hasClass("check-select-box-cur")){
             $("#bjmpx2-val").attr("data-value",$("#bjmpx2-val").text());
-            $("#stage4-fjxz").append("<li class='c6'><span class='val'>￥<b>" + $("#bjmpx2-val").attr("data-value") + "</b></span><span class='tit'>不计免赔险</span></li>");
+            if($("#stage4-fjxz:has(li[class='c6'])").length==0){
+            $("#stage4-fjxz").append("<li class='c6'><span class='val'>￥<b>" + $("#bjmpx2-val").attr("data-value") + "</b></span><span class='tit'>不计免赔险</span></li>");}
         };
         $("#settle2-byhf2").text(parseFloat($("#dszzrx-val").attr("data-value")) + parseFloat($("#clssx-val").attr("data-value")) + parseFloat($("#qcdqx-val").attr("data-value")) + parseFloat($("#sjzwzrx-val").attr("data-value")) + parseFloat($("#ckzwzrx-val").attr("data-value")) + parseFloat($("#bjmpx-val").attr("data-value")));
         console.log(parseFloat($("#dszzrx-val").attr("data-value")) +"_"+ parseFloat($("#clssx-val").attr("data-value")) +"_"+ parseFloat($("#qcdqx-val").attr("data-value")) +"_"+ parseFloat($("#sjzwzrx-val").attr("data-value")) +"_"+ parseFloat($("#ckzwzrx-val").attr("data-value")) +"_"+ parseFloat($("#bjmpx-val").attr("data-value")))
         $("#settle2-byhf3").text(parseFloat($("#zrssx-val").attr("data-value")) + parseFloat($("#blddpsx-val").attr("data-value")) + parseFloat($("#cshhssx-val").attr("data-value")) + parseFloat($("#ssxsssx-val").attr("data-value")) + parseFloat($("#zdzxc-val").attr("data-value")) + parseFloat($("#bjmpx2-val").attr("data-value")));
         //stage2保险合计
-        $("#stage2-all-val").text(parseFloat($("#settle2-byhf").text()) + parseFloat($("#settle2-byhf2").text()) + parseFloat($("#settle2-byhf3").text()));
+        $("#stage2-all-val").text((parseFloat($("#settle2-byhf").text()) + parseFloat($("#settle2-byhf2").text())*0.95 + parseFloat($("#settle2-byhf3").text())*0.95).toFixed(0));
         $("#j-calc-nav-val2").text($("#stage2-all-val").text());
     };
 
@@ -552,7 +567,7 @@ $(function(){
         console.log(parseFloat($("#dszzrx-val").attr("data-value")) +"_"+ parseFloat($("#clssx-val").attr("data-value")) +"_"+ parseFloat($("#qcdqx-val").attr("data-value")) +"_"+ parseFloat($("#sjzwzrx-val").attr("data-value")) +"_"+ parseFloat($("#ckzwzrx-val").attr("data-value")) +"_"+ parseFloat($("#bjmpx-val").attr("data-value")))
         $("#settle2-byhf3").text(parseFloat($("#zrssx-val").attr("data-value")) + parseFloat($("#blddpsx-val").attr("data-value")) + parseFloat($("#cshhssx-val").attr("data-value")) + parseFloat($("#ssxsssx-val").attr("data-value")) + parseFloat($("#zdzxc-val").attr("data-value")) + parseFloat($("#bjmpx2-val").attr("data-value")));
         //stage2保险合计
-        $("#stage2-all-val").text(parseFloat($("#settle2-byhf").text()) + parseFloat($("#settle2-byhf2").text()) + parseFloat($("#settle2-byhf3").text()));
+        $("#stage2-all-val").text((parseFloat($("#settle2-byhf").text()) + parseFloat($("#settle2-byhf2").text())*0.95 + parseFloat($("#settle2-byhf3").text())*0.95).toFixed(0));
         $("#j-calc-nav-val2").text($("#stage2-all-val").text());
         $("#s4-bxje").text($("#stage2-all-val").text());
         if($("#j-stage1-tab").find("li").eq(0).hasClass("cur")) {
@@ -592,28 +607,36 @@ $(function(){
             if($(this).hasClass("point2-dszzrx")){
                 $(".point2-dszzrx").siblings().find("#dszzrx").removeAttr("disabled");
                 $("#dszzrx-val").attr("data-value",$("#dszzrx-val").text());
-                $("#stage4-jbxz").append("<li class='c1'><span class='val'>￥<b id='s4-dszzrx-val'>" + $("#dszzrx-val").attr("data-value") + "</b></span><span class='tit'>第三者责任险</span></li>");
+                if($("#stage4-jbxz:has(li[class='c1'])").length==0){
+                $("#stage4-jbxz").append("<li class='c1'><span class='val'>￥<b id='s4-dszzrx-val'>" + $("#dszzrx-val").attr("data-value") + "</b></span><span class='tit'>第三者责任险</span></li>");}
             };
             //玻璃单独破碎险
             if($(this).hasClass("point2-blddpsx")){
                 $(".point2-blddpsx").siblings().find("#blddpsx").removeAttr("disabled");
                 $("#blddpsx-val").attr("data-value",$("#blddpsx-val").text());
-                $("#stage4-fjxz").append("<li class='c2'><span class='val'>￥<b id='s4-blddpsx-val'>" + $("#blddpsx-val").attr("data-value") + "</b></span><span class='tit'>玻璃单独破碎险</span></li>");
+                if($("#stage4-fjxz:has(li[class='c2'])").length==0){
+                $("#stage4-fjxz").append("<li class='c2'><span class='val'>￥<b id='s4-blddpsx-val'>" + $("#blddpsx-val").attr("data-value") + "</b></span><span class='tit'>玻璃单独破碎险</span></li>");}
             };
             //车身划痕损失险
             if($(this).hasClass("point2-cshhssx")){
                 $(".point2-cshhssx").siblings().find("#cshhssx").removeAttr("disabled");
                 $("#cshhssx-val").attr("data-value",$("#cshhssx-val").text());
-                $("#stage4-fjxz").append("<li class='c3'><span class='val'>￥<b id='s4-cshhssx-val'>" + $("#cshhssx-val").attr("data-value") + "</b></span><span class='tit'>车身划痕损失险</span></li>");
+                if($("#stage4-fjxz:has(li[class='c3'])").length==0){
+                $("#stage4-fjxz").append("<li class='c3'><span class='val'>￥<b id='s4-cshhssx-val'>" + $("#cshhssx-val").attr("data-value") + "</b></span><span class='tit'>车身划痕损失险</span></li>");}
             };
         };
 
         $("#settle2-byhf2").text(parseFloat($("#dszzrx-val").attr("data-value")) + parseFloat($("#clssx-val").attr("data-value")) + parseFloat($("#qcdqx-val").attr("data-value")) + parseFloat($("#sjzwzrx-val").attr("data-value")) + parseFloat($("#ckzwzrx-val").attr("data-value")) + parseFloat($("#bjmpx-val").attr("data-value")));
         $("#settle2-byhf3").text(parseFloat($("#zrssx-val").attr("data-value")) + parseFloat($("#blddpsx-val").attr("data-value")) + parseFloat($("#cshhssx-val").attr("data-value")) + parseFloat($("#ssxsssx-val").attr("data-value")) + parseFloat($("#zdzxc-val").attr("data-value")) + parseFloat($("#bjmpx2-val").attr("data-value")));
         //stage2保险合计
-        $("#stage2-all-val").text(parseFloat($("#settle2-byhf").text()) + parseFloat($("#settle2-byhf2").text()) + parseFloat($("#settle2-byhf3").text()));
+        $("#stage2-all-val").text((parseFloat($("#settle2-byhf").text()) + parseFloat($("#settle2-byhf2").text())*0.95 + parseFloat($("#settle2-byhf3").text())*0.95).toFixed(0));
         $("#j-calc-nav-val2").text($("#stage2-all-val").text());
         $("#s4-bxje").text($("#stage2-all-val").text());
+        if($("#j-stage1-tab").find("li").eq(0).hasClass("cur")) {
+            $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-jrfwf").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-dyfwf").text()) + parseFloat($("#s4-bxje").text()) + parseFloat($("#s4-jzjp").text()));
+        }else{
+            $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-bxje").text()) + parseFloat($("#s4-jzjp").text()));
+        }
         $("#j-calc-nav-val4").text($("#s4-all").text());
         bigHei();
     });
