@@ -241,8 +241,8 @@ $(function(){
             var lxValue = (dkjeValue * (1 + parseFloat(yhllVal)) / $("#yg").find("option:selected").attr("data-cycle")).toFixed(0);
         };
         if($("#lxzffs").val() == "ycxsq"){
-            var lxValue = (dkjeVal / $("#yg").find("option:selected").attr("data-cycle")).toFixed(0);
-            var ycxLxValue = (dkjeVal * yhllVal).toFixed(0);
+            var lxValue = (dkjeValue / $("#yg").find("option:selected").attr("data-cycle")).toFixed(0);
+            var ycxLxValue = (dkjeValue * yhllVal).toFixed(0);
             $("#stage1-p").append("<span>，贷款利息一次性支付：" + ycxLxValue + "元</span>")
         };
         $("#lxje-val").text(lxValue);
