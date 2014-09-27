@@ -60,7 +60,7 @@ body{ padding-bottom:50px; -webkit-text-size-adjust:none;}
 .sub-main i{ display:none;}
 
 /* search */
-.search-box{padding:10px;}
+.search-box{padding:10px 10px 0;}
 .key-words{width:86%;float:left;background-color:#efefef;-moz-border-radius:0.3em;-webkit-border-radius::0.3em;border-radius:0.3em; }
 .f-search {float:left;width:20px; height:20px; font-size:1.2em; padding:8px 0 8px 8px; color:#a0a0a0;}
 .f-search:after{ content: '\e62a';}
