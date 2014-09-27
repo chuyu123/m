@@ -474,10 +474,11 @@ function run(elem) {
         oMarquee.scrollTop += iScrollAmount;
         if (oMarquee.scrollTop == iLineCount * iLineHeight) {
             oMarquee.scrollTop = 0;
+            console.log("end")
         }
         ;
         if (oMarquee.scrollTop % iLineHeight == 0) {
-            window.setTimeout(play, 5000);
+            window.setTimeout(play, 500);
         } else {
             window.setTimeout(play, 30);
         }
@@ -490,5 +491,33 @@ function run(elem) {
         };
     };
     oMarquee.innerHTML += oMarquee.innerHTML;
-    window.setTimeout(play, 5000);
+    window.setTimeout(play, 500);
+};
+function run2(elem) {
+    var oMarquee = document.getElementById(elem);
+    var iLineHeight = 20;
+    var iLineCount = 2;
+    var iScrollAmount = 1;
+
+    function play() {
+        oMarquee.scrollTop += iScrollAmount;
+        if (oMarquee.scrollTop == iLineCount * iLineHeight) {
+            oMarquee.scrollTop = 0;
+        }
+        ;
+        if (oMarquee.scrollTop % iLineHeight == 0) {
+            window.setTimeout(play, 3000);
+        } else {
+            window.setTimeout(play, 30);
+        }
+        ;
+        oMarquee.onmouseover = function () {
+            iScrollAmount = 0;
+        };
+        oMarquee.onmouseout = function () {
+            iScrollAmount = 1;
+        };
+    };
+    oMarquee.innerHTML += oMarquee.innerHTML;
+    window.setTimeout(play, 3000);
 };
