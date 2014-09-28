@@ -30,7 +30,7 @@ a{ text-decoration:none;}
 .f-calc:after{ content:"\e622";}
 .f-right-fine:after{ content: "\e625";}
 
-body{ padding-bottom:45px; -webkit-text-size-adjust:none;}
+body{ -webkit-text-size-adjust:none;}
 .body{ min-width:320px;}
 .bodyinside{ padding-top:50px;}
 .header{ height:50px;}
@@ -140,7 +140,7 @@ body{ padding-bottom:45px; -webkit-text-size-adjust:none;}
 .yh-ul img{ display:block; margin-bottom:5px;}
 
 /* footer */
-.centerwm{ font-size:.8em; line-height:15px; background:#292929; color:#666; margin-top:15px; padding:10px 0 10px 10px; overflow:hidden; text-align:left; line-height:15px; color:#898989; margin-top:25px;}
+.centerwm{ font-size:.8em; line-height:15px; background:#292929; color:#666; margin-top:15px; padding:10px 0 45px 10px; overflow:hidden; text-align:left; line-height:15px; color:#898989; margin-top:25px;}
 .centerwm .bg{ float:right; width:69px; height:35px; background:url(../images/top.png) no-repeat; background-size:100%; margin-top:5px;}
 .centerwmgo{ text-align:left!important; font-size:1em; color:#898989;}
 

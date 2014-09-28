@@ -274,7 +274,7 @@ $(function(){
         };
         $("#s4-dszzrx-val").text($("#dszzrx-val").attr("data-value"));
         //乘客座位责任险
-        $("#ckzwzrx-val").text(10000 * 0.0026);
+        $("#ckzwzrx-val").text(10000 * 0.0026 * 4);
         //不计免赔险
         bjmpx_run();
         //自燃损失险
@@ -441,6 +441,8 @@ $(function(){
             $("#qcdqx-val").text((120 + parseFloat($("#csj").val()) * 0.005).toFixed(0));
             //司机座位责任险
             $("#sjzwzrx-val").text(10000 * 0.0041);
+            //乘客座位责任险
+            $("#ckzwzrx-val").text(10000 * 0.0026 * 4);
             //涉水行驶损失险
             $("#ssxsssx-val").text(($("#clssx-val").text() * 0.05).toFixed(0));
             //指定专修厂
@@ -455,6 +457,8 @@ $(function(){
             $("#qcdqx-val").text((140 + parseFloat($("#csj").val()) * 0.0045).toFixed(0));
             //司机座位责任险
             $("#sjzwzrx-val").text(10000 * 0.004);
+            //乘客座位责任险
+            $("#ckzwzrx-val").text(10000 * 0.0026 * 6);
             //涉水行驶损失险
             $("#ssxsssx-val").text(($("#clssx-val").text() * 0.05).toFixed(0));
             //指定专修厂
