@@ -194,7 +194,7 @@ $(function(){
         //金融服务费
         $("#jrfwf").text((rnum * 0.03).toFixed(0));
         //必要花费
-        var byhfValue = parseFloat($("#gzs").text()) + parseFloat($("#jrfwf").text()) + parseFloat($("#spfw").val());
+        var byhfValue = parseFloat($("#gzs").text()) + parseFloat($("#jrfwf").text()) + parseFloat($("#dyfw").text()) + parseFloat($("#spfw").val());
         $("#settle-byhf").text(byhfValue);
 
         //全款
@@ -205,7 +205,7 @@ $(function(){
         var sfValue2 = $("#csj2").val();
         var byhfValue2 = parseFloat($("#gzs2").text()) + parseFloat($("#spfw2").val());
         //购置税
-        $("#gzs2").text((sfValue2 / (1 + 0.17) * 0.1).toFixed(0));
+        $("#gzs2").text((zdjVal / (1 + 0.17) * 0.1).toFixed(0));
 
         //文案类别变更
         function tabSelect(){
@@ -239,15 +239,15 @@ $(function(){
         var yhllVal = $("#yg").val();
         if($("#lxzffs").val() == "ftsq"){
             var lxValue = (dkjeValue * (1 + parseFloat(yhllVal)) / $("#yg").find("option:selected").attr("data-cycle")).toFixed(0);
+            $("#lxje-val").text(lxValue);
+            $("#stage1-p").html("贷款购车，首付" + $("#sfk").find("option:selected").text() + "，" + $("#xzyh").find("option:selected").text() + "，贷款按" + $("#yg").find("option:selected").text() + "计算，需首付" + $("#sfk-val").text() + "元 + 必要花费" + $("#settle-byhf").text() + "元，月还款" + $("#lxje-val").text() + "元");
         };
         if($("#lxzffs").val() == "ycxsq"){
-            var lxValue = (dkjeVal / $("#yg").find("option:selected").attr("data-cycle")).toFixed(0);
-            var ycxLxValue = (dkjeVal * yhllVal).toFixed(0);
-            $("#stage1-p").append("<span>，贷款利息一次性支付：" + ycxLxValue + "元</span>")
+            var lxValue = (dkjeValue / $("#yg").find("option:selected").attr("data-cycle")).toFixed(0);
+            var ycxLxValue = (dkjeValue * yhllVal).toFixed(0);
+            $("#lxje-val").text(lxValue);
+         $("#stage1-p").html("贷款购车，首付" + $("#sfk").find("option:selected").text() + "，" + $("#xzyh").find("option:selected").text() + "，贷款按" + $("#yg").find("option:selected").text() + "计算，需首付" + $("#sfk-val").text() + "元 + 必要花费" + $("#settle-byhf").text() + "元，月还款" + $("#lxje-val").text() + "元" + "<span>，贷款利息一次性支付：" + ycxLxValue + "元</span>");
         };
-        $("#lxje-val").text(lxValue);
-
-        $("#stage1-p").html("贷款购车，首付" + $("#sfk").find("option:selected").text() + "，" + $("#xzyh").find("option:selected").text() + "，贷款按" + $("#yg").find("option:selected").text() + "计算，需首付" + $("#sfk-val").text() + "元 + 必要花费" + $("#settle-byhf").text() + "元，月还款" + $("#lxje-val").text() + "元");
 
         //第二屏
         //初始化

@@ -1162,7 +1162,7 @@ body{ padding-bottom:45px; -webkit-text-size-adjust:none;}
 .car-list-a li .fr{ margin-top: 5px;}
 .car-list-a li .xsj{ background: #c71a1a; color: #fff; border-radius: 2px; padding: 0 5px;}
 .car-list-a li .gray{ color: #ccc;}
-.car-list-a li .link{ display: inline-block; background: #c71a1a; color: #fff; border-radius: 2px; padding: 0 20px; height: 36px; line-height: 36px;}
+.car-list-a li .link{ display: inline-block; background: #c71aa1; color: #fff; border-radius: 2px; padding: 0 20px; height: 36px; line-height: 36px;}
 .car-list-a li .link b{ display: inline-block; vertical-align: middle;}
 .qiangche-a-box footer .totop .radius{
     transform:rotate(90deg);
