@@ -295,7 +295,7 @@ $(function(){
         //指定专修厂
         $("#zdzxc-val").text((taxTmp[0] * 0.5).toFixed(0));
         //附加险不计免赔险
-        $("#bjmpx2-val").text(((parseFloat($("#zrssx-val").text()) + parseFloat($("#cshhssx-val").text()) + parseFloat($("#ssxsssx-val").text())) * 0.15).toFixed(0));
+        $("#bjmpx2-val").text(((parseFloat($("#zrssx-val").text()) + parseFloat($("#cshhssx-val").text()) + parseFloat($("#ssxsssx-val").attr("data-value"))) * 0.15).toFixed(0));
         //小计部分
         $("#settle2-byhf").text(parseFloat($("#jqx-val").text()) + parseFloat($("#ccs-val").text()));
         $("#settle2-byhf2").text(parseFloat($("#dszzrx-val").attr("data-value")) + parseFloat($("#clssx-val").attr("data-value")) + parseFloat($("#qcdqx-val").attr("data-value")) + parseFloat($("#sjzwzrx-val").attr("data-value")) + parseFloat($("#ckzwzrx-val").attr("data-value")) + parseFloat($("#bjmpx-val").attr("data-value")));
@@ -421,7 +421,6 @@ $(function(){
             $("#stage4-fjxz").append("<li class='c6'><span class='val'>￥<b>" + $("#bjmpx2-val").attr("data-value") + "</b></span><span class='tit'>不计免赔险</span></li>");}
         };
         $("#settle2-byhf2").text(parseFloat($("#dszzrx-val").attr("data-value")) + parseFloat($("#clssx-val").attr("data-value")) + parseFloat($("#qcdqx-val").attr("data-value")) + parseFloat($("#sjzwzrx-val").attr("data-value")) + parseFloat($("#ckzwzrx-val").attr("data-value")) + parseFloat($("#bjmpx-val").attr("data-value")));
-        console.log(parseFloat($("#dszzrx-val").attr("data-value")) +"_"+ parseFloat($("#clssx-val").attr("data-value")) +"_"+ parseFloat($("#qcdqx-val").attr("data-value")) +"_"+ parseFloat($("#sjzwzrx-val").attr("data-value")) +"_"+ parseFloat($("#ckzwzrx-val").attr("data-value")) +"_"+ parseFloat($("#bjmpx-val").attr("data-value")))
         $("#settle2-byhf3").text(parseFloat($("#zrssx-val").attr("data-value")) + parseFloat($("#blddpsx-val").attr("data-value")) + parseFloat($("#cshhssx-val").attr("data-value")) + parseFloat($("#ssxsssx-val").attr("data-value")) + parseFloat($("#zdzxc-val").attr("data-value")) + parseFloat($("#bjmpx2-val").attr("data-value")));
         //stage2保险合计
         $("#stage2-all-val").text((parseFloat($("#settle2-byhf").text()) + parseFloat($("#settle2-byhf2").text())*0.95 + parseFloat($("#settle2-byhf3").text())*0.95).toFixed(0));
@@ -502,11 +501,15 @@ $(function(){
             if($(this).hasClass("check-select-box-zrssx")){
                 $("#zrssx-val").attr("data-value","0");
                 $("#stage4-fjxz").find(".c1").remove();
+                $("#bjmpx2-val").text(((parseFloat($("#zrssx-val").attr("data-value")) + parseFloat($("#cshhssx-val").attr("data-value")) + parseFloat($("#ssxsssx-val").attr("data-value"))) * 0.15).toFixed(0));
+                $("#stage4-fjxz").find(".c6").find("b").text($("#bjmpx2-val").text());
             };
             //涉水行驶损失险价格
             if($(this).hasClass("check-select-box-ssxsssx")){
                 $("#ssxsssx-val").attr("data-value","0");
                 $("#stage4-fjxz").find(".c4").remove();
+                $("#bjmpx2-val").text(((parseFloat($("#zrssx-val").attr("data-value")) + parseFloat($("#cshhssx-val").attr("data-value")) + parseFloat($("#ssxsssx-val").attr("data-value"))) * 0.15).toFixed(0));
+                $("#stage4-fjxz").find(".c6").find("b").text($("#bjmpx2-val").text());
             };
             //指定专修厂价格
             if($(this).hasClass("check-select-box-zdzxc")){
@@ -518,6 +521,8 @@ $(function(){
                 $("#bjmpx2-val").attr("data-value","0");
                 $("#stage4-fjxz").find(".c6").remove();
             };
+            //附加险不计免赔险 由涉水行驶险再计算
+            $("#bjmpx2-val").text(((parseFloat($("#zrssx-val").attr("data-value")) + parseFloat($("#cshhssx-val").attr("data-value")) + parseFloat($("#ssxsssx-val").attr("data-value"))) * 0.15).toFixed(0));
         }else{
             $(this).addClass("check-select-box-cur");
             //车辆损失险
@@ -549,11 +554,16 @@ $(function(){
             if($(this).hasClass("check-select-box-zrssx")){
                 $("#zrssx-val").attr("data-value",$("#zrssx-val").text());
                 $("#stage4-fjxz").append("<li class='c1'><span class='val'>￥<b>" + $("#zrssx-val").attr("data-value") + "</b></span><span class='tit'>自燃损失险</span></li>");
+                $("#bjmpx2-val").text(((parseFloat($("#zrssx-val").attr("data-value")) + parseFloat($("#cshhssx-val").attr("data-value")) + parseFloat($("#ssxsssx-val").attr("data-value"))) * 0.15).toFixed(0));
+                $("#stage4-fjxz").find(".c6").find("b").text($("#bjmpx2-val").text());
             };
             //涉水行驶损失险
             if($(this).hasClass("check-select-box-ssxsssx")){
                 $("#ssxsssx-val").attr("data-value",$("#ssxsssx-val").text());
+                //附加险不计免赔险 由涉水行驶险再计算
+                $("#bjmpx2-val").text(((parseFloat($("#zrssx-val").attr("data-value")) + parseFloat($("#cshhssx-val").attr("data-value")) + parseFloat($("#ssxsssx-val").attr("data-value"))) * 0.15).toFixed(0));
                 $("#stage4-fjxz").append("<li class='c4'><span class='val'>￥<b>" + $("#ssxsssx-val").attr("data-value") + "</b></span><span class='tit'>涉水行驶损失险</span></li>");
+                $("#stage4-fjxz").find(".c6").find("b").text($("#bjmpx2-val").text());
             };
             //指定专修厂
             if($(this).hasClass("check-select-box-zdzxc")){
@@ -568,7 +578,6 @@ $(function(){
         };
 
         $("#settle2-byhf2").text(parseFloat($("#dszzrx-val").attr("data-value")) + parseFloat($("#clssx-val").attr("data-value")) + parseFloat($("#qcdqx-val").attr("data-value")) + parseFloat($("#sjzwzrx-val").attr("data-value")) + parseFloat($("#ckzwzrx-val").attr("data-value")) + parseFloat($("#bjmpx-val").attr("data-value")));
-        console.log(parseFloat($("#dszzrx-val").attr("data-value")) +"_"+ parseFloat($("#clssx-val").attr("data-value")) +"_"+ parseFloat($("#qcdqx-val").attr("data-value")) +"_"+ parseFloat($("#sjzwzrx-val").attr("data-value")) +"_"+ parseFloat($("#ckzwzrx-val").attr("data-value")) +"_"+ parseFloat($("#bjmpx-val").attr("data-value")))
         $("#settle2-byhf3").text(parseFloat($("#zrssx-val").attr("data-value")) + parseFloat($("#blddpsx-val").attr("data-value")) + parseFloat($("#cshhssx-val").attr("data-value")) + parseFloat($("#ssxsssx-val").attr("data-value")) + parseFloat($("#zdzxc-val").attr("data-value")) + parseFloat($("#bjmpx2-val").attr("data-value")));
         //stage2保险合计
         $("#stage2-all-val").text((parseFloat($("#settle2-byhf").text()) + parseFloat($("#settle2-byhf2").text())*0.95 + parseFloat($("#settle2-byhf3").text())*0.95).toFixed(0));
@@ -604,6 +613,8 @@ $(function(){
                 $(".point2-cshhssx").siblings().find("#cshhssx").attr("disabled","disabled");
                 $("#cshhssx-val").attr("data-value","0");
                 $("#stage4-fjxz").find(".c3").remove();
+                $("#bjmpx2-val").text(((parseFloat($("#zrssx-val").attr("data-value")) + parseFloat($("#cshhssx-val").attr("data-value")) + parseFloat($("#ssxsssx-val").attr("data-value"))) * 0.15).toFixed(0));
+                $("#stage4-fjxz").find(".c6").find("b").text($("#bjmpx2-val").text());
             };
         }else{
             $(this).addClass("point2-cur");
@@ -627,6 +638,8 @@ $(function(){
                 $("#cshhssx-val").attr("data-value",$("#cshhssx-val").text());
                 if($("#stage4-fjxz:has(li[class='c3'])").length==0){
                 $("#stage4-fjxz").append("<li class='c3'><span class='val'>￥<b id='s4-cshhssx-val'>" + $("#cshhssx-val").attr("data-value") + "</b></span><span class='tit'>车身划痕损失险</span></li>");}
+                $("#bjmpx2-val").text(((parseFloat($("#zrssx-val").attr("data-value")) + parseFloat($("#cshhssx-val").attr("data-value")) + parseFloat($("#ssxsssx-val").attr("data-value"))) * 0.15).toFixed(0));
+                $("#stage4-fjxz").find(".c6").find("b").text($("#bjmpx2-val").text());
             };
         };
 
