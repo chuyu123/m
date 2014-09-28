@@ -201,7 +201,7 @@ body{ padding-bottom:45px; -webkit-text-size-adjust:none;}
 .f-jing{ display:inline-block; color:#5296dd; vertical-align: top;}
 .f-jing:after{ content:'\e60b';}
 .conbox .share{ margin:10px 5px 0;}
-.conbox .share a{ float:left; border:1px solid #e6e6e6; border-radius:2px; background:#fff; width:46%; height:35px; line-height: 35px; overflow: hidden; color:#292929; margin:0 2%; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+.conbox .share a{ float:left; border:1px solid #e6e6e6; border-radius:4px; background:#fff; width:46%; height:35px; line-height: 35px; overflow: hidden; color:#292929; margin:0 2%; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
 .f-share, .f-zan{ float:left; color:#fcbb01; margin:0 10px; font-size:1.1em;}
 .f-share:after{ content:'\E604';}
 .f-zan:after{ content:'\E600';}
