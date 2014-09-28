@@ -474,7 +474,6 @@ function run(elem) {
         oMarquee.scrollTop += iScrollAmount;
         if (oMarquee.scrollTop == iLineCount * iLineHeight) {
             oMarquee.scrollTop = 0;
-            console.log("end")
         }
         ;
         if (oMarquee.scrollTop % iLineHeight == 0) {

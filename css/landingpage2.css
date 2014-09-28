@@ -18,8 +18,7 @@ a{ text-decoration:none;}
 .mb30{ margin-bottom:30px!important;}
 .w70{ width: 70%!important;}
 .center{ text-align:center!important;}
-.centerwm{ text-align:center!important; font-size:.8em; line-height:15px; color:#898989; margin-top:15px;}
-.centerwmgo{ text-align:left!important; font-size:1em; color:#898989;}
+
 @font-face{ font-family:'qk'; font-weight:normal; font-style:normal; src:url(../font/icomoon.woff) format('woff'),url('../font/icomoon.ttf') format('truetype'),url('../font/icomoon.svg#qk') format('svg');}
 [class^='f-']{ font-family:qk; font-style:normal; -webkit-font-smoothing:antialiased;}
 .f-rarrow:after{ content:"\e619";}
@@ -31,7 +30,7 @@ a{ text-decoration:none;}
 .f-calc:after{ content:"\e622";}
 .f-right-fine:after{ content: "\e625";}
 
-body{ padding-bottom:50px; -webkit-text-size-adjust:none;}
+body{ padding-bottom:45px; -webkit-text-size-adjust:none;}
 .body{ min-width:320px;}
 .bodyinside{ padding-top:50px;}
 .header{ height:50px;}
@@ -139,6 +138,11 @@ body{ padding-bottom:50px; -webkit-text-size-adjust:none;}
 .yh-ul li:nth-child(3n+1){ margin-left:8px;}
 .yh-ul a{ display:block; width:85px; height:84px; overflow:hidden; padding:5px; color:#292929;}
 .yh-ul img{ display:block; margin-bottom:5px;}
+
+/* footer */
+.centerwm{ font-size:.8em; line-height:15px; background:#292929; color:#666; margin-top:15px; padding:10px 0 10px 10px; overflow:hidden; text-align:left; line-height:15px; color:#898989; margin-top:25px;}
+.centerwm .bg{ float:right; width:69px; height:35px; background:url(../images/top.png) no-repeat; background-size:100%; margin-top:5px;}
+.centerwmgo{ text-align:left!important; font-size:1em; color:#898989;}
 
 /* 至提交购车需求模块 */
 .torequire{ padding:15px; border-top:1px solid #ddd;}
@@ -967,8 +971,6 @@ body{ padding-bottom:50px; -webkit-text-size-adjust:none;}
 .xunwen-box i.i3{ background-image:url(../images/xunwen3.png);}
 .servicetel{ display:block; overflow:hidden; color:#fff; background:#dfdcd9; border-radius:5px; margin:10px 50px; padding:4px; text-align:center;}
 .servicetel span{ display:block; width:100%; line-height:30px; background:#479c02; border-radius:4px;}
-.jgd-bm-box .centerwm{ font-size:.8em; line-height:15px; background:#292929; color:#666; margin-top:15px; padding:10px 0 10px 10px; overflow:hidden; text-align:left!important;}
-.jgd-bm-box .centerwm .bg{ float:right; width:69px; height:35px; background:url(../images/top.png) no-repeat; background-size:100%; margin-top:5px;}
 
 /* qa-tab */
 .qa-tab{ border:1px solid #db1c1c; border-radius:3px; margin:10px 20px; line-height:35px; font-size:1.1em;}
@@ -1075,7 +1077,7 @@ body{ padding-bottom:50px; -webkit-text-size-adjust:none;}
 .jzjp-box li{position: relative;}
 .jzjp-box li big{ font-size:1.1em;}
 .jzjp-select{ padding: 0 10px; overflow: hidden; }
-.jzjp-select dl{ margin: 10px 0 0 10px; padding-bottom: 10px;}
+.jzjp-select dl{ margin: 10px 0 0 10px; padding-bottom: 10px;display:none;}
 .jzjp-select dt{ text-align: center; height: 42px; overflow: hidden;  }
 .jzjp-select dt span{ display:block; white-space: nowrap; border-radius: 5px; border: solid 1px; border-color: #ddd; height: 40px; line-height: 40px; overflow: hidden; padding: 0 20px;}
 .jzjp-select dt .arrow{ display: inline-block;width: 0;height: 0;border-left: 10px solid transparent;border-right: 10px solid transparent;border-bottom: 10px solid #333;}
