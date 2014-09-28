@@ -94,7 +94,7 @@ body{ min-width:320px; max-width:768px; margin:0 auto; background:url(../assets/
 .liyou-box .tit{ float:left; width:210px; color:#c71a1a; font-size:1.1em;}
 .liyou-box .txt{ float:left; width:210px; color:#350000;}
 .liyou-box .info p{ float:left; width: 50%; color:#999; font-size: .9em;}
-.liyou-box .info p span{ float: left; background: #292929; color: #fff; border-radius: 2px; font-size:.6em; margin:4px 2px 0 0; padding: 0 2px; line-height: 14px;}
+.liyou-box .info p span{ float: left; background: #c71a1a; color: #fff; border-radius: 2px; font-size:.6em; margin:4px 2px 0 0; padding: 0 2px; line-height: 14px;}
 .liyou-box .pagination-focus{ position: absolute; top:-4px; line-height: 2px;}
 .liyou-box .pagination-focus span{ width: 33%; background:#d9d9d9; height: 2px; border-radius:0; margin:0;}
 .liyou-box .pagination-focus .swiper-active-switch{ background: #999;}
@@ -157,6 +157,7 @@ body{ min-width:320px; max-width:768px; margin:0 auto; background:url(../assets/
 .act-ul1 .btn, .act-ul2 .btn{ display:none; float:right; width:64px; height:24px; line-height:24px; background:#b9000d; color:#fff; text-align:center; border-radius:3px;}
 .act-ul2 .bm{ float:left; width:100%; position:relative;}
 .act-ul2 .xsj{ float:left; width:100%; font-size:.9em; color:#000;}
+.act-ul2 .xsj span{ display:inline-block; width:40px; height:16px; background:#c71a1a; border-radius: 2px; color:#fff; line-height: 16px; font-size:.9em; text-align: center; margin-right:5px; font-weight: 700;}
 .act-ul2 .xsj b{ font-weight: 400;}
 .act-ul2 .btn{ display:none; position:absolute; right:0; bottom:0;}
 

@@ -474,7 +474,6 @@ function run(elem) {
         oMarquee.scrollTop += iScrollAmount;
         if (oMarquee.scrollTop == iLineCount * iLineHeight) {
             oMarquee.scrollTop = 0;
-            console.log("end")
         }
         ;
         if (oMarquee.scrollTop % iLineHeight == 0) {
@@ -494,6 +493,7 @@ function run(elem) {
     window.setTimeout(play, 500);
 };
 function run2(elem) {
+    if(!document.getElementById(elem)) return false;
     var oMarquee = document.getElementById(elem);
     var iLineHeight = 20;
     var iLineCount = 2;
@@ -521,3 +521,10 @@ function run2(elem) {
     oMarquee.innerHTML += oMarquee.innerHTML;
     window.setTimeout(play, 3000);
 };
+
+//pg-news 搜索框删除填入消息
+(function(){
+    $("#news-search").click(function(){
+         $(this).prev().val("");
+    });
+})();
