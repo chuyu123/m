@@ -1075,7 +1075,7 @@ body{ padding-bottom:50px; -webkit-text-size-adjust:none;}
 .jzjp-box li{position: relative;}
 .jzjp-box li big{ font-size:1.1em;}
 .jzjp-select{ padding: 0 10px; overflow: hidden; }
-.jzjp-select dl{ margin: 10px 0 0 10px; padding-bottom: 10px;}
+.jzjp-select dl{ margin: 10px 0 0 10px; padding-bottom: 10px;display:none;}
 .jzjp-select dt{ text-align: center; height: 42px; overflow: hidden;  }
 .jzjp-select dt span{ display:block; white-space: nowrap; border-radius: 5px; border: solid 1px; border-color: #ddd; height: 40px; line-height: 40px; overflow: hidden; padding: 0 20px;}
 .jzjp-select dt .arrow{ display: inline-block;width: 0;height: 0;border-left: 10px solid transparent;border-right: 10px solid transparent;border-bottom: 10px solid #333;}
@@ -1160,7 +1160,7 @@ body{ padding-bottom:50px; -webkit-text-size-adjust:none;}
 .car-list-a li .fr{ margin-top: 5px;}
 .car-list-a li .xsj{ background: #c71a1a; color: #fff; border-radius: 2px; padding: 0 5px;}
 .car-list-a li .gray{ color: #ccc;}
-.car-list-a li .link{ display: inline-block; background: #c71a1a; color: #fff; border-radius: 2px; padding: 0 20px; height: 36px; line-height: 36px;}
+.car-list-a li .link{ display: inline-block; background: #c71aa1; color: #fff; border-radius: 2px; padding: 0 20px; height: 36px; line-height: 36px;}
 .car-list-a li .link b{ display: inline-block; vertical-align: middle;}
 .qiangche-a-box footer .totop .radius{
     transform:rotate(90deg);
