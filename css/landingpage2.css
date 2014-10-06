@@ -683,6 +683,10 @@ body{ -webkit-text-size-adjust:none;}
 .yx-ul .num{ float:left; color:#292929;}
 .yx-ul .dd{ color:#5296dd; margin-left:5px;}
 .yx-ul .tit{ display:block; color:#292929; font-size:1.1em; padding-top:5px;}
+.yx-ul .pay-col{display:block;width:100%;padding-top:5px;color:#292929;}
+.yx-ul .pay{display:inline-block;width:70%;}
+.yx-ul .pay-state{display:inline-block;width:28%;color:#ce3400;font-weight:bold;}
+.yx-ul .success{color:#008000;}
 .yx-table{ width:100%; margin-top:15px;}
 .yx-table th, .yx-table td{ padding:5px 0; vertical-align: top;}
 .yx-table th{ width:30%; text-align:right; color:#999;}
