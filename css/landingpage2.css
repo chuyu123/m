@@ -683,6 +683,10 @@ body{ -webkit-text-size-adjust:none;}
 .yx-ul .num{ float:left; color:#292929;}
 .yx-ul .dd{ color:#5296dd; margin-left:5px;}
 .yx-ul .tit{ display:block; color:#292929; font-size:1.1em; padding-top:5px;}
+.yx-ul .pay-col{display:block;width:100%;padding-top:5px;color:#292929;}
+.yx-ul .pay{display:inline-block;width:70%;}
+.yx-ul .pay-state{display:inline-block;width:28%;color:#ce3400;font-weight:bold;}
+.yx-ul .success{color:#008000;}
 .yx-table{ width:100%; margin-top:15px;}
 .yx-table th, .yx-table td{ padding:5px 0; vertical-align: top;}
 .yx-table th{ width:30%; text-align:right; color:#999;}
@@ -1109,6 +1113,18 @@ body{ -webkit-text-size-adjust:none;}
 .jifen-index-page{ text-align: center; margin-top: 10px; color: #008000;}
 .jifen-detail-tit{ margin-top: 10px; text-align: center;}
 .jifen-detail-content{ margin: 10px; padding: 10px; border:solid 1px #ccc; line-height: 24px; overflow: hidden;}
+
+/* eCoupon 页面 */
+.ecoupon-box{padding:15px 10px 0 10px;}
+.ecoupon-box a{display:block;border-radius:3px;padding:3px 20px;  background-color:#e7e7e7;margin-bottom: 10px;}
+.ecoupon-box .left{float:left;width:80%;}
+.ecoupon-box .right{float:right;width:20%;}
+.ecoupon-box .unused .title{color:#c71a1a;}
+.ecoupon-box .unused .title b{font-size:2em;}
+.ecoupon-box .content{color:#999;display:block;}
+.ecoupon-box .expiry{color:#c71a1a;}
+.ecoupon-box .icon{position: absolute;width:70px;height:70px;background:url(../images/ecouponicon.png) no-repeat;background-size:100%;right:10px;}
+.ecoupon-box .unused .right span{color:#fff;width:14px;display:block;}
 
 
 /* =========================活动模板相关========================= */
