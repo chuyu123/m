@@ -1114,6 +1114,18 @@ body{ -webkit-text-size-adjust:none;}
 .jifen-detail-tit{ margin-top: 10px; text-align: center;}
 .jifen-detail-content{ margin: 10px; padding: 10px; border:solid 1px #ccc; line-height: 24px; overflow: hidden;}
 
+/* eCoupon 页面 */
+.ecoupon-box{padding:15px 10px 0 10px;}
+.ecoupon-box a{display:block;border-radius:3px;padding:3px 20px;  background-color:#e7e7e7;margin-bottom: 10px;}
+.ecoupon-box .left{float:left;width:80%;}
+.ecoupon-box .right{float:right;width:20%;}
+.ecoupon-box .unused .title{color:#c71a1a;}
+.ecoupon-box .unused .title b{font-size:2em;}
+.ecoupon-box .content{color:#999;display:block;}
+.ecoupon-box .expiry{color:#c71a1a;}
+.ecoupon-box .icon{position: absolute;width:70px;height:70px;background:url(../images/ecouponicon.png) no-repeat;background-size:100%;right:10px;}
+.ecoupon-box .unused .right span{color:#fff;width:14px;display:block;}
+
 
 /* =========================活动模板相关========================= */
 /* act-slide */
