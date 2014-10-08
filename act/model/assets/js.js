@@ -163,6 +163,44 @@ $(function(){
 });*/
 
 //第三版报名
+//选颜色弹窗
+function selectColorPopup(){
+     $("#popup-color").css("height",$(document).height());
+    $("#popup-color").show();
+    window.scrollTo(0,0);
+    $(".popup-tpbm-inside").click(function(e){
+        e.stopPropagation();
+    });
+    $("#popup-color").find(".f-close").click(function(){
+        $('#popup-color').hide();
+    });
+    $("#popup-color").click(function(){
+        $('#popup-color').hide();
+    })
+};
+$(document).ready(function(){
+
+  var colorItem=$(".color-pulldown-ul li");
+   colorItem.bind("click",function(){
+  alert(1);
+    
+         if(colorItem.hasClass("selected")){
+            this.removeClas("selected");
+        }else{
+            this.addClass("selected");
+        }
+    });
+});
+// //选颜色按钮
+// function selectColor(){
+//     var colorItem=$(".color-pulldown-ul li");
+//     if(colorItem.hasClass("selected")){
+//         this.removeClas("selected");
+//     }else{
+//         this.addClass("selected");
+//     }
+// }
+//登入
 function tpbm(){
     $("#popup-tpbm").css("height",$(document).height());
     $("#popup-tpbm").show();
