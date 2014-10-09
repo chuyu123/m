@@ -184,7 +184,10 @@ function selectColorPopup(){
 };
 $(document).ready(function(){
     var selectColorItem=$("#color-swatch").find("li");
-    //var selectColorVal=selectColorItem.attr("data-color");
+    selectColorItem.each(function(){
+        var selectColorVal=$(this).attr("data-hex");
+        $(this).css("background",selectColorVal);
+    })
     selectColorItem.bind("click",function(){
         if(selectColorItem.hasClass("select-color")){
             selectColorItem.removeClass("select-color");
