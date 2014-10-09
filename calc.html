@@ -2,8 +2,8 @@
 <!--calc-box-->
 <div class="calc-box">
     <ul class="calc-nav-ul clearfix" id="j-calc-nav-ul">
-        <li class="cur"><strong>金融方案</strong><span class="cash">￥<span id="j-calc-nav-val1"></span></span><i class="i1"></i><i class="i2"></i></li>
-        <li><strong>保险方案</strong><span class="cash">￥<span id="j-calc-nav-val2"></span></span><i class="i1"></i><i class="i2"></i></li>
+        <li class="cur"><strong>金融部分</strong><span class="cash">￥<span id="j-calc-nav-val1"></span></span><i class="i1"></i><i class="i2"></i></li>
+        <li><strong>保险部分</strong><span class="cash">￥<span id="j-calc-nav-val2"></span></span><i class="i1"></i><i class="i2"></i></li>
         <li><strong>加装精品</strong><span class="cash">￥<span id="j-calc-nav-val3">0</span></span><i class="i1"></i><i class="i2"></i></li>
         <li><strong>购车计算</strong><span class="cash">￥<span id="j-calc-nav-val4"></span></span></li>
     </ul>
@@ -86,6 +86,10 @@
                                 </span>
                             </li>
                             <li>
+                                <span class="tit">利息金额</span>
+                                <span class="value-box" id="lxje-txt"></span>
+                            </li>
+                            <li>
                                 <i class="f-rarrow"></i>
                                 <label for="yg">
                                     <span class="tit tit-auto">月供</span>
@@ -107,7 +111,7 @@
                         </ul>
                         <a href="#" class="ckyhdb">查看银行对比&gt;&gt;</a>
                         <div class="calc-list-tit mt15">
-                            <span class="tit">必要花费</span>
+                            <span class="tit">其他费用</span>
                             <span class="fr">小计：<span id="settle-byhf"></span></span>
                         </div>
                         <ul class="calc-list-ul clearfix">
@@ -159,7 +163,7 @@
                             </li>
                         </ul>
                         <div class="calc-list-tit mt15">
-                            <span class="tit">必要花费</span>
+                            <span class="tit">其他费用</span>
                             <span class="fr">小计：<span id="settle-byhf2"></span></span>
                         </div>
                         <ul class="calc-list-ul clearfix">
@@ -190,7 +194,7 @@
                     </div>
                 </div>
                 <div class="calc-settle mt15">
-                    <div class="tit">您选择的金融方案</div>
+                    <div class="tit">您选择的金融部分</div>
                     <div class="con">
                         <p id="stage1-p">请选择</p>
                         <p class="js">金融首付：<b class="val" id="stage1-all-val"></b>元</p>
@@ -408,14 +412,36 @@
                         </div>
                     </li>
                 </ul>
+                <div class="calc-list-tit mt15">
+                    <span class="tit">保险年数</span>
+                </div>
+                <ul class="calc-list-ul clearfix">
+                    <li>
+                        <i class="f-rarrow"></i>
+                        <label for="bxgmns">
+                            <span class="tit tit-auto">购买年数</span>
+                        </label>
+                        <span class="value-box">
+                            <span class="hide-select-box">
+                                <span class="hide-select-inside">
+                                    <select class="selwide change" name="bxgmns" id="bxgmns">
+                                        <option value="0">1年</option>
+                                        <option value="1">2年</option>
+                                        <option value="2">3年</option>
+                                    </select>
+                                </span>
+                            </span>
+                        </span>
+                    </li>
+                </ul>
                 <div class="calc-settle mt15">
-                    <div class="tit">您选择的保险方案</div>
+                    <div class="tit">您选择的保险部分</div>
                     <div class="con">
                         <p class="js">保险合计：<b class="val" id="stage2-all-val"></b>元</p>
                     </div>
                 </div>
                 <div class="bm-bz">注：<br />
-                        1、商业险第一年打95折 <br/>
+                        1、商业险第一年均95折，若选购第二、三年期间优惠至85.5折 <br/>
                         2、保险费用为预估价，实际以投保项目保单为准 <br/>
                         3、实际计算用的新车购置价以保险公司给出的为准
                 </div>
@@ -717,7 +743,7 @@
             <!--stage4-->
             <div class="calc-blk">
                 <div class="settle-box">
-                    <div class="settle-box-hd">金融方案</div>
+                    <div class="settle-box-hd">金融部分</div>
                     <div class="settle-box-bd"><p class="mt10" id="to-stage1-p"></p></div>
                 </div>
                 <div class="settle-box">
@@ -725,7 +751,7 @@
                     <div class="settle-box-bd"><p class="mt10" id="to-stage2-p"></p></div>
                 </div>
                 <div class="settle-box">
-                    <div class="settle-box-hd j-sh-switch"><i class="f-larrow"></i>保险方案</div>
+                    <div class="settle-box-hd j-sh-switch"><i class="f-larrow"></i>保险部分</div>
                     <div class="settle-box-bd">
                         <div class="settle-box-title">必要花费</div>
                         <ul class="settle-box-ul">
@@ -742,6 +768,8 @@
                         <ul class="settle-box-ul" id="stage4-jbxz"></ul>
                         <div class="settle-box-title">商业保险-附加险种</div>
                         <ul class="settle-box-ul" id="stage4-fjxz"></ul>
+                        <div class="settle-box-title">保险年限</div>
+                        <ul class="settle-box-ul" id="stage5-bxnx"></ul>
                     </div>
                 </div>
                 <div class="settle-box">
