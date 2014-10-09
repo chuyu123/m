@@ -247,7 +247,6 @@
                 <i class="f-close"></i>
             </div>
             <div class="popup-tpbm-bd act-baoming-box">
-                <div class="color-pulldown-box">
                     <ul class="car-select clearfix">
                         <li>宝马</li>
                         <li>宝马3系列</li>
@@ -255,13 +254,12 @@
                         <li>320Li</li>
                         <li>时尚型</li>
                     </ul>
-                    <div class="color-pulldown-hd">喜欢的颜色：<span>象牙白</span></div>
-                    <ul class="color-pulldown-ul clearfix">
-                        <li class="red" data-color="红色"></li>
-                        <li class="blue" data-color="蓝色"></li>
-                    </ul>
-                    </div>
-                    <div class="color-pulldown-box">
+                    <div class="color-swatch" id="color-swatch">
+                        <div class="color-pulldown-hd">喜欢的颜色：<span id="color-val"></span></div>
+                        <ul class="color-pulldown-ul clearfix">
+                            <li class="red" data-color="红色"></li>
+                            <li class="blue" data-color="蓝色"></li>
+                        </ul>
                         <div class="color-pulldown-hd">
                             不确定喜欢哪种颜色？
                             <span>选择</span>
@@ -271,7 +269,7 @@
                         </div>
                     </div>
                     <div class="process-banner"></div>
-                    <a href="javascript:tpbm();" class="btn">下一步</a>
+                    <a href="javascript:void();" id="nextStep" class="btn">下一步</a>
                 </div>
         </div>
     </div>
