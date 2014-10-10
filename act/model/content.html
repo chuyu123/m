@@ -157,7 +157,7 @@
     </div>-->
     <a href="#" class="servicetel"><span><i class="f-acttel"></i>服务热线400-696-5151</span></a>
 </div>
-<a href="javascript:tpbm()" class="btn-baoming"><span>我要抢车</span></a>
+<a href="javascript:selectColorPopup()" class="btn-baoming"><span>我要抢车</span></a>
 <!--popup-v2-->
 <div class="popup-v2 popup-ab" id="j-popup-v2-static">
     <div class="popup-v2-inside" id="j-popup-v2-inside-static">
@@ -197,27 +197,27 @@
             <i class="f-close"></i>
         </div>
         <div class="popup-v2a-bd act-baoming-box">
-            <!--<div class="color-select-box">-->
-                <!--<div class="color-select-circle">-->
-                    <!--<i class="f-rarrow"></i>-->
-                    <!--<span id="color-tit">选择喜欢的外观颜色</span>-->
-                <!--</div>-->
-                <!--<div class="color-select-pulldown">-->
-                    <!--<div class="color-pulldown-box">-->
-                        <!--<div class="color-pulldown-hd">本场活动可选颜色：</div>-->
-                        <!--<ul class="color-pulldown-ul clearfix">-->
-                            <!--<li class="red" data-color="红色"></li>-->
-                            <!--<li class="blue" data-color="蓝色"></li>-->
-                        <!--</ul>-->
-                    <!--</div>-->
-                    <!--<div class="color-pulldown-box">-->
-                        <!--<div class="color-pulldown-hd">您喜欢的其他颜色：</div>-->
-                        <!--<ul class="color-pulldown-ul-oth clearfix">-->
-                            <!--<li data-color="其他颜色">未确定</li>-->
-                        <!--</ul>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
+            <div class="color-select-box">
+                <div class="color-select-circle">
+                    <i class="f-rarrow"></i>
+                    <span id="color-tit">选择喜欢的外观颜色</span>
+                </div>
+                <div class="color-select-pulldown">
+                    <div class="color-pulldown-box">
+                        <div class="color-pulldown-hd">本场活动可选颜色：</div>
+                        <ul class="color-pulldown-ul clearfix">
+                            <li class="red" data-color="红色"></li>
+                            <li class="blue" data-color="蓝色"></li>
+                        </ul>
+                    </div>
+                    <div class="color-pulldown-box">
+                        <div class="color-pulldown-hd">您喜欢的其他颜色：</div>
+                        <ul class="color-pulldown-ul-oth clearfix">
+                            <li data-color="其他颜色">未确定</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <div class="fastreg-list">
                 <input class="fastreg-ipt" type="text" placeholder="请输入您的姓名" />
             </div>
@@ -240,7 +240,39 @@
         </div>
     </div>
 </div>
-
+<div class="popup-tpbm" id="popup-color">
+    <div class="popup-tpbm-inside">
+        <div class="popup-tpbm-hd">
+                <span class="title-box">您心仪的爱车</span>
+                <i class="f-close"></i>
+            </div>
+            <div class="popup-tpbm-bd act-baoming-box">
+                    <ul class="car-select clearfix">
+                        <li>宝马</li>
+                        <li>宝马3系列</li>
+                        <li>2014款</li>
+                        <li>320Li</li>
+                        <li>时尚型</li>
+                    </ul>
+                    <div class="color-swatch" id="color-swatch">
+                        <div class="color-pulldown-hd">喜欢的颜色：<span id="color-val"></span></div>
+                        <ul class="color-pulldown-ul clearfix">
+                            <li data-color="红色" data-hex="#ff0000"></li>
+                            <li data-color="蓝色" data-hex="#0000ff"></li>
+                        </ul>
+                        <div class="color-pulldown-hd">
+                            不确定喜欢哪种颜色？
+                            <span>选择</span>
+                             <ul class="color-pulldown-ul-oth clearfix">
+                                <li data-color="其他颜色">其他颜色</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="process-banner"></div>
+                    <a href="javascript:void();" id="nextStep" class="btn">下一步</a>
+                </div>
+        </div>
+</div>
 <div class="popup-tpbm" id="popup-tpbm">
     <div class="popup-tpbm-inside">
         <div class="popup-tpbm-hd">
@@ -248,27 +280,28 @@
             <i class="f-close"></i>
         </div>
         <div class="popup-tpbm-bd act-baoming-box">
-            <!--<div class="color-select-box">-->
-            <!--<div class="color-select-circle">-->
-            <!--<i class="f-rarrow"></i>-->
-            <!--<span id="color-tit">选择喜欢的外观颜色</span>-->
-            <!--</div>-->
-            <!--<div class="color-select-pulldown">-->
-            <!--<div class="color-pulldown-box">-->
-            <!--<div class="color-pulldown-hd">本场活动可选颜色：</div>-->
-            <!--<ul class="color-pulldown-ul clearfix">-->
-            <!--<li class="red" data-color="红色"></li>-->
-            <!--<li class="blue" data-color="蓝色"></li>-->
-            <!--</ul>-->
-            <!--</div>-->
-            <!--<div class="color-pulldown-box">-->
-            <!--<div class="color-pulldown-hd">您喜欢的其他颜色：</div>-->
-            <!--<ul class="color-pulldown-ul-oth clearfix">-->
-            <!--<li data-color="其他颜色">未确定</li>-->
-            <!--</ul>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
+
+        <!--     <div class="color-select-box">
+                <div class="color-select-circle">
+                    <i class="f-rarrow"></i>
+                    <span id="color-tit">选择喜欢的外观颜色</span>
+                </div>
+                <div class="color-select-pulldown">
+                    <div class="color-pulldown-box">
+                        <div class="color-pulldown-hd">本场活动可选颜色：</div>
+                        <ul class="color-pulldown-ul clearfix">
+                            <li class="red" data-color="红色"></li>
+                            <li class="blue" data-color="蓝色"></li>
+                        </ul>
+                    </div>
+                    <div class="color-pulldown-box">
+                        <div class="color-pulldown-hd">您喜欢的其他颜色：</div>
+                        <ul class="color-pulldown-ul-oth clearfix">
+                            <li data-color="其他颜色">未确定</li>
+                        </ul>
+                    </div>
+                </div>
+            </div> -->
             <div class="fastreg-list">
                 <input class="fastreg-ipt" type="text" placeholder="请输入您的姓名" />
             </div>

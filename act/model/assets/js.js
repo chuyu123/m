@@ -163,6 +163,56 @@ $(function(){
 });*/
 
 //第三版报名
+//选颜色弹窗
+function selectColorPopup(){
+     $("#popup-color").css("height",$(document).height());
+    $("#popup-color").show();
+    window.scrollTo(0,0);
+    $(".popup-tpbm-inside").click(function(e){
+        e.stopPropagation();
+    });
+    $("#popup-color").find(".f-close").click(function(){
+        $('#popup-color').hide();
+    });
+    $("#popup-color").click(function(){
+        $('#popup-color').hide();
+    })
+    $("#nextStep").click(function(){
+        $('#popup-color').hide();
+        tpbm();
+    })
+};
+$(document).ready(function(){
+    var selectColorItem=$("#color-swatch").find("li");
+    selectColorItem.each(function(){
+        var selectColorVal=$(this).attr("data-hex");
+        $(this).css("background",selectColorVal);
+    })
+    selectColorItem.bind("click",function(){
+        if(selectColorItem.hasClass("select-color")){
+            selectColorItem.removeClass("select-color");
+            $(this).addClass("select-color");
+            $("#color-val").text($(this).attr("data-color"));
+        }else{
+            $(this).addClass("select-color");
+            $("#color-val").text($(this).attr("data-color"));
+        }
+    });
+    $("#color-swatch").find("li:first").click();
+});
+//选颜色按钮
+// function selectColorBtn(){
+// var colorItem=$(".color-pulldown-ul li");
+//    colorItem.bind("click",function(){
+//       if($(this).hasClass("select-color")){
+//             colorItem.removeClass("select-color");
+//         }else{
+//               colorItem.removeClass("select-color");
+//             $(this).addClass("select-color");
+//         }
+//     });
+// }
+//登入
 function tpbm(){
     $("#popup-tpbm").css("height",$(document).height());
     $("#popup-tpbm").show();
