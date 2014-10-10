@@ -182,7 +182,7 @@ body{ -webkit-text-size-adjust:none;}
 .content-calc-box{ color:#898989; padding:5px;}
 .content-calc-box p{ padding:10px 0;}
 .content-calc-box p span{ color:#292929;}
-.content-calc-box .btn{ display: block; line-height:30px; border:1px solid #e7b557; border-radius:4px; color:#e7b557; text-align:center; font-size: 1.1em;}
+.content-calc-box .btn{ display: block; line-height:30px; background:#e7b557; border-radius:4px; color:#fff; text-align:center; font-size: 1.1em;}
 .content-calc-box .btn i{ font-size:1.3em;}
 
 
