@@ -1,0 +1,33 @@
+<!--#include file="_head.html"-->
+<body>
+<div class="container">
+    <!--#include file="_header.html"-->
+    <div class="a">11111</div>
+    <!--#include file="_footer.html"-->
+</div>
+
+<!--#include file="_necessity-js.html"-->
+<script src="assets/js/jquery-2.1.0.min.js"></script>
+<script src="assets/js/idangerous.swiper.js"></script>
+<script src="assets/js/idangerous.swiper.3dflow.js"></script>
+<script>
+    //首页幻灯片
+    var mySwiper = new Swiper('#j-slide-wide-container',{
+        slidesPerView:1,
+        autoplay: 5000,
+        loop:true,
+        //Enable 3D Flow
+        tdFlow: {
+            rotate:90,
+            depth:1500
+        }
+    });
+    //乾坤优惠车型
+    var mySwiperfocus = new Swiper('.yhframe', {
+        pagination: '.yhline',
+        loop: true,
+        paginationClickable: true
+    });
+</script>
+</body>
+</html>

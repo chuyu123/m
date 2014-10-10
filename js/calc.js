@@ -258,15 +258,19 @@ $(function(){
         if($("#lxzffs").val() == "ftsq" && $("#j-stage1-tab").find("li").eq(0).hasClass("cur")){
             var lxValue = (dkjeValue * (1 + parseFloat(yhllVal)) / $("#yg").find("option:selected").attr("data-cycle")).toFixed(0);
             $("#lxje-val").text(lxValue);
-            $("#stage1-p").html("贷款购车，首付" + $("#sfk").find("option:selected").text() + "，" + $("#xzyh").find("option:selected").text() + "，贷款按" + $("#yg").find("option:selected").text() + "计算，需首付" + $("#sfk-val").text() + "元 + 必要花费" + $("#settle-byhf").text() + "元，月还款" + $("#lxje-val").text() + "元");
+            $("#stage1-p").html("贷款购车，首付" + $("#sfk").find("option:selected").text() + "，" + $("#xzyh").find("option:selected").text() + "，贷款按" + $("#yg").find("option:selected").text() + "计算，需首付" + $("#sfk-val").text() + "元 + 其他费用" + $("#settle-byhf").text() + "元，月还款" + $("#lxje-val").text() + "元");
             $("#lxje-txt").text("分摊至月供中");
         };
         if($("#lxzffs").val() == "ycxsq" && $("#j-stage1-tab").find("li").eq(0).hasClass("cur")){
             var lxValue = (dkjeValue / $("#yg").find("option:selected").attr("data-cycle")).toFixed(0);
             var ycxLxValue = (dkjeValue * yhllVal).toFixed(0);
             $("#lxje-val").text(lxValue);
-         $("#stage1-p").html("贷款购车，首付" + $("#sfk").find("option:selected").text() + "，" + $("#xzyh").find("option:selected").text() + "，贷款按" + $("#yg").find("option:selected").text() + "计算，需首付" + $("#sfk-val").text() + "元 + 必要花费" + $("#settle-byhf").text() + "元，月还款" + $("#lxje-val").text() + "元" + "<span>，贷款利息一次性支付：" + ycxLxValue + "元</span>");
+         $("#stage1-p").html("贷款购车，首付" + $("#sfk").find("option:selected").text() + "，" + $("#xzyh").find("option:selected").text() + "，贷款按" + $("#yg").find("option:selected").text() + "计算，需首付" + $("#sfk-val").text() + "元 + 其他费用" + $("#settle-byhf").text() + "元，月还款" + $("#lxje-val").text() + "元" + "<span>，贷款利息一次性支付：" + ycxLxValue + "元</span>");
             $("#lxje-txt").text(ycxLxValue + "元");
+
+            var firstValue = parseFloat(sfkValue) + parseFloat(byhfValue) + parseFloat(ycxLxValue);
+            $("#stage1-all-val").text(firstValue);
+            $("#j-calc-nav-val1").text(firstValue);
         };
 
         //第二屏
