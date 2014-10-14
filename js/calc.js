@@ -78,6 +78,7 @@ $("#j-calc-nav-ul").find("li").each(function(i){
 $(".stage-btn").each(function(i){
    $(this).click(function(){
        $("body,html").animate({scrollTop:0},500);
+       calc_get_height($('.calc-blk').eq(i+1));
        if(i == 0){
            setTimeout(function(){to2(i + 1)},600);
        }else if(i == 1){
@@ -89,28 +90,32 @@ $(".stage-btn").each(function(i){
    });
 });
 
-
 //==========================================功能函数，华丽丽的分割线 ヽ(●´∀`●)ﾉ==========================================
 //过渡到当前的动画
 function to1(i){
-    $("#calc-blk-inside").removeClass().addClass("calc-area1");
+    $("#calc-blk-inside").children().removeClass("calc-area");
+    $("#calc-blk-inside").children().eq(0).addClass("calc-area");
     $("#j-calc-nav-ul").find("li").removeClass();
     $("#j-calc-nav-ul").find("li").eq(i).addClass("cur");
 };
 function to2(i){
-    $("#calc-blk-inside").removeClass().addClass("calc-area2");
+    $("#calc-blk-inside").children().removeClass("calc-area");
+    $("#calc-blk-inside").children().eq(1).addClass("calc-area");
     $("#j-calc-nav-ul").find("li").removeClass();
     $("#j-calc-nav-ul").find("li").eq(i-1).addClass("cur-before");
     $("#j-calc-nav-ul").find("li").eq(i).addClass("cur");
 };
 function to3(i){
-    $("#calc-blk-inside").removeClass().addClass("calc-area3");
+    $("#calc-blk-inside").children().removeClass("calc-area");
+    $("#calc-blk-inside").children().eq(2).addClass("calc-area");
+    calc_autosize();
     $("#j-calc-nav-ul").find("li").removeClass();
     $("#j-calc-nav-ul").find("li").eq(i-1).addClass("cur-before");
     $("#j-calc-nav-ul").find("li").eq(i).addClass("cur");
 };
 function to4(i){
-    $("#calc-blk-inside").removeClass().addClass("calc-area4");
+    $("#calc-blk-inside").children().removeClass("calc-area");
+    $("#calc-blk-inside").children().eq(3).addClass("calc-area");
     $("#j-calc-nav-ul").find("li").removeClass();
     $("#j-calc-nav-ul").find("li").eq(i-1).addClass("cur-before");
     $("#j-calc-nav-ul").find("li").eq(i).addClass("cur");
@@ -212,7 +217,7 @@ $(function(){
         //金融服务费
         $("#jrfwf").text((rnum * 0.03).toFixed(0));
         //必要花费
-        var byhfValue = parseFloat($("#gzs").text()) + parseFloat($("#jrfwf").text()) + parseFloat($("#dyfw").text()) + parseFloat($("#spfw").val());
+        var byhfValue = parseFloat($("#gzs").text()) + parseFloat($("#jrfwf").text()) + parseFloat($("#spfw").val());
         $("#settle-byhf").text(byhfValue);
 
         //全款
@@ -234,7 +239,7 @@ $(function(){
                 $("#j-calc-nav-val1").text(firstValue);
                 $("#j-settle-box-ul3").find(".daikuan").css("display","block");
                 //首付合计
-                $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-jrfwf").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-dyfwf").text()) + parseFloat($("#s4-bxje").text()));
+                $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-jrfwf").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-bxje").text()));
                 //车身首付
                 $("#s4-csj-tit").text("车身首付");
                 $("#s4-csj").text($("#sfk-val").text());
@@ -341,7 +346,7 @@ $(function(){
         //上牌服务费
         $("#s4-spfwf").text($("#spfw").val());
         //抵押服务费
-        $("#s4-dyfwf").text($("#dyfw").text());
+        //$("#s4-dyfwf").text($("#dyfw").text());
         //保险金额
         $("#s4-bxje").text($("#j-calc-nav-val2").text());
         //关联第三关 + 加装精品
@@ -354,7 +359,7 @@ $(function(){
             };
             $("#s4-jzjp").text($("#j-calc-nav-val3").text());
             if($("#j-stage1-tab").find("li").eq(0).hasClass("cur")) {
-                $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-jrfwf").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-dyfwf").text()) + parseFloat($("#s4-bxje").text()) + parseFloat($("#s4-jzjp").text()));
+                $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-jrfwf").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-bxje").text()) + parseFloat($("#s4-jzjp").text()));
             }else{
                 $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-bxje").text()) + parseFloat($("#s4-jzjp").text()));
             }
@@ -367,9 +372,9 @@ $(function(){
         $("#s4-jzjp").text($("#j-calc-nav-val3").text());
         //首付合计
         if($("#j-stage1-tab").find("li").eq(0).hasClass("cur")){
-            $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-jrfwf").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-dyfwf").text()) + parseFloat($("#s4-bxje").text()) + parseFloat($("#s4-jzjp").text()));
+            $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-jrfwf").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-bxje").text()) + parseFloat($("#s4-jzjp").text()));
             $(".jzjp-select").bind("click",function(){
-                $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-jrfwf").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-dyfwf").text()) + parseFloat($("#s4-bxje").text()) + parseFloat($("#s4-jzjp").text()));
+                $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-jrfwf").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-bxje").text()) + parseFloat($("#s4-jzjp").text()));
             });
             $("#s4-tit").text("首付合计");
         }else{
@@ -602,7 +607,7 @@ $(function(){
         bxns();
         $("#s4-bxje").text($("#stage2-all-val").text());
         if($("#j-stage1-tab").find("li").eq(0).hasClass("cur")) {
-            $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-jrfwf").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-dyfwf").text()) + parseFloat($("#s4-bxje").text()) + parseFloat($("#s4-jzjp").text()));
+            $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-jrfwf").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-bxje").text()) + parseFloat($("#s4-jzjp").text()));
         }else{
             $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-bxje").text()) + parseFloat($("#s4-jzjp").text()));
         }
@@ -666,7 +671,7 @@ $(function(){
         bxns();
         $("#s4-bxje").text($("#stage2-all-val").text());
         if($("#j-stage1-tab").find("li").eq(0).hasClass("cur")) {
-            $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-jrfwf").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-dyfwf").text()) + parseFloat($("#s4-bxje").text()) + parseFloat($("#s4-jzjp").text()));
+            $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-jrfwf").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-bxje").text()) + parseFloat($("#s4-jzjp").text()));
         }else{
             $("#s4-all").text(parseFloat($("#s4-csj").text()) + parseFloat($("#s4-gzs").text()) + parseFloat($("#s4-spfwf").text()) + parseFloat($("#s4-bxje").text()) + parseFloat($("#s4-jzjp").text()));
         }
@@ -684,6 +689,7 @@ $(function(){
 
 //stage3
 $(function(){
+    isSingle();
     calc_autosize();
     $('.jzjp-list').each(function(){
         $(this).find('li:last').addClass('last');
@@ -747,10 +753,17 @@ function getTaozhuang(obj,hobj){
     var hobj=hobj||'dt span';
     $(obj).each(function(n){
         var prex=n==0?'':'+';
-        html+=prex+$(this).find(hobj).html();
+         var hobjValue=$(this).find(hobj).html();
+         if(typeof(hobjValue)=='undefined'){
+         html=html+'';
+         }else{
+         html=html+prex+hobjValue;
+         }
+       // html+=prex+$(this).find(hobj).html();
     });
     return html;
 }
+
 function getTotalALL(){
     var all=getTotal($('.calc-blk:eq(2) .calc-settle'),'.js .val');
     $('.calc-nav-ul #j-calc-nav-val3').html(all);
@@ -770,12 +783,22 @@ function calc_autosize(){
                 var w=$(this).find('dt').width();
                 $(this).find('dd').css({'width':win_w});
                 if($(this).parents('#j-jzjp-select-normal').length==0)return;
+                console.log($(this));
                 $(this).css({'width':w});
             });
         });
     }
     run();
     $(window).resize(run);
+}
+function isSingle(){
+    if($('#j-jzjp-select-normal').length==0){
+        $("#j-jzjp-cons").children().eq(0).css("display","none");
+        $("#j-jzjp-cons").children().eq(1).css("display","block");
+        console.log($("#j-jzjp-cons").eq(1));
+        $("#j-jzjp-tab").find("li").eq(0).css("display","none");
+        $("#j-jzjp-tab").find("li").eq(1).addClass("calc-single-tab");
+    }
 }
 function calc_get_height(me){
     obj=$(me).hasClass('calc-blk')?me:$(me).parents('.calc-blk');
