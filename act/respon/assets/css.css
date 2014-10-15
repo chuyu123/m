@@ -58,7 +58,9 @@ a { color: #333333; }
 
 body { min-width: 320px; margin: 0 auto; background: #fff; }
 
-.main-page { background: #ebebeb; }
+.bg-page { background: #ebebeb; }
+
+.sub-page { padding-top: 50px; }
 
 /* part iconfont */
 @font-face { font-family: 'iconfont'; font-weight: normal; font-style: normal; src: url(icomoon.woff) format("woff"), url("icomoon.ttf") format("truetype"), url("icomoon.svg#iconfont") format("svg"); }
@@ -73,6 +75,10 @@ body { min-width: 320px; margin: 0 auto; background: #fff; }
 .f-adds:after { content: "\e61e"; }
 
 .f-close:after { content: '\e626'; }
+
+.f-return:after { content: '\E607'; }
+
+.f-home:after { content: '\e616'; }
 
 /*
 Author: piercalex
@@ -187,18 +193,12 @@ Date: 2014-10-13
 .xunwen-box-outside { margin: 13px 10px 0; }
 
 .xunwen-box { width: 100%; border: 1px solid #e0e0e0; border-radius: 5px; display: -moz-box; display: -webkit-box; display: box; text-align: center; }
-
 .xunwen-box p { height: 75px; -moz-box-flex: 1; -webkit-box-flex: 1; box-flex: 1; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
-
 .xunwen-box a { display: block; height: 100%; overflow: hidden; border-left: 1px solid #e0e0e0; color: #666; }
-
 .xunwen-box p:first-child a { border-left: none; }
-
 .xunwen-box i { display: block; width: 50px; height: 35px; margin: 10px auto 0; background: url(xunwen1.png) no-repeat; background-size: 100%; }
-
-.xunwen-box i.i2 { background-image: url(xunwen2.png); }
-
-.xunwen-box i.i3 { background-image: url(xunwen3.png); }
+.xunwen-box i .i2 { background-image: url(xunwen2.png); }
+.xunwen-box i .i3 { background-image: url(xunwen3.png); }
 
 @media only screen and (min-width: 768px) { .jgd-bm-box { float: left; width: 190px; height: 100%; margin: 0 -190px 0 0; padding: 0; border: none; }
   .xunwen-box-outside { margin: 0; }
@@ -226,5 +226,34 @@ Date: 2014-10-13
 .bmbar .txt span { display: block; font-size: 1.3em; color: #FFEC12; }
 .bmbar .f-close { float: left; width: 25px; height: 25px; font-size: 1.8em; padding: 10px 5px 0; color: #a0a0a0; }
 .bmbar a { float: right; border: 1px solid #fff; border-radius: 3px; color: #eee; margin-right: 10px; padding: 8px 10px; }
+
+/*
+Author: piercalex
+Date: 2014-10-13
+*/
+/* header-inside */
+.header-inside { position: fixed; top: 0; left: 0; width: 100%; height: 50px; line-height: 50px; background: rgba(41, 41, 41, 0.8); color: #fff; font-size: 1.2em; text-align: center; font-weight: bold; z-index: 99; }
+.header-inside .return { position: absolute; left: 0; top: 0; width: 50px; height: 50px; border-right: 1px solid #3f3f3f; color: #fff; }
+.header-inside .return i { font-size: 1.9em; font-weight: 400; }
+.header-inside .home { position: absolute; right: 0; top: 0; width: 50px; height: 50px; border-left: 1px solid #3f3f3f; color: #fff; }
+.header-inside .home i { font-size: 1.5em; font-weight: 400; }
+
+/*
+Author: piercalex
+Date: 2014-10-13
+*/
+/* car-console-box */
+.car-console-box .title { padding: 10px 10px 0; }
+.car-console-box .type-tm { background: #ec131c; color: #fff; padding: 2px 5px; }
+.car-console-box .value-box { padding: 0 10px; color: #898989; }
+.car-console-box .value-box li { float: left; width: 60%; padding-top: 5px; }
+.car-console-box .value-box li:nth-child(even) { width: 40%; }
+.car-console-box .value-box .bold { font-weight: 700; color: #e3121a; }
+
+@media only screen and (min-width: 768px) { .header { height: 90px; }
+  .header .logo { width: 210px; margin: 20px 0 0 10px; }
+  .header .bg-zzxctm { float: left; width: 174px; height: 46px; background: url(bg-zzxctm.png) no-repeat; background-size: 100%; margin: 22px 0 0 20px; }
+  .header .f-member { font-size: 2.2em; line-height: 90px; margin: 0 10px 0 20px; }
+  .header .hotline { display: block; } }
 
 /*# sourceMappingURL=css.css.map */
