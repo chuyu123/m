@@ -32,7 +32,7 @@ a{ text-decoration:none;}
 
 body{ -webkit-text-size-adjust:none;}
 .body{ min-width:320px;}
-.bodyinside{ padding-top:50px;}
+.bodyinside{ padding-top:50px;min-height:305px;}
 .header{ height:50px;}
 .header .logo{ float:left; width:132px; height:50px; background:url(../images/logo.png) no-repeat; background-size:100%; text-indent:-987em;}
 .loginarea{ float:right; line-height:50px; padding-right:10px; font-size:1.1em; white-space:nowrap;}
@@ -69,6 +69,7 @@ body{ -webkit-text-size-adjust:none;}
 .f-search-close:after{content: '\e61a';}
 .search-submit{float:left;width:10%;height:37px;line-height:37px;margin-left:4%;text-align:right;}
 .search-submit input{border:none;font-size:1.1em;background:none;}
+.no-result{display:table-cell;vertical-align: middle;height:178px;padding:0 10px;color:#666;}
 /* slide-ver2 */
 .slide-ver2-outside{ position:relative; z-index:90;}
 .slide-ver2{ position:relative; height:256px;}
