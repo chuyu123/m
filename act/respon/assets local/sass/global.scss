@@ -18,8 +18,14 @@ $grayblue : #596076;/* 灰蓝 */
 $lightblue : #3598db;/* 高亮蓝 */
 
 //mixin
+@mixin displaybox{
+  display:-moz-box; display:-webkit-box; display:box;
+}
 @mixin boxsizing{
   -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;
+}
+@mixin flex($length : 1){
+  -moz-box-flex:$length; -webkit-box-flex:$length; box-flex:$length;
 }
 @mixin radius($radius : 2px){
   border-radius:$radius;
@@ -31,7 +37,8 @@ $lightblue : #3598db;/* 高亮蓝 */
 a{ color:$baselinkcolor;}
 .lightbluelinkcolor{ color:$lightblue; text-decoration:underline;}
 body{ min-width:320px; margin:0 auto; background:#fff;}
-.main-page{ background:#ebebeb;}
+.bg-page{ background:#ebebeb;}
+.sub-page{ padding-top:50px;}
 
 /* part iconfont */
 @font-face{ font-family:'iconfont'; font-weight:normal; font-style:normal; src:url(icomoon.woff) format('woff'),url('icomoon.ttf') format('truetype'),url('icomoon.svg#iconfont') format('svg');}
@@ -41,4 +48,6 @@ body{ min-width:320px; margin:0 auto; background:#fff;}
 .f-tolink:after{ content:"\e621";}
 .f-adds:after{ content:"\e61e";}
 .f-close:after{ content: '\e626';}
+.f-return:after{ content: '\E607';}
+.f-home:after{ content: '\e616';}
 
