@@ -4,4 +4,12 @@ Author: piercalex
 Date: 2014-07-11
 */
 
-@import "initialize.scss";//初始化
+@import "initialize.scss";
+@import "global.scss";
+@import "header-box.scss";
+@import "navact-broadcast.scss";//引导页广播栏
+@import "act-li-box.scss";//引导页块元素栏
+@import "xxtyg-box.scss";//线下体验馆
+@import "jgd-bm-box.scss";//底部按钮块
+@import "footer.scss";
+@import "fixed.scss";

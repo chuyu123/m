@@ -1,11 +1,11 @@
 @charset "utf-8";
 /*
 Author: piercalex
-Date: 2014-07-11
+Date: 2014-10-13
 */
 
 body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td,a{ margin:0; padding:0;}
-body,button,input,select,textarea,td{ font-size:14px; line-height:20px; font-family:sans-serif;}
+body,button,input,select,textarea,td{ font-size:14px; line-height:20px; font-family:STHeiTi,"Microsoft YaHei",sans-serif;}
 ul,ol{ list-style:none;}
 input[type=text], input[type=password], input[type=number], input[type=submit], input[type=button]{ -webkit-appearance:none;}
 table{ border-collapse:collapse;}
@@ -17,16 +17,6 @@ a{ text-decoration:none;}
 .fl{ float:left!important;}
 .fr{ float:right!important;}
 .mt10{ margin-top:10px!important;}
-.mt15{ margin-top:15px!important;}
 .mt20{ margin-top:20px!important;}
-.mb30{ margin-bottom:30px!important;}
-.ph10{ padding:0 10px!important;}
 .center{ text-align:center!important;}
-.f07{ font-size:1.1em!important;}/*9.8px*/
-.f08{ font-size:1.2em!important;}/*11.2px*/
-.f09{ font-size:1.3em!important;}/*12.6px*/
-.f11{ font-size:1.1em!important;}/*15.4px*/
-.f12{ font-size:1.2em!important;}/*16.8px*/
-.f13{ font-size:1.3em!important;}/*18.2px*/
 
-body{ background:red;  }
