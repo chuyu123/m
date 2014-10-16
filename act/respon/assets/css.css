@@ -38,6 +38,11 @@ a { text-decoration: none; }
 .center { text-align: center !important; }
 
 /*
+z-index infomation
+header-inside bmbar 99
+popup 999
+*/
+/*
 Author: piercalex
 Date: 2014-10-13
 */
@@ -80,7 +85,25 @@ body { min-width: 320px; margin: 0 auto; background: #fff; }
 
 .f-home:after { content: '\e616'; }
 
-.f-detla-bm:after { content: '\e601'; }
+.f-down:after { content: "\e61c"; }
+
+.f-share:after { content: '\E604'; }
+
+.f-like:after { content: '\E600'; }
+
+.f-calc:after { content: "\e622"; }
+
+.f-arrright:after { content: "\e619"; }
+
+.f-chain:after { content: '\E602'; }
+
+.f-acttel:after { content: "\e61b"; }
+
+.f-weibo:after { content: '\e60f'; }
+
+.f-qzone:after { content: '\e611'; }
+
+.f-txweibo:after { content: '\e610'; }
 
 /*
 Author: piercalex
@@ -223,7 +246,7 @@ Author: piercalex
 Date: 2014-10-13
 */
 /* bmbar */
-.bmbar { position: fixed; left: 0; bottom: 0; width: 100%; height: 30px; line-height: 9px; padding: 10px 0 5px; background: rgba(0, 0, 0, 0.8); z-index: 900; }
+.bmbar { position: fixed; left: 0; bottom: 0; width: 100%; height: 30px; line-height: 9px; padding: 10px 0 5px; background: rgba(0, 0, 0, 0.8); z-index: 99; }
 .bmbar .txt { float: left; color: #fff; font-size: .8em; color: #fff; }
 .bmbar .txt span { display: block; font-size: 1.3em; color: #FFEC12; }
 .bmbar .f-close { float: left; width: 25px; height: 25px; font-size: 1.8em; padding: 10px 5px 0; color: #a0a0a0; }
@@ -233,30 +256,39 @@ Date: 2014-10-13
 Author: piercalex
 Date: 2014-10-13
 */
-/* header-inside */
-.header-inside { position: fixed; top: 0; left: 0; width: 100%; height: 50px; line-height: 50px; background: rgba(41, 41, 41, 0.8); color: #fff; font-size: 1.2em; text-align: center; font-weight: bold; z-index: 99; }
-.header-inside .return { position: absolute; left: 0; top: 0; width: 50px; height: 50px; border-right: 1px solid #3f3f3f; color: #fff; }
-.header-inside .return i { font-size: 1.9em; font-weight: 400; }
-.header-inside .home { position: absolute; right: 0; top: 0; width: 50px; height: 50px; border-left: 1px solid #3f3f3f; color: #fff; }
-.header-inside .home i { font-size: 1.5em; font-weight: 400; }
+/* popup-box */
+.popup-box { display: none; position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); z-index: 999; }
 
-/*
-Author: piercalex
-Date: 2014-10-13
-*/
-/* car-console-box */
-.car-console-box .title { padding: 10px 10px 0; }
-.car-console-box .type-tm { background: #ec131c; color: #fff; padding: 2px 5px; }
-.car-console-box .value-box { padding: 0 10px; color: #898989; }
-.car-console-box .value-box li { float: left; width: 60%; padding-top: 5px; }
-.car-console-box .value-box li:nth-child(even) { width: 40%; }
-.car-console-box .value-box .bold { font-weight: 700; color: #e3121a; }
+.popup-inside { position: fixed; left: 50%; width: 300px; background: #fff; border-radius: 4px; margin-left: -150px; }
 
-@media only screen and (min-width: 768px) { .header { height: 90px; }
-  .header .logo { width: 210px; margin: 20px 0 0 10px; }
-  .header .bg-zzxctm { float: left; width: 174px; height: 46px; background: url(bg-zzxctm.png) no-repeat; background-size: 100%; margin: 22px 0 0 20px; }
-  .header .f-member { font-size: 2.2em; line-height: 90px; margin: 0 10px 0 20px; }
-  .header .hotline { display: block; } }
+.popup-hd { position: relative; height: 40px; line-height: 40px; text-align: center; font-size: 1.3em; padding-top: 5px; border-bottom: 1px solid #eee; }
+
+.popup-hd .title { display: block; width: 100%; height: 100%; }
+
+.popup-hd .f-close { position: absolute; right: 0; top: 0; width: 16px; height: 16px; line-height: 16px; font-size: .9em; padding: 10px; color: #a0a0a0; }
+
+.popup-bd { padding: 10px; }
+
+.popup-fd { border-top: 1px solid #eee; padding: 10px; }
+.popup-fd .btn1, .popup-fd .btn2 { display: inline-block; width: 100%; line-height: 40px; background: #c71a1a; border: none; color: #fff; font-size: 1.2em; border-radius: 5px; text-align: center; }
+.popup-fd .btn2 { width: 44%; margin: 0 3%; }
+
+/* 分享给朋友 */
+.share-ul { display: -moz-box; display: -webkit-box; display: box; text-align: center; padding: 20px 0 10px; }
+
+.share-ul li { -moz-box-flex: 1; -webkit-box-flex: 1; box-flex: 1; }
+
+.share-ul a { color: #a0a0a0; }
+
+.share-ul i { display: block; margin: 0 auto 20px; font-size: 2.8em; }
+
+.f-weibo:after { content: '\e60f'; color: #e4423f; }
+
+.f-qzone:after { content: '\e611'; color: #1a78fe; }
+
+.f-txweibo:after { content: '\e610'; color: #1fb9f9; }
+
+@media only screen and (min-width: 768px) { .popup-inside { width: 600px; margin-left: -300px; } }
 /*
 Date: 2014-10-15
 */
@@ -442,5 +474,90 @@ Date: 2014-10-13
 @media only screen and (min-width: 768px) { .require-box { height: 300px; margin: 13px 12px 0; padding-right: 190px; background: #fff; border: 1px solid #d3d3d3; }
   .gcxq-box { background: url(../assets/gcxq.jpg) no-repeat 50% 50%; background-size: cover; float: left; height: 200px; width: 100%; }
   .jgd-bm-box .gcxq, .jgd-bm-box .gcxq-info { display: none; } }
+/*
+Author: piercalex
+Date: 2014-10-13
+*/
+/* header-inside */
+.header-inside { position: fixed; top: 0; left: 0; width: 100%; height: 50px; line-height: 50px; background: rgba(41, 41, 41, 0.8); color: #fff; font-size: 1.2em; text-align: center; font-weight: bold; z-index: 99; }
+.header-inside a { position: absolute; top: 0; width: 50px; height: 50px; color: #fff; }
+.header-inside a i { font-weight: 400; }
+.header-inside .return { left: 0; }
+.header-inside .return i { font-size: 1.9em; }
+.header-inside .home { right: 0; }
+.header-inside .home i { font-size: 1.5em; }
+
+/*
+Author: piercalex
+Date: 2014-10-13
+*/
+/* car-console-box */
+.car-console-box .title { padding: 10px 10px 5px; }
+.car-console-box .type-tm { background: #ec131c; color: #fff; margin-right: 10px; padding: 2px 5px; border-radius: 2px; }
+.car-console-box .value-box { padding: 0 10px; color: #898989; }
+.car-console-box .value-box li { float: left; width: 60%; padding-top: 5px; }
+.car-console-box .value-box li:nth-child(even) { width: 40%; }
+.car-console-box .value-box .bold { font-weight: 700; color: #e3121a; }
+.car-console-box .value-box .f-down { color: green; vertical-align: baseline; }
+.car-console-box .value-box .length { color: #e3121a; }
+.car-console-box .calc-box { margin: 10px 10px 0; color: #898989; }
+.car-console-box .calc-box a { display: block; line-height: 30px; background: #e7b557; border-radius: 2px; color: #fff; text-align: center; font-size: 1.1em; }
+.car-console-box .calc-box a i { font-size: 1.3em; }
+.car-console-box .calc-box p { margin-top: 5px; }
+.car-console-box .btn-apply { display: block; line-height: 36px; margin: 7px 10px; color: #fff; background: #c71a1a; font-size: 1.3em; text-align: center; border-radius: 2px; }
+.car-console-box .btns { margin: 0 10px; }
+.car-console-box .btns a { float: left; border: 1px solid #e6e6e6; border-radius: 4px; background: #fff; width: 48%; height: 35px; line-height: 35px; overflow: hidden; color: #292929; }
+.car-console-box .btns a i { float: left; color: #fcbb01; margin: 0 10px; font-size: 1.1em; }
+.car-console-box .btns a:nth-child(2) { float: right; }
+
+/* calc-pad-box */
+.calc-pad-box { display: none; float: right; width: 390px; height: 100%; margin-right: -400px; }
+.calc-pad-box .link { display: block; width: 100%; height: 100%; background: url(bg-calc-pad.png) no-repeat; background-size: 100%; }
+.calc-pad-box .machine { width: 100%; height: 100%; background: url(bg-calc-machine.png) no-repeat; background-size: 100%; }
+
+/* servicetel */
+.servicetel { display: block; overflow: hidden; color: #fff; line-height: 30px; background: #479c02; border-radius: 4px; margin: 0 10px; text-align: center; }
+
+@media only screen and (min-width: 768px) { .console-calc-frame { height: 300px; overflow: hidden; margin: 12px 12px 0; padding-right: 400px; }
+  .car-console-box { float: left; height: 100%; background: #fff; padding: 10px; }
+  .car-console-box .title { font-size: 1.2em; }
+  .car-console-box .value-box { padding: 10px; font-size: 1.1em; }
+  .car-console-box .value-box li { padding-top: 10px; }
+  .car-console-box .calc-box { display: none; }
+  .car-console-box .btn-apply { line-height: 54px; font-size: 1.5em; font-weight: 700; border-radius: 6px; }
+  .car-console-box .btns { margin-top: 15px; }
+  .calc-pad-box { display: block; }
+  .car-list-infomation { margin: 0 12px; }
+  .fruit-box { margin: 0 12px; }
+  .servicetel { line-height: 48px; font-size: 1.2em; } }
+/*
+Author: piercalex
+Date: 2014-10-13
+*/
+/* fruit */
+.fruit-hd { background: #fff; border-bottom: 1px solid #febc02; padding: 10px; font-size: 1.1em; line-height: 1.1em; }
+.fruit-hd i { display: inline-block; color: #fcbb01; background: #fff; border-radius: 50%; margin-right: 5px; font-size: 1.2em; vertical-align: top; }
+
+.fruit-tit-ul { background: #fff; }
+.fruit-tit-ul li a { display: block; height: 40px; line-height: 40px; overflow: hidden; color: #333; padding: 0 20px; border-bottom: 1px solid #eee; }
+.fruit-tit-ul li a i { float: right; color: #666; }
+.fruit-tit-ul li:last-child a { border-bottom: none; }
+
+.fruit-img-ul li { float: left; position: relative; float: left; width: 150px; height: 202px; margin: 10px 5px 0; background: #f7f7f7; border-radius: 2px; }
+.fruit-img-ul .link { display: block; width: 100%; }
+.fruit-img-ul img { display: block; width: 100%; border-radius: 2px; }
+.fruit-img-ul .tit { display: block; height: 40px; overflow: hidden; color: #111; margin: 0 5px; }
+.fruit-img-ul .val { float: left; color: #ec131c; font-size: .9em; line-height: 30px; margin-left: 5px; }
+.fruit-img-ul .val b { font: 400 1.6em arial; }
+.fruit-img-ul .val .t { display: block; font-size: .9em; color: #6d6d6c; height: 20px; overflow: hidden; line-height: 20px; }
+.fruit-img-ul .btnact { position: absolute; right: 2px; bottom: 5px; line-height: 30px; background: #5396dd; border-radius: 20px; color: #fff; padding: 0 10px; }
+
+.morecars .fruit-bd { background: #fff; height: 222px; overflow-x: auto; }
+
+@media only screen and (min-width: 768px) { .header { height: 90px; }
+  .header .logo { width: 210px; margin: 20px 0 0 10px; }
+  .header .bg-zzxctm { float: left; width: 174px; height: 46px; background: url(bg-zzxctm.png) no-repeat; background-size: 100%; margin: 22px 0 0 20px; }
+  .header .f-member { font-size: 2.2em; line-height: 90px; margin: 0 10px 0 20px; }
+  .header .hotline { display: block; } }
 
 /*# sourceMappingURL=css.css.map */

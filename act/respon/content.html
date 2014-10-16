@@ -28,21 +28,30 @@
                 <li>
                     <span class="tit">市场均价:</span>888.88万
                 </li>
+                <li>
+                    <span class="tit">当前上路价:</span>888.88万
+                </li>
             </ul>
+            <div class="calc-box">
+                <a href="#"><i class="f-calc"></i>购车计算</a>
+                <p>*购车费用包括 车身价+金融+保险+加装精品</p>
+            </div>
             <a href="#" class="btn-apply">立即抢报</a>
             <div class="btns clearfix">
-                <a href="#"><i class="f-share"></i>分享给朋友</a>
+                <a href="javascript:egShare.share('1','2','3','4')"><i class="f-share"></i>分享给朋友</a>
                 <a href="#"><i class="f-like"></i>值得买+1</a>
             </div>
         </div>
         <!--/car-console-box-->
-        <!--calc-box-->
-        <div class="calc-box">
+        <!--calc-pad-box-->
+        <div class="calc-pad-box">
+            <a href="#" class="link"></a>
+            <!--<div class="machine"></div>-->
         </div>
-        <!--/calc-box-->
+        <!--/calc-pad-box-->
     </div>
     <!--car-list-infomation-->
-    <div class="car-list-infomation">
+    <div class="car-list-infomation mt10">
         <ul class="fruit-tit-ul clearfix">
             <li><a href=""><i class="f-arrright"></i>购车金融</a></li>
             <li><a href=""><i class="f-arrright"></i>车型点评</a></li>
@@ -55,7 +64,7 @@
     </div>
     <!--/car-list-infomation-->
     <!--fruit-box-->
-    <div class="fruit-box">
+    <div class="fruit-box mt10">
         <div class="fruit-hd"><i class="f-chain"></i>乾坤评测</div>
         <div class="fruit-bd">
             <ul class="fruit-tit-ul clearfix">
@@ -66,39 +75,36 @@
     </div>
     <!--/fruit-box-->
     <!--fruit-box-->
-    <div class="fruit-box">
-        <div class="fruit-hd"><i class="f-chain"></i>大家还看的这些车型</div>
+    <div class="fruit-box morecars mt10">
+        <div class="fruit-hd"><i class="f-chain"></i>大家都在看的车型</div>
         <div class="fruit-bd">
-            <ul class="fruit-img-ul clearfix" id="data-c333">
+            <ul class="fruit-img-ul clearfix" id="morecars-ul">
                 <li>
-                    <a href="">
+                    <a class="link" href="">
                         <img src="http://115.29.184.142:81/weixin-image/tmp/20140820/c2cc5368a1df483aac3fe6aabf075844/0_160x120" alt="">
                         <span class="tit">雪铁龙 爱丽舍 2014款 1.6L 手动时尚型</span>
                     </a>
-                    <div class="clearfix">
-                        <a href="" class="btnact">+对比</a>
-                        <span class="val">
-                            <span class="tit">一口价:</span>
-                            <b>7.63</b>万
-                        </span>
-                    </div>
+                    <span class="val">
+                        <span class="t">一口价:</span>
+                        <b>7.63</b>万
+                    </span>
+                    <a href="" class="btnact">+对比</a>
                 </li>
             </ul>
-            <script>data("data-c333",9)</script>
+            <script>data("morecars-ul",9)</script>
         </div>
     </div>
     <!--/fruit-box-->
+    <a href="" class="servicetel mt20"><i class="f-acttel"></i>服务热线400-696-5151</a>
     <!--#include file="_footer.html"-->
 </div>
 <!--#include file="_fixed.html"-->
+<!--#include file="_popup.html"-->
 
 <script src="assets/jquery-2.1.0.min.js"></script>
 <script src="assets/js.js"></script>
 <script>
-$(function(){
-    new scrollEffect($("#j-navact-broadcast-ul"),"hor",10,4000,4000).Start();
-    new scrollEffect($(".link-bms-ul"),"hor",10,4000,4000).Start();
-});
+var egShare = new popupFunc('分享到','<ul class="share-ul"><li><a href=""><i class="f-weibo"></i>新浪微博</a></li><li><a href=""><i class="f-qzone"></i>QQ空间</a></li><li><a href=""><i class="f-txweibo"></i>腾讯微博</a></li></ul>');
 </script>
 </body>
 </html>

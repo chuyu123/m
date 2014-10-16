@@ -1,0 +1,45 @@
+@charset "utf-8";
+/*
+Author: piercalex
+Date: 2014-10-13
+*/
+
+/* fruit */
+.fruit-hd{ background:#fff; border-bottom:1px solid #febc02; padding:10px; font-size:1.1em; line-height:1.1em;
+  i{ display:inline-block; color:#fcbb01; background:#fff; border-radius:50%; margin-right:5px; font-size:1.2em; vertical-align: top;}
+}
+.fruit-tit-ul{ background:#fff;
+  li{
+    a{ display:block; height:40px; line-height:40px; overflow: hidden; color:#333; padding:0 20px; border-bottom:1px solid #eee;
+      i{ float:right; color:#666;}
+    }
+  }
+  li:last-child a{ border-bottom:none;}
+}
+.fruit-img-ul{
+  li{ float:left; position:relative; float:left; width:150px; height:202px; margin:10px 5px 0; background:#f7f7f7; @include radius;}
+  .link{ display:block; width:100%;}
+  img{ display:block; width:100%; @include radius;}
+  .tit{ display:block; height:40px; overflow:hidden; color:#111; margin:0 5px;}
+  .val{ float:left; color:#ec131c; font-size:.9em; line-height: 30px; margin-left:5px;
+    b{ font:400 1.6em arial;}
+    .t{ display:block; font-size:.9em; color:#6d6d6c; height:20px; overflow:hidden; line-height:20px;}
+  }
+  .btnact{ position:absolute; right:2px; bottom:5px; line-height: 30px; background:#5396dd; border-radius:20px; color:#fff; padding:0 10px;}
+}
+.morecars{
+  .fruit-bd{ background:#fff; height:222px; overflow-x:auto;}
+}
+
+@media only screen and (min-width:768px){
+  .header{ height:90px;
+    .logo{ width:210px; margin:20px 0 0 10px;}
+    .bg-zzxctm{ float:left; width:174px; height:46px; background:url(bg-zzxctm.png) no-repeat; background-size:100%; margin:22px 0 0 20px;}
+    .f-member{ font-size:2.2em; line-height: 90px; margin:0 10px 0 20px;}
+    .hotline{ display:block;}
+  }
+}
+
+
+
+
