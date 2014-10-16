@@ -1,5 +1,5 @@
 act/respon/_bulid/
-!act/respon/_bulid/*.js
-!act/respon/_bulid/*.json
+!act/respon/_bulid/Gruntfile.js
+!act/respon/_bulid/package.json
 act/respon/respon static html/
 act/respon/index.php
