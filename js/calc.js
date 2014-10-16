@@ -336,7 +336,11 @@ $(function(){
 
         //第四屏
         $("#to-stage1-p").text($("#stage1-p").text() + "。首付" + $("#stage1-all-val").text() + "元。");
-        $("#to-stage2-p").text($(".stage3-p").eq(0).text() + "+" + $(".stage3-p").eq(1).text());
+        if($('#j-jzjp-select-normal').length==0){
+            $("#to-stage2-p").text($(".stage3-p").eq(1).text());
+        }else{
+            $("#to-stage2-p").text($(".stage3-p").eq(0).text() + "+" + $(".stage3-p").eq(1).text());
+        }
         $("#s4-jqx-val").text($("#jqx-val").text());
         $("#s4-ccs-val").text($("#ccs-val").text());
         //购置税
@@ -355,7 +359,12 @@ $(function(){
             if($(".stage3-p").eq(0).text() == ""){
                 $("#to-stage2-p").text($(".stage3-p").eq(1).text());
             }else if($(".stage3-p").eq(1).text() != ""){
-                $("#to-stage2-p").text($(".stage3-p").eq(0).text() + "+" + $(".stage3-p").eq(1).text());
+                if($('#j-jzjp-select-normal').length==0){
+                    $("#to-stage2-p").text( $(".stage3-p").eq(1).text());
+                }else{
+                    $("#to-stage2-p").text($(".stage3-p").eq(0).text() + "+" + $(".stage3-p").eq(1).text());
+                }
+                
             };
             $("#s4-jzjp").text($("#j-calc-nav-val3").text());
             if($("#j-stage1-tab").find("li").eq(0).hasClass("cur")) {
@@ -366,8 +375,16 @@ $(function(){
             $("#j-calc-nav-val4").text($("#s4-all").text());
         });
         $("#to-stage2-p").text($(".stage3-p").eq(0).text());
+        if($('#j-jzjp-select-normal').length==0){
+            $("#to-stage2-p").text($(".stage3-p").eq(1).text());
+        };
         if($(".stage3-p").eq(1).text() != ""){
-            $("#to-stage2-p").text($(".stage3-p").eq(0).text() + "+" + $(".stage3-p").eq(1).text());
+            if($('#j-jzjp-select-normal').length==0){
+                $("#to-stage2-p").text($(".stage3-p").eq(1).text());
+            }else{
+                 $("#to-stage2-p").text($(".stage3-p").eq(0).text() + "+" + $(".stage3-p").eq(1).text());
+            }
+           
         };
         $("#s4-jzjp").text($("#j-calc-nav-val3").text());
         //首付合计
@@ -795,7 +812,6 @@ function isSingle(){
     if($('#j-jzjp-select-normal').length==0){
         $("#j-jzjp-cons").children().eq(0).css("display","none");
         $("#j-jzjp-cons").children().eq(1).css("display","block");
-        console.log($("#j-jzjp-cons").eq(1));
         $("#j-jzjp-tab").find("li").eq(0).css("display","none");
         $("#j-jzjp-tab").find("li").eq(1).addClass("calc-single-tab");
     }
