@@ -2,4 +2,4 @@ act/respon/_bulid/
 !act/respon/_bulid/*.js
 !act/respon/_bulid/*.json
 act/respon/respon static html/
-act/respon/*.php
+act/respon/index.php
