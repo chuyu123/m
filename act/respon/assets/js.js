@@ -97,7 +97,31 @@ popupFunc.prototype = {
 
 
 
-
+//navScrollTo
+$(function ($) {
+    $(window).scroll(function () {
+        if (($(window).scrollTop() > 623 && $(".side-box").width()<768) || ($(window).scrollTop() > 350 && $(".side-box").width()<768)) {
+            $('#j-nav-position').addClass('selected');
+            $("#j-nav-position").css("width",$(document).width());
+        } else {
+            $('#j-nav-position').removeClass('selected');
+            $("#j-nav-position").css("width","auto");
+        };
+    });
+    $('#j-nav-ul').onePageNav({
+        filter: ':not(.external)',
+        scrollThreshold: 0.25,
+        scrollOffset: 0,
+        end: function () {
+            var $left = $('.current').position().left;
+            $('#j-nav-ul .back').stop().animate({'left': $left}, "fast");
+        },
+        scrollChange: function () {
+            var $left = $('.current').position().left;
+            $('#j-nav-ul .back').stop().animate({'left': $left}, "fast");
+        }
+    });
+});
 
 $(function(){
 
@@ -112,4 +136,27 @@ function response(){
 
 };
 
+function side(){
+    var slide = document.getElementById("j-slide-ver2");
+    var x = document.getElementsByClassName("swiper-slide");
+    slide.style.height = slide.offsetWidth * 0.42 + "px";//640*270
+}
+
 window.onload = window.onresize = response;
+
+
+//活动规则查看
+$(function(){
+    $(".banner").click(function(){
+        var hei = document.documentElement.clientHeight;
+        console.log(hei)
+        $("#j-popup-v2-static").css("height",hei);
+        $("#j-popup-v2-static").show();
+        x = ( document.documentElement.clientHeight - $("#j-popup-v2-inside-static").height() ) / 2;
+        $("#j-popup-v2-inside-static").css("top",x);
+        alert(document.body.clientHeight+"_"+document.documentElement.clientHeight)
+    });
+    $(".f-close").click(function(){
+        $("#j-popup-v2-static").hide();
+    });
+});
