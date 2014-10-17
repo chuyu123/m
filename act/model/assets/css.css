@@ -202,8 +202,7 @@ body{ min-width:320px; max-width:768px; margin:0 auto; background:url(../assets/
 .xunwen-box i{ display:block; width:50px; height:35px; margin:10px auto 0; background:url(../assets/xunwen1.png) no-repeat; background-size:100%;}
 .xunwen-box i.i2{ background-image:url(../assets/xunwen2.png);}
 .xunwen-box i.i3{ background-image:url(../assets/xunwen3.png);}
-.servicetel{ display:block; overflow:hidden; color:#fff; background:#dfdcd9; border-radius:5px; margin:10px 50px; padding:4px; text-align:center;}
-.servicetel span{ display:block; width:100%; line-height:30px; background:#479c02; border-radius:4px;}
+.servicetelbtn-baoming
 
 /* ====================================(◔౪◔)内页(◔౪◔)==================================== */
 /* topbar */
