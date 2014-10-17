@@ -744,10 +744,9 @@ Date: 2014-10-15
 /* slide-ver2 */
 .act-slide {
   position: relative;
-  z-index: 90; }
+  z-index: 1; }
   .act-slide .slide-ver2 {
-    position: relative;
-    height: 135px; }
+    position: relative; }
     .act-slide .slide-ver2 .pagination-focus {
       position: absolute;
       right: 0;
@@ -870,7 +869,7 @@ Date: 2014-10-15
 /* mod-slide */
 .mod-slide {
   position: relative;
-  z-index: 90; }
+  z-index: 1; }
   .mod-slide .mod-slide-frame {
     position: relative;
     width: 100%;
@@ -955,15 +954,15 @@ Date: 2014-10-15
 
 @media only screen and (min-width: 768px) {
   .side-box {
-    width: 100%; }
+    padding-right: 310px; }
 
   .act-slide {
-    float: left;
-    width: 65%; }
+    float: left; }
 
   .act-wrap {
     float: right;
-    width: 260px; } }
+    width: 300px;
+    margin: 0 -310px 0 10px; } }
 /*
 Date: 2014-10-15
 */
@@ -1427,23 +1426,14 @@ Date: 2014-10-15
 Author: piercalex
 Date: 2014-10-13
 */
-.gcxq {
-  display: block;
-  line-height: 35px;
-  overflow: hidden;
-  color: #fff;
-  background: #c71a1a;
-  text-align: center;
-  border-radius: 4px;
-  margin: 0 10px;
-  font-size: 1.1em;
-  width: 100%; }
+.mt25 {
+  margin-top: 25px; }
 
-.gcxq-info {
-  color: #666;
+.require-box .gcxq-info {
   padding: 5px 10px 0;
-  font-size: .9em;
-  line-height: 17px; }
+  font-size: 0.9em;
+  line-height: 17px;
+  color: #666; }
 
 @media only screen and (min-width: 768px) {
   .require-box {
@@ -1454,10 +1444,10 @@ Date: 2014-10-13
     border: 1px solid #d3d3d3; }
 
   .gcxq-box {
-    background: url(../assets/gcxq.jpg) no-repeat 50% 50%;
-    background-size: cover;
+    background: url(../assets/gcxq.jpg) no-repeat 0 bottom;
+    background-size: 100%;
     float: left;
-    height: 200px;
+    height: 100%;
     width: 100%; }
 
   .jgd-bm-box .gcxq, .jgd-bm-box .gcxq-info {
