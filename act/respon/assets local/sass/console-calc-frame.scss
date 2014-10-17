@@ -5,7 +5,7 @@ Date: 2014-10-13
 */
 
 /* car-console-box */
-.car-console-box{
+.car-console-box{ width:100%; @include boxsizing;
   .title{ padding:10px 10px 5px;}
   .type-tm{ background:#ec131c; color:#fff; margin-right:10px; padding:2px 5px; @include radius;}
   .value-box{ padding:0 10px; color:#898989;
