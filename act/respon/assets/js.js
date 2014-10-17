@@ -38,12 +38,18 @@ function popupFunc(hd,bd,fd){
         popupBd = popup.getElementsByClassName("popup-bd")[0],
         popupFd = popup.getElementsByClassName("popup-fd")[0],
         popupClose = popup.getElementsByClassName("f-close")[0];
-    popupTitle.innerHTML = this.hd;
-    popupBd.innerHTML = this.bd;
-    if(popupFd.innerHTML == ""){
-        popupFd.parentNode.removeChild(popupFd);
-    }else{
-        popupFd.innerHTML = this.fd;
+    this.public = function(){
+        popupTitle.innerHTML = this.hd;
+        popupBd.innerHTML = this.bd;
+        if(this.fd == ""){
+            if(!document.getElementById("popup-box").getElementsByClassName("popup-fd")[0]){
+                return false;
+            }else{
+                popupFd.parentNode.removeChild(popupFd);
+            };
+        }else{
+            popupFd.innerHTML = this.fd;
+        };
     };
 };
 popupFunc.prototype = {
@@ -58,6 +64,7 @@ popupFunc.prototype = {
         };
     },
     share : function(desc,url,pic,carsn){
+        this.public();
         popup.style.display = "block";
         popupInside.style.top = (document.documentElement.clientHeight - popupInside.offsetHeight) / 2 + "px";
         popupClose.onclick = function(){

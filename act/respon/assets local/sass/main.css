@@ -1517,6 +1517,9 @@ Date: 2014-10-13
     .car-console-box .value-box .bold {
       font-weight: 700;
       color: #e3121a; }
+    .car-console-box .value-box .bold2 {
+      font-weight: 700;
+      color: #555; }
     .car-console-box .value-box .f-down {
       color: green;
       vertical-align: baseline; }
