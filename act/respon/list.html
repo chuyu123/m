@@ -43,59 +43,60 @@
                 </a>
             </div>
             <!--/act-area-->
-                <div class="act-area mt10">
-        <div class="act-area-hd">选择乾坤的理由</div>
-        <!--liyou-box-->
-        <div class="mod-slide liyou-box mt10">
-            <div class="mod-slide-frame swiper-container" id="liyou-frame">
-                <ul class="mod-slide-ul swiper-wrapper noSwipingClass clearfix">
-                    <li class="swiper-slide">
-                        <div class="liyou">
-                            <div class="area clearfix">
-                                <i class="i1"></i>
-                                <span class="tit">全国联保</span>
-                                <p class="txt txt-vertical">乾坤所售车型，均享全国联保</p>
-                            </div>
-                            <div class="info clearfix">
-                                <p><span>限时价</span>活动当日限时价！</p>
-                                <p><span>一口价</span>线上线下一个价！</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="swiper-slide">
-                        <div class="liyou">
-                            <div class="area clearfix">
-                                <i class="i2"></i>
-                                <span class="tit">正品保证</span>
-                                <p class="txt txt-vertical">乾坤车型，均为厂家所售 正品新车</p>
-                            </div>
-                            <div class="info clearfix">
-                                <p><span>限时价</span>活动当日限时价！</p>
-                                <p><span>一口价</span>线上线下一个价！</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="swiper-slide">
-                        <div class="liyou">
-                            <div class="area clearfix">
-                                <i class="i3"></i>
-                                <span class="tit">厂家质保</span>
-                                <p class="txt txt-vertical">非厂家质保新车，乾坤承诺无条件退货</p>
-                            </div>
-                            <div class="info clearfix">
-                                <p><span>限时价</span>活动当日限时价！</p>
-                                <p><span>一口价</span>线上线下一个价！</p>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+            <div class="act-area mt10">
+                <div class="act-area-hd">选择乾坤的理由</div>
+                <!--liyou-box-->
+                <div class="mod-slide liyou-box mt10">
+                    <div class="mod-slide-frame swiper-container" id="liyou-frame">
+                        <ul class="mod-slide-ul swiper-wrapper noSwipingClass clearfix">
+                            <li class="swiper-slide">
+                                <div class="liyou">
+                                    <div class="area clearfix">
+                                        <i class="i1"></i>
+                                        <span class="tit">全国联保</span>
+                                        <p class="txt txt-vertical">乾坤所售车型，均享全国联保</p>
+                                    </div>
+                                    <div class="info clearfix">
+                                        <p><span>限时价</span>活动当日限时价！</p>
+                                        <p><span>一口价</span>线上线下一个价！</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="liyou">
+                                    <div class="area clearfix">
+                                        <i class="i2"></i>
+                                        <span class="tit">正品保证</span>
+                                        <p class="txt txt-vertical">乾坤车型，均为厂家所售 正品新车</p>
+                                    </div>
+                                    <div class="info clearfix">
+                                        <p><span>限时价</span>活动当日限时价！</p>
+                                        <p><span>一口价</span>线上线下一个价！</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="liyou">
+                                    <div class="area clearfix">
+                                        <i class="i3"></i>
+                                        <span class="tit">厂家质保</span>
+                                        <p class="txt txt-vertical">非厂家质保新车，乾坤承诺无条件退货</p>
+                                    </div>
+                                    <div class="info clearfix">
+                                        <p><span>限时价</span>活动当日限时价！</p>
+                                        <p><span>一口价</span>线上线下一个价！</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pagination-focus" id="liyou-focus"></div>
+                </div>
+                <!--/liyou-box-->
             </div>
-            <div class="pagination-focus" id="liyou-focus"></div>
-        </div>
-        <!--/liyou-box-->
-    </div>
         </div>
     </div>
+ <div class="product-box">
      <div class="nav-box mt10 clearfix">
         <div class="nav-position" id="j-nav-position">
             <ul class="nav-ul clearfix" id="j-nav-ul">
@@ -106,8 +107,7 @@
             </ul>
         </div>
     </div>
-
-    <div class="act-area" id="stage2">
+    <div class="act-area" id="stage1">
         <div class="act-area-hd">10万以内预售车</div>
         <div class="act-area-bd">
             <div class="bchdcx-box">
@@ -384,6 +384,7 @@
         </ul>
         <script>data("data-c5ll",1)</script>
     </div>
+    </div>
     <!--/act-box-->
     <div class="act-area-box clearfix">
         <!--act-area-->
@@ -542,6 +543,33 @@ window.onresize = window.onload = function(){
         grabCursor: true,
         paginationClickable: true
     });
+</script>
+<script type="text/javascript">
+    //navScrollTo
+$(function ($) {
+    $(window).scroll(function () {
+        if (($(window).scrollTop() > 623 && $(".side-box").width()<768) || ($(window).scrollTop() > 350 && $(".side-box").width()<768)) {
+            $('#j-nav-position').addClass('selected');
+            $("#j-nav-position").css("width",$(document).width());
+        } else {
+            $('#j-nav-position').removeClass('selected');
+            $("#j-nav-position").css("width","auto");
+        };
+    });
+    $('#j-nav-ul').onePageNav({
+        filter: ':not(.external)',
+        scrollThreshold: 0.25,
+        scrollOffset: 0,
+        end: function () {
+            var $left = $('.current').position().left;
+            $('#j-nav-ul .back').stop().animate({'left': $left}, "fast");
+        },
+        scrollChange: function () {
+            var $left = $('.current').position().left;
+            $('#j-nav-ul .back').stop().animate({'left': $left}, "fast");
+        }
+    });
+});
 </script>
 </body>
 </html>

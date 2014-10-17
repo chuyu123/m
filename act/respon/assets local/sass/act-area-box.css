@@ -1,0 +1,84 @@
+/*
+Syntax error: Undefined mixin 'boxsizing'.
+        on line 7 of act-area-box.scss, in `boxsizing'
+        from line 7 of act-area-box.scss
+
+2: /*
+3: Date: 2014-10-15
+4: *\/
+5: .act-area-box{margin:12px 12px 0;}
+6: .zc-ul{
+7: 	a{ display:block; width:100%; border-bottom:1px solid #eee; height:40px; line-height:40px; overflow:hidden; font-size: .9em; color:#333; padding:0 10px; @include boxsizing;}
+8: 	span{ background:#292929; color:#fff; font-size:.8em; line-height:18px; margin-right:6px; padding:0 3px; @include radius(2px);}
+9: }
+10: .baoming{ position:relative;}
+11: .baoming-mask{ width:100%; height:183px; position:absolute; z-index:100;}
+12: .baoming-box{ border-bottom:1px solid #eee; padding:10px; overflow:hidden; color:#333; font-size:.9em;
+
+Backtrace:
+act-area-box.scss:7:in `boxsizing'
+act-area-box.scss:7
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:320:in `block in visit_mixin'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/stack.rb:98:in `block in with_mixin'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/stack.rb:121:in `with_frame'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/stack.rb:98:in `with_mixin'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:318:in `visit_mixin'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/stack.rb:79:in `block in with_base'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/stack.rb:121:in `with_frame'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/stack.rb:79:in `with_base'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:152:in `visit'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:389:in `block (2 levels) in visit_rule'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:389:in `map'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:389:in `block in visit_rule'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:387:in `visit_rule'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/stack.rb:79:in `block in with_base'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/stack.rb:121:in `with_frame'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/stack.rb:79:in `with_base'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:152:in `visit'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:389:in `block (2 levels) in visit_rule'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:389:in `map'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:389:in `block in visit_rule'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:387:in `visit_rule'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/stack.rb:79:in `block in with_base'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/stack.rb:121:in `with_frame'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/stack.rb:79:in `with_base'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:152:in `visit'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/base.rb:52:in `map'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:161:in `block in visit_children'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:160:in `visit_children'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:180:in `visit_root'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:151:in `visit'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:8:in `visit'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/root_node.rb:36:in `css_tree'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/root_node.rb:20:in `render'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/engine.rb:274:in `render'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/plugin/compiler.rb:414:in `update_stylesheet'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/plugin/compiler.rb:189:in `block in update_stylesheets'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/plugin/compiler.rb:186:in `each'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/plugin/compiler.rb:186:in `update_stylesheets'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/plugin.rb:82:in `update_stylesheets'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/exec.rb:489:in `watch_or_update'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/exec.rb:346:in `process_result'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/exec.rb:43:in `parse'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/exec.rb:22:in `parse!'
+d:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.3.5/bin/scss:13:in `<top (required)>'
+d:/RailsInstaller/Ruby1.9.3/bin/scss:23:in `load'
+d:/RailsInstaller/Ruby1.9.3/bin/scss:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Undefined mixin 'boxsizing'.\A         on line 7 of act-area-box.scss, in `boxsizing'\A         from line 7 of act-area-box.scss\A \A 2: /*\A 3: Date: 2014-10-15\A 4: */\A 5: .act-area-box{margin:12px 12px 0;}\A 6: .zc-ul{\A 7: 	a{ display:block; width:100%; border-bottom:1px solid #eee; height:40px; line-height:40px; overflow:hidden; font-size: .9em; color:#333; padding:0 10px; @include boxsizing;}\A 8: 	span{ background:#292929; color:#fff; font-size:.8em; line-height:18px; margin-right:6px; padding:0 3px; @include radius(2px);}\A 9: }\A 10: .baoming{ position:relative;}\A 11: .baoming-mask{ width:100%; height:183px; position:absolute; z-index:100;}\A 12: .baoming-box{ border-bottom:1px solid #eee; padding:10px; overflow:hidden; color:#333; font-size:.9em;"; }
