@@ -54,6 +54,7 @@ function popupFunc(hd,bd,fd){
 };
 popupFunc.prototype = {
     transmit : function(){
+        this.public();
         popup.style.display = "block";
         popupInside.style.top = (document.documentElement.clientHeight - popupInside.offsetHeight) / 2 + "px";
         popupClose.onclick = function(){
