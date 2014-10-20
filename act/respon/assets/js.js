@@ -213,3 +213,27 @@ function tpbm(){
         $('#popup-tpbm').hide();
     })
 };
+
+//排序
+$(function(){
+    var tmp = 0;
+    $(".act-ul2-sel").bind("click",function(){
+        if(tmp == 0){
+            $(this).addClass("act-ul2-sel-open");
+            $(".ul > li").each(function(i){
+                $(this).bind("click",function(e){
+                    var val = $(this).html();
+                    $(this).parents(".act-ul2-sel").find("span").html(val);
+                    $(".ul > li").eq(i).siblings().removeClass("cur").end().addClass("cur");
+                    $(this).parent().parent().removeClass("act-ul2-sel-open");
+                    e.stopPropagation();
+                    tmp = 0;
+                });
+            });
+            tmp = 1;
+        }else{
+            $(this).removeClass("act-ul2-sel-open");
+            tmp = 0;
+        };
+    });
+});
