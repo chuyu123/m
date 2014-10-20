@@ -83,7 +83,7 @@ add by all
 .product-list{margin-bottom:10px;padding:0 8px;
 	.product-item{position:relative; float:left; width:46%; background:#fff; padding-bottom:3px;@include radius(2px);margin:10px 2%;box-shadow: 1px 1px 1px #f4f4f4,-1px -1px 1px #f4f4f4,-1px 1px 1px #f4f4f4,1px -1px 1px #f4f4f4;}
 	.tip{ position:absolute; left:5px; top:0; display:block; width:45px; height:33px; line-height:12px; background:url(../assets/down.png) no-repeat; background-size:100%; font-size:.8em; color:#fff; padding-top:2px; font-weight:700; text-align:center;}
-	.none{width:143px;float:left;@include radius(2px);border:1px solid #e3e3e3;height:223px; background:#fff url(../assets/linone.png) no-repeat 50% 100%; background-size:100%;margin:10px 5px 0;}
+	.none{width:46%;float:left;@include radius(2px);height:223px; box-shadow: 1px 1px 1px #f4f4f4,-1px -1px 1px #f4f4f4,-1px 1px 1px #f4f4f4,1px -1px 1px #f4f4f4;background:#fff url(../assets/linone.png) no-repeat 50% 100%; background-size:100%;margin:10px 2%;}
 	img{ display:block; border-radius:2px 2px 0 0; margin-left: -1px;width:100%;}
 	.tit{display:block; color:#000; height:34px; line-height:17px; overflow:hidden; margin:10px 5px 3px; font-size:.9em;
 		em{font-style:normal; background:#c71a1a; color:#fff; border-radius:1px; font-size:.9em; margin-right:2px; padding:0 2px;}
