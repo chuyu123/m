@@ -142,7 +142,7 @@ function side(){
     slide.style.height = slide.offsetWidth * 0.42 + "px";//640*270
 }
 
-window.onload = window.onresize = response;
+window.onload = window.onresize = response=side;
 
 
 //活动规则查看
