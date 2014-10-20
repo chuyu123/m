@@ -80,7 +80,7 @@ Date: 2014-10-15
 
 /* Product List Vertical*/
 .product-list{margin-bottom:10px;
-	.product-item{position:relative; float:left; width:143px; background:#fff; padding-bottom:3px; border:1px solid #e3e3e3; border-radius:2px;margin:10px 5px 0;box-shadow: 1px 1px 1px #f4f4f4,-1px -1px 1px #f4f4f4,-1px 1px 1px #f4f4f4,1px -1px 1px #f4f4f4;}
+	.product-item{position:relative; float:left; width:46px; background:#fff; padding-bottom:3px;border-radius:2px;margin:10px 5px 0;box-shadow: 1px 1px 1px #f4f4f4,-1px -1px 1px #f4f4f4,-1px 1px 1px #f4f4f4,1px -1px 1px #f4f4f4;}
 	.tip{ position:absolute; left:5px; top:0; display:block; width:45px; height:33px; line-height:12px; background:url(../assets/down.png) no-repeat; background-size:100%; font-size:.8em; color:#fff; padding-top:2px; font-weight:700; text-align:center;}
 	.none{width:143px;float:left;@include radius(2px);border:1px solid #e3e3e3;height:223px; background:#fff url(../assets/linone.png) no-repeat 50% 100%; background-size:100%;margin:10px 5px 0;}
 	img{ display:block; border-radius:2px 2px 0 0; margin-left: -1px;}
@@ -107,7 +107,7 @@ Date: 2014-10-15
 @media only screen and (min-width:768px){
   .product-box{margin:12px 12px 0;}
   .product-list{
-		.product-item{width:30%;margin:10px 1% 0 2%;}
+		.product-item{width:31.33333%;margin:10px 1% 0;}
 		.none{display:none}
 	}
 }
