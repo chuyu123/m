@@ -16,6 +16,7 @@ function scrollEffect(obj,category,minLength,intervalTime,animateSpeed) {
         var img = self.Ul.children().eq(0);
         if(category == "hor"){
             var left = img.width();
+            console.log(left)
             img.animate({ "marginLeft": (-1 * left) + "px" }, animateSpeed, function () {
                 $(this).css("margin-left", "auto").appendTo(self.Ul);
             });
@@ -129,7 +130,11 @@ $(function(){
     //内页用统计元素宽度
     var x = $("#morecars-ul").find("li").width() + 10;
     var y = $("#morecars-ul").find("li").length;
-    $("#morecars-ul").css("width",x*y)
+    $("#morecars-ul").css("width",x*y);
+//    alert($(".act-wrap").height());
+    $(".bg-zzxctm").click(function(){
+        alert(document.body.clientWidth + "-" + document.documentElement.clientHeight)
+    })
 })
 
 function response(){
@@ -138,9 +143,11 @@ function response(){
     //列表页用slide
     (function(){
         if(!document.getElementById("j-slide-ver2")) return false;
-        var slide = document.getElementById("j-slide-ver2");
-        var x = document.getElementsByClassName("swiper-slide");
-        slide.style.height = slide.offsetWidth * 0.42 + "px";//640*270
+        if(document.body.clientWidth < 767){
+            var slide = document.getElementById("j-slide-ver2");
+            var x = document.getElementsByClassName("swiper-slide");
+            slide.style.height = slide.offsetWidth * 0.42 + "px";//640*270
+        };
     })();
 };
 
