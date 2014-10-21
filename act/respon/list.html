@@ -33,7 +33,7 @@
             <!--act-area-->
             <div class="act-area">
                 <div class="act-area-hd">
-                    活动要点
+                    <span class="tit">活动要点</span>
                 </div>
                 <a class="hdgz-link" href="">
                     <span class="txt">
@@ -44,7 +44,9 @@
             </div>
             <!--/act-area-->
             <div class="act-area mt10">
-                <div class="act-area-hd">选择乾坤的理由</div>
+                <div class="act-area-hd">
+                    <span class="tit">选择乾坤的理由</span>
+                </div>
                 <!--liyou-box-->
                 <div class="mod-slide liyou-box mt10">
                     <div class="mod-slide-frame swiper-container" id="liyou-frame">
@@ -108,7 +110,9 @@
         </div>
     </div>
     <div class="act-area" id="stage1">
-        <div class="act-area-hd">10万以内预售车</div>
+        <div class="act-area-hd">
+            <span class="tit">10万以内预售车</span>
+        </div>
         <div class="act-area-bd">
             <div class="bchdcx-box">
                 <div class="bchdcx-tit"><i class="f-i"></i>限时价已包含支付意向金直降2000元的优惠限时价已包含支付意向金直降2000元的优惠</div>
@@ -247,7 +251,9 @@
     </div>
     <!--/act-box-->
     <div class="act-area mt10" id="stage2">
-        <div class="act-area-hd">20万预售车</div>
+        <div class="act-area-hd">
+            <span class="tit">20万预售车</span>
+        </div>
         <div class="act-area-bd">
             <div class="bchdcx-box">
                 <div class="bchdcx-tit">本场活动车型</div>
@@ -390,7 +396,7 @@
         <!--act-area-->
         <div class="act-area mt10">
             <div class="act-area-hd">
-                更多抢车活动
+                <span class="tit">更多抢车活动</span>
             </div>
             <ul class="zc-ul">
                 <li>
@@ -414,67 +420,19 @@
         <!--act-area-->
         <div class="act-area mt10">
             <div class="act-area-hd">
-                活动最新报名
+                <span class="tit">活动最新报名</span>
             </div>
-            <div class="baoming">
-                <div class="baoming-mask"></div>
-                <!--slide-ver2-->
-                <div class="slide-ver2-baoming">
-                    <div class="slide-ver2" id="j-slide-ver2">
-                        <div class="slide-ver2-frame" id="j-slide-ver2-frame-hdzxbm">
-                            <ul class="slide-ver2-ul swiper-wrapper">
-                                <li class="swiper-slide">
-                                    <div class="baoming-box">
-                                        <div class="tit">别克 昂科拉ENCORE 2014款 1.4T 手动两驱都市进取版</div>
-                                        <dl class="member">
-                                            <dt>李**</dt>
-                                            <dd>159*****396</dd>
-                                        </dl>
-                                    </div>
-                                    <div class="baoming-box">
-                                        <div class="tit">别克 昂科拉ENCORE 2014款 1.4T 手动两驱都市进取版</div>
-                                        <dl class="member">
-                                            <dt>李**</dt>
-                                            <dd>159*****396</dd>
-                                        </dl>
-                                    </div>
-                                    <div class="baoming-box">
-                                        <div class="tit">别克 昂科拉ENCORE 2014款 1.4T 手动两驱都市进取版</div>
-                                        <dl class="member">
-                                            <dt>李**</dt>
-                                            <dd>159*****396</dd>
-                                        </dl>
-                                    </div>
-                                </li>
-                                <li class="swiper-slide">
-                                    <div class="baoming-box">
-                                        <div class="tit">2别克 昂科拉ENCORE 2014款 1.4T 手动两驱都市进取版</div>
-                                        <dl class="member">
-                                            <dt>李**</dt>
-                                            <dd>159*****396</dd>
-                                        </dl>
-                                    </div>
-                                    <div class="baoming-box">
-                                        <div class="tit">2别克 昂科拉ENCORE 2014款 1.4T 手动两驱都市进取版</div>
-                                        <dl class="member">
-                                            <dt>李**</dt>
-                                            <dd>159*****396</dd>
-                                        </dl>
-                                    </div>
-                                    <div class="baoming-box">
-                                        <div class="tit">2别克 昂科拉ENCORE 2014款 1.4T 手动两驱都市进取版</div>
-                                        <dl class="member">
-                                            <dt>李**</dt>
-                                            <dd>159*****396</dd>
-                                        </dl>
-                                    </div>
-                                </li>
-                            </ul>
+            <div class="hdzxbm">
+                <ul class="hdzxbm-ul clearfix" id="hdzxbm-ul">
+                    <li>
+                        <div class="info">
+                            <span class="name">李**</span>
+                            <span class="tel">159****2222</span>
                         </div>
-                        <div class="pagination-focus" id="j-slide-pgfocus-hdzxbm"></div>
-                    </div>
-                </div>
-                <!--/slide-ver2-->
+                        <div class="tit">本田  雅阁  2014款 2.0L EX 豪华版本田  雅阁  2014款 2.0L EX 豪华版</div>
+                    </li>
+                </ul>
+                <script>data("hdzxbm-ul",9);</script>
             </div>
         </div>
         <!--/act-area-->
@@ -500,7 +458,7 @@
     </div>
     <!--#include file="_footer.html"-->
 </div>
-<!--#include file="_fixed.html"-->
+<!--#include file="_bmbar.html"-->
 
 <script src="../../js/jquery-2.1.0.min.js"></script>
 <script src="../../js/jquery.navScrollTo.min.js"></script>
@@ -520,20 +478,8 @@
         loop: true,
         autoplay: 3000,
     });
-    //活动最新报名
-    var mySwiperfocus = new Swiper('#j-slide-ver2-frame-hdzxbm', {
-        pagination: '#j-slide-pgfocus-hdzxbm',
-        loop: true,
-        noSwiping: true,
-        autoplay: 60000,
-    });
-</script>
-<script>
-    var mySwiperfocus = new Swiper('.us-brand-frame', {
-        pagination: '.us-brand-btn',
-        loop: true,
-        grabCursor: true,
-        paginationClickable: true
+    $(function(){
+        new scrollEffect($("#hdzxbm-ul"),"ver",10,5000,5000).Start();
     });
 </script>
 </body>
