@@ -14,8 +14,8 @@ Date: 2014-10-13
   a{ display:block; height:100%; overflow:hidden; border-left:1px solid #e0e0e0; color:#666;}
   p:first-child a{ border-left: none;}
   i{ display:block; width:50px; height:35px; margin:10px auto 0; background:url(xunwen1.png) no-repeat; background-size:100%;
-    .i2{ background-image:url(xunwen2.png);}
-    .i3{ background-image:url(xunwen3.png);}
+    &.i2{ background-image:url(xunwen2.png);}
+    &.i3{ background-image:url(xunwen3.png);}
   }
 }
 

@@ -5,10 +5,10 @@ Date: 2014-10-13
 */
 
 /* header */
-.header{ height:50px; background:#fff;
+.header{ height:50px; line-heihght:50px; background:#fff; overflow: hidden;
   .logo{ float:left; width:105px; margin:12px 0 0 5px;}
   .f-member{ float:left; display:inline; font-size:1.5em; color:#ce0000; margin-right:5px;}
-  .hotline{ display:none; float:right; line-height:90px; font-size:1.3em; color:#666;
+  .hotline{ display:none; float:right; line-height:90px; font-size:1.2em; color:#666;
     .bg{ float:left; width:60px; height:42px; background:url(xunwen2.png) no-repeat; background-size:100%; margin-top:24px;}
   }
 }
@@ -17,11 +17,14 @@ Date: 2014-10-13
 }
 
 @media only screen and (min-width:768px){
-  .header{ height:90px;
+  .header{ height:90px; line-height:90px;
     .logo{ width:210px; margin:20px 0 0 10px;}
     .bg-zzxctm{ float:left; width:174px; height:46px; background:url(bg-zzxctm.png) no-repeat; background-size:100%; margin:22px 0 0 20px;}
     .f-member{ font-size:2.2em; line-height: 90px; margin:0 10px 0 20px;}
     .hotline{ display:block;}
+    .loginarea{
+      a{ line-height:90px; font-size:1.2em;}
+    }
   }
 }
 
