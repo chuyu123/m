@@ -29,6 +29,7 @@ a{ text-decoration:none;}
 .f-tolink:after{ content:"\e621";}
 .f-calc:after{ content:"\e622";}
 .f-right-fine:after{ content: "\e625";}
+.f-help:after{content: "\e62b";}
 
 body{ -webkit-text-size-adjust:none;}
 .body{ min-width:320px;}
@@ -91,6 +92,9 @@ body{ -webkit-text-size-adjust:none;}
 .libox .cla{ height:39px; line-height:43px; background:url(../images/rp.png); border-bottom:1px solid #febc02; color:#292929; font-size:1.2em;}
 .libox .cla .hot-num{ color:#e5121a;}
 .libox .cla .clear{ float:right; font-size:.8em; line-height: 20px; margin:7px 10px 0 0; padding:2px 8px; border:1px solid #dcdcdc; color:#808080; border-radius:2px; background:-moz-linear-gradient(#f9f9f9,#e6e6e6); background:-webkit-linear-gradient(#f9f9f9,#e6e6e6); background:linear-gradient(#f9f9f9,#e6e6e6);}
+.libox .cla .left{float:left;}
+.libox .cla .right{float:right;padding-right:15px;}
+.libox .cla .f-help{color:#febc02;font-size:1.1em;}
 .libox .time, .selbar{ height:30px; line-height:32px; border-bottom:1px solid #d1d1d1; background:#ebebeb; color:#f18235; padding:0 10px;}
 .libox .time i{ display:inline-block; width:24px; height:20px; line-height:18px; font-style:normal; margin:0 2px; color:#fff; text-align:center; background:url(../images/ico9.png) no-repeat; background-size:100%; letter-spacing:4px; padding-left:2px; font-size:1.2em; white-space:nowrap;}
 .libox .ico-clock{ float:left; width:12px; height:14px; background:url(../images/ico7.png) no-repeat; background-size:100%; margin:9px 5px 0 0;}
@@ -101,7 +105,7 @@ body{ -webkit-text-size-adjust:none;}
 .licon .tit{ float:left; color:#292929; font-size:1.1em; line-height:1.2em;}
 .licon .txt{ float:left; width:100%; min-height:20px; max-height:30px; line-height:15px; overflow:hidden; font-size:.9em; color:#6d6d6c; padding-top:5px;}
 .licon .price{ float:left; color:#898989; font-size:.9em; padding-top:5px;}
-.licon .price em{ font-size:.9em; font-style:normal; color:#e3121a;w}
+.licon .price em{ font-size:.9em; font-style:normal; color:#e3121a;}
 .licon .price b{ font:400 1.6em arial;}
 .licon .price i{ font-style:normal; text-decoration:line-through;}
 .btns{ padding:15px 10px 0;}
@@ -228,6 +232,41 @@ body{ -webkit-text-size-adjust:none;}
 .more-ul .btn, .more-ul .btnact{ float:right; line-height: 30px; background:#e5121a; border-radius:20px; color:#fff; padding:0 10px;}
 .more-ul .btnact{ background:#5396dd;}
 
+/* 汽车详情中情报模块 */
+.winner-box{margin-bottom:20px;}
+.winner-top{position:relative;}
+.winner-banner{margin:0 14px;background:#ffe2bd;height:30px;position:absolute;bottom:32px;width:92%;margin:0 4%;}
+.winner-box .top{background:url(../images/cxTopBg.png) no-repeat;background-size:100%;height:120px;position:relative;}
+.winner-box .top .title{padding:5px;position:absolute;bottom:0;width:100%;margin:0 4%;}
+.winner-box .btm{background:url(../images/cxBtmBg.png) no-repeat 0 center;background-size:100%;}
+.winner-box .btm li{padding:8px 5px;border-bottom:1px dotted #b7b7b7;margin:0 4%;background-color:#ffe2bd;}
+.winner-box ul li span{float:left;}
+.winner-box .model,.winner-box .con{width:30%;}
+.winner-box .member,.winner-box .price{width:20%;}
+.winner-box .btm .border-none{border-bottom:none;text-align:left;}
+.winner-box b{color:#cb302b;}
+.winner-box a{display:inline-block;border:1px solid #ffd298;border-radius:5px;background:#fff;padding:5px 8px;width:105px;height:20px;text-align:center;color:#e17230;}
+.winner-box .price-btn{margin-right:25px;}
+.winner-no-con{background:url(../images/cxNoConBg.png) no-repeat;background-size:100%;width:100%;height:200px;color:#666;padding-top:100px;}
+.winner-box  .winner-no-con li span{float:none;color:#c71a1a;}
+.winner-no-con li{padding:12px 25px;}
+
+/* 汽车情报员我要报价页面 */
+.other-price-box{padding:18px 15px 0;}
+.other-price-box li{padding:2px 0;}
+.other-price-box .price-sel,.other-price-box .price-ipt{color:#a9a9a9;-moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;border:1px solid #999;border-radius:3px;font-size:1.2em;margin-top:6px;padding:6px 10px 5px; width:95%;}
+.price-ipt-box{display:inline-block;margin-top:6px;}
+.price-ipt-box .price-ipt{width:65%;float:left;margin:0;}
+.price-ipt-box .price-text{width:30%;float:left;padding-left:10px;}
+.price-ipt-box .price-text span{background:#c71a1a;border-radius:2px;color:#fff;display:block;font-size:0.8em;line-height:14px;margin:4px 2px 0 0;padding:0 2px;width:35px;}
+.other-price-box li b{color:#c71a1a;}
+.other-price-box .upload-ipt{background:#f0f0f0;display:block;margin:20px 0 10px 4%;border:none;border-radius:3px;padding:8px 10px;-moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;width:95%;}
+.other-price-box .upload-btn{border-radius:3px;border:1px solid #c71a1a;color:#c71a1a;background-color:#fff;padding:5px 10px;margin-left:4%;float:left;}
+.other-price-box .help{color:#326cf1;font-size:1.2em;float:right;margin-top:4px;}
+.other-price-box .help a{text-decoration:underline;color:#326cf1;}
+.other-price-box .submit{background:#c71a1a;color:#fff;border-radius:3px;border:none;width:100%;padding:5px 0;margin-top:35px;display:block;text-align:center;}
+
+
 /*delete*/
 .operatebox{ padding:5px 10px 0;}
 .operatebox .btnarea{ float:right; width:70px; margin-right:1px;}
@@ -272,6 +311,7 @@ body{ -webkit-text-size-adjust:none;}
 .morecontent .corbox .price .val i{ font-size:.7em; font-style:normal; margin-right:3px;}
 .morecontent .yhc-more{ display:block; margin:5px 10px 0; padding:10px 0; color:#BD3B3B; text-align:center;}
 .moreinfobar-another .ico-more{ -moz-transform:rotate(90deg); -webkit-transform:rotate(90deg); transform:rotate(90deg);}
+.moreinfobox .xq-banner{background:url(../images/xq-banner.png) no-repeat;background-size:100%;height:47px;}
 
 
 /* appearance-box */
@@ -1129,6 +1169,22 @@ body{ -webkit-text-size-adjust:none;}
 .ecoupon-box .unused .right{color:#fff;background:url(../images/ecouponUnused.png) no-repeat;background-size:cover;}
 .ecoupon-box .expired .right{color:#555;background:url(../images/ecouponExpired.png) no-repeat;background-size:cover;}
 .ecoupon-box .inused .right{color:#fff;background:url(../images/ecouponInused.png) no-repeat;background-size:cover;}
+
+/* 提交成功 页面 */
+.success-box{padding:30px;color:#666;}
+.success-box .tit{color: #292929;font-size: 1.5em;line-height: 35px;margin: 0 auto 20px;overflow: hidden;text-align: center;width:260px;}
+.success-box .tit i{background: url("../images/right.png") no-repeat scroll 0 0 / 100% auto rgba(0, 0, 0, 0);float: left;height: 35px;margin: 0 10px 0 62px;width: 35px;}
+.success-box .tit span{float:left;}
+.success-list {padding-left:20px;}
+.success-list li{list-style-type: disc;padding:15px 0;}
+.success-list li a{color:#326cf1;text-decoration: underline;}
+
+/* 汽车情报员说明 页面 */
+.instruce-box .instruce-banner img{width:100%;background-size:100%;margin-bottom:-15px;}
+.instruce-box .tit{background:url(../images/agentsTitBg.png) no-repeat;background-size:100%;width:116px;height:28px;line-height:22px;color:#fff;text-align: center;margin:0 auto;font-size:1.1em;position:relative;}
+.instruce-box ul{margin:15px 22px;}
+.instruce-box ul li{color:#666;font-size:1.1em;padding:2px 0;}
+.instruce-box ul li span{color:#c71a1a;}
 
 
 /* =========================活动模板相关========================= */
