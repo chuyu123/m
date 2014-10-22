@@ -7,7 +7,7 @@ Date: 2014-10-13
 /* act-li-box */
 .act-li{ float:left; width:100%; margin-top: 13px;
   .act-li-inside{ width: 100%; border-top: 1px solid #d3d3d3; border-bottom: 1px solid #d3d3d3; background: #fff;}
-  .link{ display: block;}
+  .link{ display: block; margin:0 10px;}
   img{ display:block; width: 100%;}
   .link-bms{ border-bottom:1px dotted #666; height:20px; overflow:hidden; margin:8px 10px;}
   .link-bms-ul{ display: block; width:200%;
@@ -17,11 +17,11 @@ Date: 2014-10-13
   }
   .status{ display:block; margin:8px 15px; color:#666;}
 }
-.act-li-hd{ height: 44px; line-height:44px; overflow:hidden;
+.act-li-hd{ height: 44px; line-height:44px; overflow:hidden; padding:0 10px;
   .more { float: right; color: #666; margin-right: 5px; font-size: 1.1em;
     i{ display:inline-block; vertical-align:top; color:#c71a1a; margin-left:2px;}
   }
-  .tit{ float: left; font-size: 1.5em; line-height:20px; font-weight: 700; color: #c71a1a; margin:12px 0 12px 5px; padding-left:5px; border-left:2px solid #c71a1a;}
+  .tit{ float: left; font-size: 1.5em; line-height:20px; font-weight: 700; color: #c71a1a; margin:12px 0 12px; padding-left:5px; border-left:2px solid #c71a1a;}
   .tit2{ float:left; line-height: 47px; color:#666;}
 }
 .act-li-end{ display:none; float:left; width:50%; @include boxsizing; margin-top:13px; padding:0 12px 0 6px;}

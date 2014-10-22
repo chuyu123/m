@@ -170,7 +170,9 @@ Date: 2014-10-13
 /* header */
 .header {
   height: 50px;
-  background: #fff; }
+  line-heihght: 50px;
+  background: #fff;
+  overflow: hidden; }
   .header .logo {
     float: left;
     width: 105px;
@@ -185,7 +187,7 @@ Date: 2014-10-13
     display: none;
     float: right;
     line-height: 90px;
-    font-size: 1.3em;
+    font-size: 1.2em;
     color: #666; }
     .header .hotline .bg {
       float: left;
@@ -206,7 +208,8 @@ Date: 2014-10-13
 
 @media only screen and (min-width: 768px) {
   .header {
-    height: 90px; }
+    height: 90px;
+    line-height: 90px; }
     .header .logo {
       width: 210px;
       margin: 20px 0 0 10px; }
@@ -222,7 +225,10 @@ Date: 2014-10-13
       line-height: 90px;
       margin: 0 10px 0 20px; }
     .header .hotline {
-      display: block; } }
+      display: block; }
+    .header .loginarea a {
+      line-height: 90px;
+      font-size: 1.2em; } }
 /* nav */
 .nav {
   position: relative;
@@ -330,7 +336,8 @@ Date: 2014-10-13
     border-bottom: 1px solid #d3d3d3;
     background: #fff; }
   .act-li .link {
-    display: block; }
+    display: block;
+    margin: 0 10px; }
   .act-li img {
     display: block;
     width: 100%; }
@@ -365,7 +372,8 @@ Date: 2014-10-13
 .act-li-hd {
   height: 44px;
   line-height: 44px;
-  overflow: hidden; }
+  overflow: hidden;
+  padding: 0 10px; }
   .act-li-hd .more {
     float: right;
     color: #666;
@@ -382,7 +390,7 @@ Date: 2014-10-13
     line-height: 20px;
     font-weight: 700;
     color: #c71a1a;
-    margin: 12px 0 12px 5px;
+    margin: 12px 0 12px;
     padding-left: 5px;
     border-left: 2px solid #c71a1a; }
   .act-li-hd .tit2 {
@@ -461,7 +469,7 @@ Date: 2014-10-13
   height: 165px;
   margin-top: 10px;
   padding-bottom: 10px;
-  background: url(http://m.qk.cc/mobile_res/images/xxtyg-pic.jpg) no-repeat 50% 50%; }
+  background: url(xxtyg-pic.jpg) no-repeat 50% 50%; }
 
 .xxtyg-fd {
   padding-top: 10px;
@@ -1195,9 +1203,49 @@ Date: 2014-10-15
     .liyou-box .pagination-focus .swiper-active-switch {
       background: #999; }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
   .side-box {
-    height: 251px;
+    height: 198px;
+    overflow: hidden;
+    padding-right: 290px;
+    margin: 13px 12px 0; }
+
+  .act-slide {
+    float: left;
+    width: 100%;
+    height: 100%; }
+
+  .act-slide .slide-ver2 {
+    height: 100%; }
+
+  .act-wrap {
+    float: right;
+    width: 280px;
+    margin: 0 -290px 0 10px; }
+    .act-wrap .act-area:nth-child(2) {
+      margin-top: 0 !important; }
+
+  .act-area .hdgz-link {
+    margin: 5px 10px 0; }
+    .act-area .hdgz-link p {
+      font-size: .9em;
+      height: 15px;
+      line-height: 15px;
+      overflow: hidden; }
+
+  .liyou-box {
+    width: 100%;
+    margin-top: 0 !important; }
+    .liyou-box .liyou {
+      width: 260px; }
+    .liyou-box i {
+      width: 50px;
+      height: 55px; }
+    .liyou-box .tit {
+      width: 200px; } }
+@media only screen and (min-width: 1024px) {
+  .side-box {
+    height: 291px;
     overflow: hidden;
     padding-right: 310px;
     margin: 13px 12px 0; }
@@ -1213,7 +1261,12 @@ Date: 2014-10-15
   .act-wrap {
     float: right;
     width: 300px;
-    margin: 0 -310px 0 10px; } }
+    margin: 0 -310px 0 10px; }
+
+  .hdgz-link .txt {
+    display: block;
+    height: 65px;
+    overflow: hiden; } }
 /*
 Date: 2014-10-15
 add by all
@@ -1735,7 +1788,8 @@ Date: 2014-10-13
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
   .car-console-box .title {
-    padding: 10px 10px 5px; }
+    margin-bottom: 5px;
+    padding: 10px 10px 0; }
   .car-console-box .type-tm {
     background: #ec131c;
     color: #fff;
@@ -1867,6 +1921,8 @@ Date: 2014-10-13
     background: #fff;
     padding: 10px; }
     .car-console-box .title {
+      height: 20px;
+      overflow: hidden;
       font-size: 1.2em; }
     .car-console-box .value-box {
       padding: 10px;
@@ -1987,22 +2043,8 @@ Date: 2014-10-13
   height: 222px;
   overflow-x: auto; }
 
-@media only screen and (min-width: 768px) {
-  .header {
-    height: 90px; }
-    .header .logo {
-      width: 210px;
-      margin: 20px 0 0 10px; }
-    .header .bg-zzxctm {
-      float: left;
-      width: 174px;
-      height: 46px;
-      background: url(bg-zzxctm.png) no-repeat;
-      background-size: 100%;
-      margin: 22px 0 0 20px; }
-    .header .f-member {
-      font-size: 2.2em;
-      line-height: 90px;
-      margin: 0 10px 0 20px; }
-    .header .hotline {
-      display: block; } }
+@media only screen and (min-width: 1024px) {
+  .fruit-tit-ul li a {
+    height: 60px;
+    line-height: 60px;
+    font-size: 1.2em; } }
