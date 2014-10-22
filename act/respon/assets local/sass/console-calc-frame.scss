@@ -6,7 +6,7 @@ Date: 2014-10-13
 
 /* car-console-box */
 .car-console-box{ width:100%; @include boxsizing;
-  .title{ padding:10px 10px 5px;}
+  .title{ margin-bottom:5px; padding:10px 10px 0;}
   .type-tm{ background:#ec131c; color:#fff; margin-right:10px; padding:2px 5px; @include radius;}
   .value-box{ padding:0 10px; color:#898989;
     li{ float:left; width:60%; padding-top:5px;}
@@ -46,7 +46,7 @@ Date: 2014-10-13
 @media only screen and (min-width:768px){
   .console-calc-frame{ height:300px; overflow:hidden; margin:12px 12px 0; padding-right:400px;}
   .car-console-box{ float:left; height:100%; background:#fff; padding:10px;
-    .title{ font-size:1.2em;}
+    .title{ height:20px; overflow:hidden; font-size:1.2em;}
     .value-box{ padding:10px; font-size:1.1em;
       li{ padding-top:10px;}
     }
