@@ -1135,6 +1135,7 @@ body{ -webkit-text-size-adjust:none;}
 .jzjp-list li:first-child{ border-bottom-style: solid; color: #d0d0d0; }
 .jzjp-list li.last{ border: 0px;}
 .jzjp-list .calc-list-ul { position:relative; float: left; width: 30px; height: 30px; margin: -5px 0 0 -10px;  }
+.calc-list-ul .calc-list-ul-jzjp-li{padding-right:5px;}
 .calc-list-ul-jzjp-li dl{ display: inline-block; *display: inline; zoom:1; margin: 5px 0 0 20px; padding: 0;  }
 .calc-list-ul-jzjp-li dt{ display: inline-block; *display: inline; zoom:1; height: 20px; line-height: 20px; margin: 0; padding: 0}
 #j-jzjp-select-normal dt{ display: inline-block;*display:inline; zoom:1;}
