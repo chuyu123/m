@@ -254,14 +254,14 @@ body{ -webkit-text-size-adjust:none;}
 /* 汽车情报员我要报价页面 */
 .other-price-box{padding:18px 15px 0;}
 .other-price-box li{padding:2px 0;}
-.other-price-box .price-sel,.other-price-box .price-ipt{color:#a9a9a9;-moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;border:1px solid #999;border-radius:3px;font-size:1.2em;margin-top:6px;padding:6px 10px 5px; width:95%;}
-.price-ipt-box{display:inline-block;margin-top:6px;}
-.price-ipt-box .price-ipt{width:65%;float:left;margin:0;}
-.price-ipt-box .price-text{width:30%;float:left;padding-left:10px;}
-.price-ipt-box .price-text span{background:#c71a1a;border-radius:2px;color:#fff;display:block;font-size:0.8em;line-height:14px;margin:4px 2px 0 0;padding:0 2px;width:35px;}
+.other-price-box .price-sel,.other-price-box .price-ipt{color:#a9a9a9;-moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;border:1px solid #999;border-radius:3px;font-size:1.1em;margin-top:6px;padding:7px 10px; width:95%;}
+.price-ipt-box .price-ipt{width:160px;}
+.price-text{padding-left:10px;display:inline-block;vertical-align:bottom;}
+.price-text .price-limit{background:#c71a1a;border-radius:2px;color:#fff;font-size:0.8em;line-height:14px;margin:4px 2px 0 0;padding:0 2px;width:35px;display:block;}
+.price-text .price-unit{color:#c71a1a;font-size:16px;font-weight:bold;display:block;margin-top:2px;}
 .other-price-box li b{color:#c71a1a;}
-.other-price-box .upload-ipt{background:#f0f0f0;display:block;margin:20px 0 10px 4%;border:none;border-radius:3px;padding:8px 10px;-moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;width:95%;}
-.other-price-box .upload-btn{border-radius:3px;border:1px solid #c71a1a;color:#c71a1a;background-color:#fff;padding:5px 10px;margin-left:4%;float:left;}
+.other-price-box .upload-box{color:#a9a9a9;background:#f0f0f0;margin:20px 2% 10px 4%;border-radius:3px;height:36px;line-height:36px;text-indent:10px;width:94%;}
+.other-price-box .upload-btn .btn{border-radius:3px;border:1px solid #c71a1a;color:#c71a1a;background-color:#fff;padding:5px 10px;margin-left:4%;float:left;}
 .other-price-box .help{color:#326cf1;font-size:1.2em;float:right;margin-top:4px;}
 .other-price-box .help a{text-decoration:underline;color:#326cf1;}
 .other-price-box .submit{background:#c71a1a;color:#fff;border-radius:3px;border:none;width:100%;padding:5px 0;margin-top:35px;display:block;text-align:center;}
