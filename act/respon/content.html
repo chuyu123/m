@@ -77,36 +77,45 @@
     </div>
     <!--/fruit-box-->
     <!--fruit-box-->
-    <div class="fruit-box morecars mt10">
+    <div class="fruit-box othercars mt10">
         <div class="fruit-hd"><i class="f-chain"></i>大家都在看的车型</div>
         <div class="fruit-bd">
-            <ul class="fruit-img-ul clearfix" id="morecars-ul">
-                <li>
-                    <a class="link" href="">
-                        <img src="http://115.29.184.142:81/weixin-image/tmp/20140820/c2cc5368a1df483aac3fe6aabf075844/0_160x120" alt="">
-                        <span class="tit">雪铁龙 爱丽舍 2014款 1.6L 手动时尚型</span>
-                    </a>
+            <div class="othercars-frame" id="swpier-othercars">
+                <ul class="fruit-img-ul swiper-wrapper clearfix" id="data-cn3i">
+                    <li class="swiper-slide">
+                        <a class="link" href="">
+                            <img src="http://115.29.184.142:81/weixin-image/tmp/20140820/c2cc5368a1df483aac3fe6aabf075844/0_160x120" alt="">
+                            <span class="tit">雪铁龙 爱丽舍 2014款 1.6L 手动时尚型</span>
+                        </a>
                     <span class="val">
                         <span class="t">一口价:</span>
                         <b>7.63</b>万
                     </span>
-                    <a href="" class="btnact">+对比</a>
-                </li>
-            </ul>
-            <script>data("morecars-ul",9)</script>
+                        <a href="" class="btnact">+对比</a>
+                    </li>
+                </ul>
+                <script>data("data-cn3i",9);</script>
+            </div>
+            <div class="pagination-line" id="pagination-othercars"></div>
         </div>
     </div>
     <!--/fruit-box-->
     <a href="" class="servicetel mt20"><i class="f-acttel"></i>服务热线400-696-5151</a>
-    <!--#include file="_footer.html"-->
 </div>
 <!--#include file="_popup.html"-->
 <a href="javascript:selectColorPopup()" class="btn-phone-baoming"><span>我要抢车</span></a>
 
 
 <script src="assets/jquery-2.1.0.min.js"></script>
+<script src="assets/idangerous.swiper-2.0.min.js"></script>
 <script src="assets/js.js"></script>
 <script>
+//大家都在看的车型
+var mySwiper = new Swiper('#swpier-othercars',{
+    pagination: '#pagination-othercars',
+    paginationClickable: true,
+    slidesPerView: 'auto'
+});
 var egShare = new popupFunc('分享到','<ul class="share-ul"><li><a href=""><i class="f-weibo"></i>新浪微博</a></li><li><a href=""><i class="f-qzone"></i>QQ空间</a></li><li><a href=""><i class="f-txweibo"></i>腾讯微博</a></li></ul>','');
 var egCode = new popupFunc('扫码支付','<div></div>','');
 </script>

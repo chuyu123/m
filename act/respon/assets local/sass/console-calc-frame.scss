@@ -41,8 +41,11 @@ Date: 2014-10-13
 }
 
 /* servicetel */
-.servicetel{ display:block; overflow:hidden; color:#fff; line-height:30px; background:#479c02; @include radius(4px); margin:0 10px; text-align:center;}
+.servicetel{ display:block; overflow:hidden; color:#fff; line-height:30px; background:#479c02; @include radius(4px); margin:0 10px 10px; text-align:center;}
 
+@media only screen and (max-width:767px){
+  .servicetel{ margin-bottom:60px;}
+}
 @media only screen and (min-width:768px){
   .console-calc-frame{ height:300px; overflow:hidden; margin:12px 12px 0; padding-right:400px;}
   .car-console-box{ float:left; height:100%; background:#fff; padding:10px;
