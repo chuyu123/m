@@ -25,28 +25,41 @@ Date: 2014-10-15
 		.tit{position:absolute; left:0; bottom:2%; display:block; width:100%;}
 		b{display:inline-block; background:#000; border-radius:4px; margin:0 3px; padding:0 2px;}
 	}
+}
 
+/* pagination-focus */
+.pagination-focus{ text-align:center; padding-top:3px;
+  span{ display:inline-block; width:6px; height:6px; border-radius:1em; background:#dedede; margin:0 3px;}
+  .swiper-active-switch{ background:#febc02;}
 }
-.act-area{
-	.act-area-hd{ line-height:36px; background:#efefef; overflow:hidden;
-      .tit{ float: left; font-size: 1.1em; line-height:20px; margin:5px 0 5px 5px; padding-left:5px; border-left:2px solid #c71a1a;}
-    }
-	.hdgz-link{display:block; color:#666; line-height: 25px; margin:10px;
-		b{ font-size:.9em;color:#c71a1a;}
-		.morex{display:block; width: 100%; text-align: right;}
-		.f-tolink{color:#cd3434; margin-left:3px;}
-	}
-	.hdxc-ul{margin-top:5px;background-color:#efefef;padding:5px;
-		.show{color:#333;display:inline-block;
-			img{float:left;padding-right:3px;}
-		p{
-			span{display:inline-block;background:#c71a1a;color:#fff;border-radius:3px;padding:0 2px;}
-		}
-		}
-	}
-	
-	
+
+/* pagination-line */
+.pagination-line{ @include displaybox; width:60%; text-align:center; margin:10px auto 0; box-shadow:2px 0 2px #ff0,-2px 0px 2px #ff0;
+  span{ @include flex; width:100%; height:2px; display:block; background:#fff;}
+  .swiper-visible-switch{ background:#ccc;}
 }
+
+/* act-area */
+.act-area-hd{ line-height:36px; background:#efefef; overflow:hidden;
+  .tit{ float: left; font-size: 1.1em; line-height:20px; margin:5px 0 5px 5px; padding-left:5px; border-left:2px solid #c71a1a;}
+}
+.hdgz-link{display:block; color:#666; line-height: 25px; margin:10px;
+    b{ font-size:.9em;color:#c71a1a;}
+    .morex{display:block; width: 100%; text-align: right;}
+    .f-tolink{color:#cd3434; margin-left:3px;}
+}
+
+/* .hdxc-box */
+.hdxc-box{
+  .act-area-bd{ background:#fff;}
+}
+.hdxc-ul{
+  a{ display:block; padding:10px 40px 0 100px; overflow: hidden; color: #666; font-size:.9em;}
+  img{ float: left; margin-left:-90px; border-radius: 2px;}
+  i{ float: right; margin:16px -30px 0 0;}
+  span{ display:block; padding-top:8px;}
+}
+
 /* mod-slide */
 .mod-slide{ position: relative; z-index: 1;
 	.mod-slide-frame{ position: relative; width: 100%; height: 100%; overflow: hidden; cursor: -moz-grab; cursor: -webkit-grab;}
