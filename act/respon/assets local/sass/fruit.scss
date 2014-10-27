@@ -27,11 +27,19 @@ Date: 2014-10-13
   }
   .btnact{ position:absolute; right:2px; bottom:5px; line-height: 30px; background:#5396dd; border-radius:20px; color:#fff; padding:0 10px;}
 }
+.morecars{
+  .fruit-bd{ background:#fff; height:222px; overflow-x:auto;}
+}
 /* othercars */
 .othercars{
   .fruit-bd{ background:#fff; padding:0 10px 10px;}
 }
 .othercars-frame{ height:212px; overflow:hidden;}
+.agent-banner{
+    padding:10px 20px;
+    border-top:1px solid #eee;
+    background:#fff;
+}
 
 @media only screen and (min-width:1024px) {
   .fruit-tit-ul li a{ height:60px; line-height:60px; font-size:1.2em;}

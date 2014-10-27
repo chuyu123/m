@@ -235,21 +235,29 @@ body{ -webkit-text-size-adjust:none;}
 /* 汽车详情中情报模块 */
 .winner-box{margin-bottom:20px;}
 .winner-top{position:relative;}
-.winner-banner{margin:0 14px;background:#ffe2bd;height:30px;position:absolute;bottom:32px;width:92%;margin:0 4%;}
+.winner-banner{background:#ffe2bd;height:30px;position:absolute;bottom:32px;width:92%;margin:0 4%;}
 .winner-box .top{background:url(../images/cxTopBg.png) no-repeat;background-size:100%;height:120px;position:relative;}
-.winner-box .top .title{padding:5px;position:absolute;bottom:0;width:100%;margin:0 4%;}
+.winner-box .top .title{padding:5px 0;position:absolute;bottom:0;width:92%;margin:0 4%;}
 .winner-box .btm{background:url(../images/cxBtmBg.png) no-repeat 0 center;background-size:100%;}
 .winner-box .btm li{padding:8px 5px;border-bottom:1px dotted #b7b7b7;margin:0 4%;background-color:#ffe2bd;}
-.winner-box ul li span{float:left;}
-.winner-box .model,.winner-box .con{width:30%;}
+.winner-box ul li span{float:left;text-align:center;}
+.winner-box ul li .model{text-align:left;}
+.winner-box .model{width:38%;padding-right:2%;}
+.winner-box .top .model{width:35%;padding-left:3%;}
+.winner-box .con{width:20%;}
 .winner-box .member,.winner-box .price{width:20%;}
 .winner-box .btm .border-none{border-bottom:none;text-align:left;}
 .winner-box b{color:#cb302b;}
 .winner-box a{display:inline-block;border:1px solid #ffd298;border-radius:5px;background:#fff;padding:5px 8px;width:105px;height:20px;text-align:center;color:#e17230;}
-.winner-box .price-btn{margin-right:25px;}
-.winner-no-con{background:url(../images/cxNoConBg.png) no-repeat;background-size:100%;width:100%;height:200px;color:#666;padding-top:100px;}
-.winner-box  .winner-no-con li span{float:none;color:#c71a1a;}
-.winner-no-con li{padding:12px 25px;}
+.winner-box .price-btn{margin-right:25px;float:left;}
+.winner-box .win-btn{float:right;}
+.winner-no-con{color:#666;}
+.winner-no-con .top{height:100px;}
+.winner-no-con .winner-banner{height:45px;bottom:0;}
+.winner-no-con .btm{background:url(../images/cxNoConBtmBg.png) no-repeat 0 bottom;background-size:100%;}
+.winner-no-con .btm li{border-bottom:none;}
+.winner-no-con ul li span{float:none;color:#c71a1a;}
+.winner-no-con li{padding:3px 25px;}
 
 /* 汽车情报员我要报价页面 */
 .other-price-box{padding:18px 15px 0;}
@@ -261,7 +269,7 @@ body{ -webkit-text-size-adjust:none;}
 .price-text .price-unit{color:#c71a1a;font-size:16px;font-weight:bold;display:block;margin-top:2px;}
 .other-price-box li b{color:#c71a1a;}
 .other-price-box .upload-box{color:#a9a9a9;background:#f0f0f0;margin:20px 2% 10px 4%;border-radius:3px;height:36px;line-height:36px;text-indent:10px;width:94%;}
-.other-price-box .upload-btn .btn{border-radius:3px;border:1px solid #c71a1a;color:#c71a1a;background-color:#fff;padding:5px 10px;margin-left:4%;float:left;}
+.other-price-box .upload-btn .btn{border-radius:3px;border:1px solid #c71a1a;color:#c71a1a;background-color:#fff;padding:5px 10px;margin-left:4%;margin-right:2%;float:left;}
 .other-price-box .help{color:#326cf1;font-size:1.2em;float:right;margin-top:4px;}
 .other-price-box .help a{text-decoration:underline;color:#326cf1;}
 .other-price-box .submit{background:#c71a1a;color:#fff;border-radius:3px;border:none;width:100%;padding:5px 0;margin-top:35px;display:block;text-align:center;}
@@ -311,7 +319,6 @@ body{ -webkit-text-size-adjust:none;}
 .morecontent .corbox .price .val i{ font-size:.7em; font-style:normal; margin-right:3px;}
 .morecontent .yhc-more{ display:block; margin:5px 10px 0; padding:10px 0; color:#BD3B3B; text-align:center;}
 .moreinfobar-another .ico-more{ -moz-transform:rotate(90deg); -webkit-transform:rotate(90deg); transform:rotate(90deg);}
-.moreinfobox .xq-banner{background:url(../images/xq-banner.png) no-repeat;background-size:100%;height:47px;}
 
 
 /* appearance-box */
@@ -449,7 +456,7 @@ body{ -webkit-text-size-adjust:none;}
 .referrer{ margin:0 10px; color:#666;}
 
 /* login-tdcode */
-.login-tdcode{ border-top:1px solid #eee; margin-top:20px; padding:30px 10px 10px;}
+.login-tdcode{ overflow:hidden; border-top:1px solid #eee; margin-top:20px; padding:30px 10px 10px;}
 .login-tdcode img{ float:left; margin-right:10px;}
 .login-tdcode p{ color:#666; line-height: 18px; font-size:.9em;}
 .login-tdcode b{ display:block; font-size:1.2em; color:#333; padding-bottom:5px;}
