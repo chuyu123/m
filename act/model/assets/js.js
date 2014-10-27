@@ -207,12 +207,10 @@ $(document).ready(function(){
         if(obj.hasClass(className)){
             obj.removeClass(className);
             $(this).addClass(className);
-            $(this).parent().parent().find("#color-val-outside").text($(this).attr("data-color"));
-            $(this).parent().parent().find("#color-val-inside").text($(this).attr("data-color"));
+            $(this).parent().parent().find(".color-val").text($(this).attr("data-color"));
         }else{
             $(this).addClass(className);
-            $(this).parent().parent().find("#color-val-outside").text($(this).attr("data-color"));
-            $(this).parent().parent().find("#color-val-inside").text($(this).attr("data-color"));
+            $(this).parent().parent().find(".color-val").text($(this).attr("data-color"));
         }
     });
     }
