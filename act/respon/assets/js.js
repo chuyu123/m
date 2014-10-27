@@ -186,24 +186,41 @@ function selectColorPopup(){
         $('#popup-color').hide();
         tpbm();
     })
-};
+}
 $(document).ready(function(){
     var selectColorItem=$("#color-swatch").find("li");
+    var colorItem=$("#color-swatch-outside").find("li");
+    var colorList=$("#color-swatch-inside").find("ul");
+    var colorListItem=$("#color-swatch-inside").find("li");
     selectColorItem.each(function(){
         var selectColorVal=$(this).attr("data-hex");
         $(this).css("background",selectColorVal);
-    })
-    selectColorItem.bind("click",function(){
-        if(selectColorItem.hasClass("select-color")){
-            selectColorItem.removeClass("select-color");
-            $(this).addClass("select-color");
-            $("#color-val").text($(this).attr("data-color"));
+    });
+    colorItem.each(function(){
+        $(this).click(function(){
+            var outsideclick=colorclick(colorItem,'select-color');
+            var insideclick=colorclick(colorListItem,'select-color');
+            colorList.hide();
+            colorList.eq($(this).index()).fadeIn(500);
+        })
+        $("#color-swatch-outside").find("li:first-child").click();
+        //$("#color-swatch-inside").children("ul").find("li:first-child").click();
+
+    });
+    function colorclick(obj,className){
+        obj.bind("click",function(){
+        if(obj.hasClass(className)){
+            obj.removeClass(className);
+            $(this).addClass(className);
+            $(this).parent().parent().find("#color-val-outside").text($(this).attr("data-color"));
+            $(this).parent().parent().find("#color-val-inside").text($(this).attr("data-color"));
         }else{
-            $(this).addClass("select-color");
-            $("#color-val").text($(this).attr("data-color"));
+            $(this).addClass(className);
+            $(this).parent().parent().find("#color-val-outside").text($(this).attr("data-color"));
+            $(this).parent().parent().find("#color-val-inside").text($(this).attr("data-color"));
         }
     });
-    $("#color-swatch").find("li:first").click();
+    }
 });
 //登入
 function tpbm(){
@@ -219,7 +236,7 @@ function tpbm(){
     $("#popup-tpbm").click(function(){
         $('#popup-tpbm').hide();
     })
-};
+}
 
 //排序
 $(function(){

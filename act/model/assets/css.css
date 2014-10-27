@@ -415,6 +415,7 @@ body{ min-width:320px; max-width:768px; margin:0 auto; background:url(../assets/
 .color-select-pulldown{  font-size:.9em; color:#666; padding:10px 0;}
 .car-select{padding:5px 0 10px 0;}
 .car-select li{float:left;padding:0 6px 0 10px;color:#333;}
+.color-swatch-inside .color-pulldown-ul{display:none;}
 .color-pulldown-ul{ margin:0 20px;padding-bottom:10px;}
 .color-pulldown-box:first-child .color-pulldown-ul{ margin-bottom: 5px; padding-bottom: 5px;}
 .color-pulldown-ul li{ float:left; width:30px; height:30px; border:1px solid #fff; box-shadow: 1px 1px 1px #ccc,-1px -1px 1px #ccc,-1px 1px 1px #ccc,1px -1px 1px #ccc; border-radius: 2px; margin:5px;}

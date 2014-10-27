@@ -48,8 +48,7 @@ Date: 2014-10-13
 .color-pulldown-ul-oth li.select-color{border:2px solid #c81a1b;background:none;}
 .color-pulldown-ul-oth li:after{border-bottom:10px solid #979797;border-left:10px solid transparent;width:0;height:0;position:absolute;content: " ";right:0px;bottom:0px;}
 .color-pulldown-ul-oth li.select-color:after{border-bottom:10px solid #c81a1b;}
-.color-pulldown-ul .red{ background:red;}
-.color-pulldown-ul .blue{ background:blue;}
+.color-swatch-inside .color-pulldown-ul{display:none;}
 .color-pulldown-hd{ margin:0 10px;color:#999;padding-bottom:5px;}
 .color-pulldown-hd:last-child{border-bottom:1px solid #d9d9d9;padding-bottom:15px;}
 .color-pulldown-hd span{color:#333;}
