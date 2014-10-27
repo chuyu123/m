@@ -430,6 +430,10 @@ body{ min-width:320px; max-width:768px; margin:0 auto; background:url(../assets/
 .color-pulldown-hd{ margin:0 10px;color:#999;padding-bottom:5px;}
 .color-pulldown-hd:last-child{border-bottom:1px solid #d9d9d9;padding-bottom:15px;}
 .color-pulldown-hd span{color:#333;}
+.date-arrive{color:#666;position:relative;}
+.date-arrive span{color:#000;text-decoration:underline;}
+.date-arrive .f-icon{color:#5296dd;}
+.date-arrive .car-help{position:absolute;bottom:0;right:10px;background:url(../assets/car-help.png) no-repeat;background-size:100%;height:65px;display:inline-block;width:102px;}
 .process-banner{background:url(../assets/processBanner.png) no-repeat;background-size:100%;margin:10px 10px 0;width:280px;height:150px;}
 .act-baoming-box .fastreg-list{ margin-top:5px;}
 .act-baoming-box .fastreg-large{ float:left; width:60%;}

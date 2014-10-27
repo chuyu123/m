@@ -201,10 +201,10 @@ $(document).ready(function(){
             var outsideclick=colorclick(colorItem,'select-color');
             var insideclick=colorclick(colorListItem,'select-color');
             colorList.hide();
-            colorList.eq($(this).index()).fadeIn(500);
+			colorList.eq($(this).index()).find("li:first").click();
+            colorList.eq($(this).index()).fadeIn(500);	
         })
         $("#color-swatch-outside").find("li:first-child").click();
-        //$("#color-swatch-inside").children("ul").find("li:first-child").click();
 
     });
     function colorclick(obj,className){

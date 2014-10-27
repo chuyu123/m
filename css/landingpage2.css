@@ -30,6 +30,7 @@ a{ text-decoration:none;}
 .f-calc:after{ content:"\e622";}
 .f-right-fine:after{ content: "\e625";}
 .f-help:after{content: "\e62b";}
+.f-icon:after{content: "\e623";}
 
 body{ -webkit-text-size-adjust:none;}
 .body{ min-width:320px;}

@@ -197,6 +197,7 @@ $(document).ready(function(){
             var insideclick=colorclick(colorListItem,'select-color');
             colorList.hide();
             colorList.eq($(this).index()).fadeIn(500);
+            colorList.eq($(this).index()).find("li:first").click();
         })
         $("#color-swatch-outside").find("li:first-child").click();
         //$("#color-swatch-inside").children("ul").find("li:first-child").click();
