@@ -84,8 +84,6 @@ popupFunc.prototype = {
     }
 };
 
-
-
 //应用函数
 (function(){
     //底部栏关闭功能
@@ -149,6 +147,10 @@ function response(){
             slide.style.height = slide.offsetWidth * 0.42 + "px";//640*270
         };
     })();
+	var colorHeight=$("#color-swatch").outerHeight();
+	if($(".console-calc-frame").outerWidth()>768){
+		$(".console-calc-frame").css({height:colorHeight+324});
+	}
 };
 
 window.onload = window.onresize = response;
@@ -168,27 +170,11 @@ $(function(){
     });
 });
 
-//选颜色弹窗
-function selectColorPopup(){
-    $("#popup-color").css("height",$(document).height());
-    $("#popup-color").show();
-    window.scrollTo(0,0);
-    $(".popup-tpbm-inside").click(function(e){
-        e.stopPropagation();
-    });
-    $("#popup-color").find(".f-close").click(function(){
-        $('#popup-color').hide();
-    });
-    $("#popup-color").click(function(){
-        $('#popup-color').hide();
-    })
-    $("#nextStep").click(function(){
-        $('#popup-color').hide();
-        tpbm();
-    })
-}
 $(document).ready(function(){
-    var selectColorItem=$("#color-swatch").find("li");
+    colorSwatch();
+});
+function colorSwatch(){
+	var selectColorItem=$("#color-swatch").find("li");
     var colorItem=$("#color-swatch-outside").find("li");
     var colorList=$("#color-swatch-inside").find("ul");
     var colorListItem=$("#color-swatch-inside").find("li");
@@ -202,10 +188,9 @@ $(document).ready(function(){
             var insideclick=colorclick(colorListItem,'select-color');
             colorList.hide();
 			colorList.eq($(this).index()).find("li:first").click();
-            colorList.eq($(this).index()).fadeIn(500);	
+            colorList.eq($(this).index()).show();	
         })
         $("#color-swatch-outside").find("li:first-child").click();
-
     });
     function colorclick(obj,className){
         obj.bind("click",function(){
@@ -219,7 +204,7 @@ $(document).ready(function(){
         }
     });
     }
-});
+}
 //登入
 function tpbm(){
     $("#popup-tpbm").css("height",$(document).height());
@@ -259,3 +244,37 @@ $(function(){
         };
     });
 });
+//Start of tip window function
+function showClickWindow(obj) {
+    var showWindow = $(obj).parent().find(".tipWindow");
+    var objShow = (showWindow.css("visibility")=="visible")?true:false;
+    $(".tipWindow").css("visibility", "hidden");
+    if (!objShow){
+        showWindow.css("visibility", "visible");
+        showWindow.css("display", "inline-block");
+        showWindow.attr("author","outClick");
+        $(obj).attr("author","outClick");
+        closeOutClickWindow();
+    }
+}
+function closeClickWindow(obj) {
+    var showWindow = $(obj).parent().parent().find(".tipWindow");
+    showWindow.css("display", "none");
+    showWindow.css("visibility", "hidden");
+	$(showWindow).find("*").removeAttr("author", "outClick");
+    $(obj).removeAttr("author", "outClick");
+}
+function closeOutClickWindow() {
+    document.onclick = outsideOutClickWindow;
+    function outsideOutClickWindow(event) {
+        event = (event == null) ? window.event : event;
+        var srcelement = event.target ? event.target : event.srcElement;
+        if (srcelement.getAttribute("author") != "outClick") {
+            $(".tipWindow").css("visibility", "hidden");
+            $(".tipWindow").css("display", "none");
+			$(showWindow).find("*").removeAttr("author", "outClick");
+			$(obj).removeAttr("author", "outClick");
+            document.onclick = null;
+        }
+    }
+}

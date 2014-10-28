@@ -7,6 +7,7 @@
         <div class="car-console-box">
             <div class="title"><span class="type-tm">特卖</span>雪铁龙 爱丽舍 2014款 1.6L 自动时尚型</div>
             <ul class="value-box clearfix">
+			
                 <li>
                     <span class="tit">限时价:</span>
                     <span class="bold">888.88万</span>
@@ -33,7 +34,48 @@
                     <span class="tit">当前上路价:</span>888.88万
                 </li>
             </ul>
-            <div class="calc-box">
+            <div class="color-swatch" id="color-swatch">
+                <div id="color-swatch-outside">
+                    <div class="color-pulldown-hd">外观颜色：<span id="color-val-outside" class="color-val">红色</span></div>
+                    <ul class="color-pulldown-ul clearfix">
+                        <li data-color="红色" data-hex="#ff0000" class="select-color" style="background: rgb(255, 0, 0);"></li>
+                        <li data-color="蓝色" data-hex="#0000ff" style="background: rgb(0, 0, 255);"></li>
+                        <li data-color="黑色" data-hex="#000000" style="background: rgb(0, 0, 0);"></li>
+                    </ul>
+                </div>
+                <div id="color-swatch-inside" class="color-swatch-inside">
+                    <div class="color-pulldown-hd">内饰颜色：<span id="color-val-inside" class="color-val">红色</span></div>
+                    <ul class="color-pulldown-ul clearfix" style="display: block;">
+                        <li data-color="红色" data-hex="#ff0000" class="select-color" style="background: rgb(255, 0, 0);"></li>
+                        <li data-color="黑色" data-hex="#000000" style="background: rgb(0, 0, 0);"></li>
+                    </ul>
+                    <ul class="color-pulldown-ul clearfix" style="display: none;">
+                        <li data-color="浅黄色" data-hex="#ffebd2" style="background: rgb(255, 235, 210);"></li>
+                        <li data-color="墨玉灰" data-hex="#b9b9b9" style="background: rgb(185, 185, 185);"></li>
+                    </ul>
+                    <ul class="color-pulldown-ul clearfix" style="display: none;">
+                        <li data-color="黑色" data-hex="#000000" style="background: rgb(0, 0, 0);"></li>
+                        <li data-color="墨玉灰" data-hex="#b9b9b9" style="background: rgb(185, 185, 185);"></li>
+                    </ul>
+                </div>
+                <div class="date-arrive clearfix">
+                    <div class="left">车辆预计
+                    <span>2014-10-10</span> 
+                    到达</div>
+                    <div class="date-arrive-help">
+						<i class="f-icon" onclick="showClickWindow(this);"></i>
+						<div class="help-con tipWindow" style="display: none; visibility: hidden;">
+							<p class="f-close" onclick="closeClickWindow(this)"></p>
+							<p class="tit">车辆预计到达说明</p>
+							沿途不可控因素沿途不
+							可控因素沿途不可控因
+							素沿途不可控
+						</div>
+					</div>
+                    
+                </div>				
+            </div>
+			<div class="calc-box">
                 <a href="#"><i class="f-calc"></i>购车计算</a>
                 <p>*购车费用包括 车身价+金融+保险+加装精品</p>
             </div>
@@ -52,44 +94,6 @@
         </div>
         <!--/calc-pad-box-->
     </div>
-	            <div class="color-swatch" id="color-swatch">
-                <div id="color-swatch-outside">
-                    <div class="color-pulldown-hd">外饰颜色：<span id="color-val-outside" class="color-val"></span></div>
-                    <ul class="color-pulldown-ul clearfix">
-                        <li data-color="红色" data-hex="#ff0000"></li>
-                        <li data-color="蓝色" data-hex="#0000ff"></li>
-                        <li data-color="黑色" data-hex="#000000"></li>
-                    </ul>
-                </div>
-                <div id="color-swatch-inside" class="color-swatch-inside">
-                    <div class="color-pulldown-hd">内饰颜色：<span id="color-val-inside" class="color-val">未选择</span></div>
-                    <ul class="color-pulldown-ul clearfix">
-                        <li data-color="红色" data-hex="#ff0000"></li>
-                        <li data-color="黑色" data-hex="#000000"></li>
-                    </ul>
-                    <ul class="color-pulldown-ul clearfix">
-                        <li data-color="浅黄色" data-hex="#ffebd2"></li>
-                        <li data-color="墨玉灰" data-hex="#b9b9b9"></li>
-                    </ul>
-                    <ul class="color-pulldown-ul clearfix">
-                        <li data-color="黑色" data-hex="#000000"></li>
-                        <li data-color="墨玉灰" data-hex="#b9b9b9"></li>
-                    </ul>
-                </div>
-                <div class="date-arrive">
-                    车辆预计
-                    <span>2014-10-10</span> 
-                    到达
-                    <i class="f-icon"></i>
-                    
-                </div>
-				<div class="date-arrive-help">
-						<p class="tit">车辆预计到达说明</p>
-						<p>沿途不可控因素沿途不
-						可控因素沿途不可控因
-						素沿途不可控</p>
-				</div>
-            </div>
     <!--car-list-infomation-->
     <div class="car-list-infomation mt10">
         <ul class="fruit-tit-ul clearfix">
@@ -146,7 +150,7 @@
     <a href="" class="servicetel mt20"><i class="f-acttel"></i>服务热线400-696-5151</a>
 </div>
 <!--#include file="_popup.html"-->
-<a href="javascript:selectColorPopup();void(0);" class="btn-phone-baoming"><span>我要抢车</span></a>
+<a onclick="javascript:tpbm();void(0);" class="btn-phone-baoming"><span>我要抢车</span></a>
 
 
 <script src="assets/jquery-2.1.0.min.js"></script>
