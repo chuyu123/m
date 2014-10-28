@@ -1190,10 +1190,10 @@ body{ -webkit-text-size-adjust:none;}
 
 /* 汽车情报员说明 页面 */
 .instruce-box .instruce-banner img{width:100%;background-size:100%;margin-bottom:-15px;}
-.instruce-box .tit{background:url(../images/agentsTitBg.png) no-repeat;background-size:100%;width:116px;height:28px;line-height:22px;color:#fff;text-align: center;margin:0 auto;font-size:1.1em;position:relative;}
-.instruce-box ul{margin:15px 22px;}
-.instruce-box ul li{color:#666;font-size:1.1em;padding:2px 0;}
-.instruce-box ul li span{color:#c71a1a;}
+.instruce-box .tit{background:url(../images/agentsTitBg.png) no-repeat;background-size:100%;width:116px;height:28px;line-height:22px;color:#fff;text-align: center;margin:0 auto;font-size:1.1em;position:relative;margin-bottom:15px;}
+.instruce-box dl{margin:15px 22px;}
+.instruce-box dl dd{color:#666;font-size:1.1em;padding:2px 0;}
+.instruce-box dl dd span{color:#c71a1a;}
 
 
 /* =========================活动模板相关========================= */

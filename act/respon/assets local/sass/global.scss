@@ -39,6 +39,8 @@ a{ color:$baselinkcolor;}
 body{ min-width:320px; margin:0 auto; background:#fff;}
 .bg-page{ background:#ebebeb;}
 .sub-page{ padding-top:50px;}
+.vMiddle,.vHeight{display: table-cell;zoom: 1;vertical-align: middle;text-align: center;overflow: hidden;}
+.vHeight{width:0;}
 
 /* part iconfont */
 @font-face{ font-family:'iconfont'; font-weight:normal; font-style:normal; src:url(icomoon.woff) format('woff'),url('icomoon.ttf') format('truetype'),url('icomoon.svg#iconfont') format('svg');}
